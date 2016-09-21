@@ -1,0 +1,17 @@
+$ seq 5
+1
+2
+3
+4
+5
+
+$ seq 5 > sayı
+
+$ seq 5 | shuf
+1
+4
+3
+2
+5
+
+$ seq 5 | shuf > sayı-karışık
