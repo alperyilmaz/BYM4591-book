@@ -24,6 +24,7 @@ Klasörler dosyaları içeren yapılardır. Dosyalar; sistem, kullanıcı ve ça
 
 ![Şekil 1.1 Klasör yapısı](images/klasor-yapisi.png)
 ![Ece Özmen Değişikliği](images/indir.png)
+
 Her bir klasörün içerikleri özet olarak şöyle sıralanabilir:
 bin
 
