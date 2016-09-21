@@ -23,6 +23,7 @@ Yazılımın sahipsiz olması farklı kullanıcılar tarafından geliştirilmesi
 Klasörler dosyaları içeren yapılardır. Dosyalar; sistem, kullanıcı ve çalışabilir dosyalar olmak üzere üçe ayrılır. Sistem dosyaları, işletim sisteminin kullandığı metin tipinde yazılmış dosyalardır. Kullanıcı dosyaları, işletim sistemi kullanıcılarının sayısal ve alfabetik veriler içeren metin tipinde dosyalarıdır. Çalışabilir dosyalar, özel yazılım ürünleri olan ve belli amaçlar doğrultusunda oluşturulmuş programlardır.
 
 ![Şekil 1.1 Klasör yapısı](images/klasor-yapisi.png)
+![Ece Özmen Değişikliği](images/indir.png)
 
 Her bir klasörün içerikleri özet olarak şöyle sıralanabilir:
 bin
