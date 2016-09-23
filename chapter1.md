@@ -69,6 +69,8 @@ Daha detaylı klasör yapısı hakkında [akış diyagramı](http://blog.danyll.
 
 Terminalde çalışılırken genel görünüm aşağıdaki gibidir. Yeşil renkli kısımda kullanıcı adı ve çalışılan makine adı verilmektedir. Sarı renkli kısım ise şu anda çalışılan klasörün adını göstermektedir. Dolar işaretinden ($) sonraki kısımda ise istenilen komut girilmektedir. Kitapta verilecek olan örneklerde $ işaretinden sonraki kısım gösterilecektir. Bu durumda $ işareti ile başlayan satırlar, komutların yazıldığı satır; $ işareti olmayan satırlar ise terminalde görüntülenen kısımlardır.
 
+![şekil 11](images/hediye.png)
+
 {#terminal-genel-gorunum}
 ![Şekil 1.2 Terminalin genel görümü](images/terminal-genel-gorunum.png)
 
