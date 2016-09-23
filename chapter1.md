@@ -63,7 +63,7 @@ var
 
  : Değişken dosyaları içeren klasördür.
  
-![Şekil 1.2] (nurdan.jpg)
+![Şekil 1.2](nurdan.jpg)
 
 Daha detaylı klasör yapısı hakkında [akış diyagramı](http://blog.danyll.com/linux-directory-map/) resmine bakılabilir. Ayrıca, terminalde `man hier` komutu ile hiyerarşik dosya yapısı hakkında bilgi edinilebilir.
 
