@@ -118,6 +118,8 @@ No space left on device
 
 Herhangi bir işlemden sonra alınacak outputun ekranda görüntülenmesi isteniyorsa ekstra işlem yapılmaz. Elde edilen output ayrı bir dosya olarak kaydedilmek isteniyorsa büyüktür (>) işareti, başka bir işlemin çıktısı olarak kullanılmak isteniyorsa çubuk (|) işareti kullanılır.
 
+Leontief tarafından geliştirilen girdi-çıktı modeli, pek çok ülkenin iktisadi planlama amacı ile kullandığı ve 1950’li yıllarda son derece popüler olan bir yöntem. [kaynak](http://iibf.ogu.edu.tr/maslan/DERSLER/MATEMAT%C4%B0KSEL%20%C4%B0KT%C4%B0SAT/DERS%20NOTLARI/lecture-5%20-c%20input-output%20modeli.pdf)
+
 > Türkçe klavyelerde çubuk işareti Alt Gr ve < tuşlarına aynı anda basarak elde edilebilir.
 
 ![Şekil 1.3 Çıktının farklı şekillerde yönlendirilmesi](images/input-output.png)
