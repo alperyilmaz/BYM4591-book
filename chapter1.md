@@ -2,15 +2,11 @@
 
 ## GNU/Linux Hakkında
 
-![Veri Analizi] (creativity_technology.png) 
+![Veri Analizi](images/DataanalysisByAli.png)
 
 ![Şekil 1.1 Tanıtıcı Diyagram](images/data-analysis.png)
 
 Açık kaynak kodlu ve özgür bir işletim sistemi çekirdeği olan Linux, Unix işletim sistemi kaynak alınarak oluşturulmuştur. İşletim sistemi çekirdeği, yazılım ve araçların tümünü ifade etmek için GNU/Linux terimi kullanılır. Linux sayesinde GNU (GNU is Not Unix) Projesi'nin en büyük eksiği olan çekirdeği tamamlanmıştır.
-
-Linux, 1991 yılında Finlandiyalı bir üniversite öğrencisi olan Linus Torvalds tarafından, daha eski işletim sistemlerinden birisi olan UNIX'ten esinlenerek geliştirilmeye başlanmıştır. Linus hâlen çekirdek geliştirme ekibindedir.
-
-Linus Torvalds, Unix benzeri MINIX işletim sisteminden daha iyi bir işletim sistemi yaratmak düşüncesiyle 1991 Nisan ayında işletim sistemi çekirdeğini oluşturmaya başladı. 25 Ağustos 1991'de, comp.os.minix adresli MINIX haber grubuna gönderdiği yazıda yeni bir işletim sistemi geliştirmekte olduğunu ve ilgilenen herkesin yardımını beklediğini yazdı. Daha sonra 17 Eylül 1991'de Linux'un ilk sürümü olan 0.01'i İnternet'te yayınladı. Kısa bir süre sonra, 5 Ekim 1991'de temel özellikleriyle beraber ilk resmi Linux sürümü olan 0.02'yi yayınladı.[kaynak] (https://tr.wikipedia.org/wiki/Linux)
 
 Unix işletim sistemi ile uyumlu olarak geliştirilmeye başlanması, GNU/Linux'un taşınabilir olmasını ve kullanıcıların kolayca uyum sağlayabilmesini kolaylaştırmıştır. Bunun yanında, GNU/Linux kodları sil baştan yazılmış ve temel metin biçimlendirici olarak TeX kullanılmıştır. Yazılımın geliştirilmesi, internet üzerinden iletişim kurabilen kullanıcıların (programcıların) işbirliği ile sağlanmıştır ve günümüzde de devam etmektedir. GNU/Linux'un bağlı olduğu GNU projesi, özgür yazılımlar oldukları için kullanılmaları sağlanan ve kullanıcıların kendi amaçları doğrultusunda geliştirilen işletim sistemlerini ve programları içerir.
 
@@ -22,12 +18,7 @@ Açık kaynak kodlu işletim sistemleri lisanlı veya lisanssız olabildiği gib
 
 GNU/Linux'un kullanım alanlarından bazıları; Android işletim sistemine sahip mobil telefonlar, tabletler, televizyonlar, oyun konsolları, eğitim simülatörleri, uçaklar ve otomobillerdir.
 
-![şekil 1.2](images/zgr-yazlm-gnulinux-10-638.jpg)
-
 Yazılımın sahipsiz olması farklı kullanıcılar tarafından geliştirilmesini mümkün kılar.Bu sayede kısa sürede fazla özellik kazandırılabilir. Yazılımda oluşacak hataların düzeltilmesi de daha hızlı gerçekleşir. En önemli özelliklerden biri ise, insanlar arasında yardımlaşmayı sağlamasıdır. Böylece farklı toplumlar arasındaki bağları kuvvetlendirir. Bu sayede kişisel olarak değil evrensel olarak kazanç sağlanır. Maddi kayıp olmadığı gibi manevi kazanç sağlanır ve bu, günümüzde en çok ihtiyaç duyulan şeylerden biridir.
-
-GitHub takım üyeleri, Yahoo! merkez ofisinde 24 Şubat 2009 tarihinde yaptıkları konuşmada; henüz bir yıl olmadan 46.000 açık kaynaklı depoya ulaştıklarını, bu depolardan 17.000 tanesinin Ocak 2009 da yaratıldığını belirtmişlerdir. Bununla birlikte 6.200 deponun en az bir kez çatallandığını (fork), 4.600 adedinin tekrar birleştiğini (merge) açıklamışlardır. 5 Temmuz 2009 tarihli web günlüğü makalesinde GitHub'ın 100.000 kullanıcıya ulaştığı duyurulmuştur.Temmuz 2015 itibarı ile Github, 10.3 milyon kayıtlı kullanıcıya ve 25 milyon kaynak deposu adedine ulaşmıştır
-[kaynak](https://tr.wikipedia.org/wiki/GitHub)
 
 ## GNU/Linux Kullanımında Gerekli Bilgiler
 
@@ -71,16 +62,12 @@ tmp
 var
 
  : Değişken dosyaları içeren klasördür.
- 
-![Şekil 1.2](images/nurdan.jpg)
 
 Daha detaylı klasör yapısı hakkında [akış diyagramı](http://blog.danyll.com/linux-directory-map/) resmine bakılabilir. Ayrıca, terminalde `man hier` komutu ile hiyerarşik dosya yapısı hakkında bilgi edinilebilir.
 
 ### Terminalin Genel Görünümü
 
 Terminalde çalışılırken genel görünüm aşağıdaki gibidir. Yeşil renkli kısımda kullanıcı adı ve çalışılan makine adı verilmektedir. Sarı renkli kısım ise şu anda çalışılan klasörün adını göstermektedir. Dolar işaretinden ($) sonraki kısımda ise istenilen komut girilmektedir. Kitapta verilecek olan örneklerde $ işaretinden sonraki kısım gösterilecektir. Bu durumda $ işareti ile başlayan satırlar, komutların yazıldığı satır; $ işareti olmayan satırlar ise terminalde görüntülenen kısımlardır.
-
-![şekil 11](images/hediye.png)
 
 {#terminal-genel-gorunum}
 ![Şekil 1.2 Terminalin genel görümü](images/terminal-genel-gorunum.png)
@@ -128,8 +115,6 @@ No space left on device
 İnput, işleme alınacak dosyalar ve komutlardır; kısaca girdi olarak tanımlanır. Output, işlemin ve komutun sonuçlarıdır; kısaca çıktı olarak tanımlanır.
 
 Herhangi bir işlemden sonra alınacak outputun ekranda görüntülenmesi isteniyorsa ekstra işlem yapılmaz. Elde edilen output ayrı bir dosya olarak kaydedilmek isteniyorsa büyüktür (>) işareti, başka bir işlemin çıktısı olarak kullanılmak isteniyorsa çubuk (|) işareti kullanılır.
-
-Leontief tarafından geliştirilen girdi-çıktı modeli, pek çok ülkenin iktisadi planlama amacı ile kullandığı ve 1950’li yıllarda son derece popüler olan bir yöntem. [kaynak](http://iibf.ogu.edu.tr/maslan/DERSLER/MATEMAT%C4%B0KSEL%20%C4%B0KT%C4%B0SAT/DERS%20NOTLARI/lecture-5%20-c%20input-output%20modeli.pdf)
 
 > Türkçe klavyelerde çubuk işareti Alt Gr ve < tuşlarına aynı anda basarak elde edilebilir.
 
@@ -246,5 +231,6 @@ Bilişim veya programlama türündeki bilgilerin en hızlı öğrenilmesi pratik
 
 
 %%%% TODO link for downloading course materials and instructions to use them at Tutorials Point website
-.
 
+
+##Eklediğim kısım
