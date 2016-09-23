@@ -62,6 +62,8 @@ tmp
 var
 
  : Değişken dosyaları içeren klasördür.
+ 
+ ![şekil.1.9](images/url.htm)
 
 Daha detaylı klasör yapısı hakkında [akış diyagramı](http://blog.danyll.com/linux-directory-map/) resmine bakılabilir. Ayrıca, terminalde `man hier` komutu ile hiyerarşik dosya yapısı hakkında bilgi edinilebilir.
 
