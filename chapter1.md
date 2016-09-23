@@ -26,6 +26,9 @@ GNU/Linux'un kullanım alanlarından bazıları; Android işletim sistemine sahi
 
 Yazılımın sahipsiz olması farklı kullanıcılar tarafından geliştirilmesini mümkün kılar.Bu sayede kısa sürede fazla özellik kazandırılabilir. Yazılımda oluşacak hataların düzeltilmesi de daha hızlı gerçekleşir. En önemli özelliklerden biri ise, insanlar arasında yardımlaşmayı sağlamasıdır. Böylece farklı toplumlar arasındaki bağları kuvvetlendirir. Bu sayede kişisel olarak değil evrensel olarak kazanç sağlanır. Maddi kayıp olmadığı gibi manevi kazanç sağlanır ve bu, günümüzde en çok ihtiyaç duyulan şeylerden biridir.
 
+GitHub takım üyeleri, Yahoo! merkez ofisinde 24 Şubat 2009 tarihinde yaptıkları konuşmada; henüz bir yıl olmadan 46.000 açık kaynaklı depoya ulaştıklarını, bu depolardan 17.000 tanesinin Ocak 2009 da yaratıldığını belirtmişlerdir. Bununla birlikte 6.200 deponun en az bir kez çatallandığını (fork), 4.600 adedinin tekrar birleştiğini (merge) açıklamışlardır. 5 Temmuz 2009 tarihli web günlüğü makalesinde GitHub'ın 100.000 kullanıcıya ulaştığı duyurulmuştur.Temmuz 2015 itibarı ile Github, 10.3 milyon kayıtlı kullanıcıya ve 25 milyon kaynak deposu adedine ulaşmıştır
+[kaynak](https://tr.wikipedia.org/wiki/GitHub)
+
 ## GNU/Linux Kullanımında Gerekli Bilgiler
 
 ### Dosya Sistem Yapısı
@@ -74,6 +77,8 @@ Daha detaylı klasör yapısı hakkında [akış diyagramı](http://blog.danyll.
 ### Terminalin Genel Görünümü
 
 Terminalde çalışılırken genel görünüm aşağıdaki gibidir. Yeşil renkli kısımda kullanıcı adı ve çalışılan makine adı verilmektedir. Sarı renkli kısım ise şu anda çalışılan klasörün adını göstermektedir. Dolar işaretinden ($) sonraki kısımda ise istenilen komut girilmektedir. Kitapta verilecek olan örneklerde $ işaretinden sonraki kısım gösterilecektir. Bu durumda $ işareti ile başlayan satırlar, komutların yazıldığı satır; $ işareti olmayan satırlar ise terminalde görüntülenen kısımlardır.
+
+![şekil 11](images/hediye.png)
 
 {#terminal-genel-gorunum}
 ![Şekil 1.2 Terminalin genel görümü](images/terminal-genel-gorunum.png)
