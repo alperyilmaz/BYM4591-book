@@ -18,6 +18,18 @@ Açık kaynak kodlu işletim sistemleri lisanlı veya lisanssız olabildiği gib
 
 GNU/Linux'un kullanım alanlarından bazıları; Android işletim sistemine sahip mobil telefonlar, tabletler, televizyonlar, oyun konsolları, eğitim simülatörleri, uçaklar ve otomobillerdir.
 
+## Avantajları
+
+UNIX işletim sistemine sahip bir bilgisayar kullanmak istiyorsanız ve bu işletim sisteminde platforma bağımlı bir yazılım kullanmıyorsanız, Linux ideal bir çözümdür.
+
+Linux ücretsizder. Sadece işletim sisteminin maliyeti açısından değil, verdiği performans için ihtiyaç duyduğu donanım açısından da çok ucuzdur. Üstüne üstlük çok kullanılan ve bol yedek parçası bulunan bir platform altında çalıştığı için belirli bir Linux sisteminin performansını artırmak için yapılması gereken yatırım başka bir UNIX iş istasyonunu aynı oranda geliştirmek için gereken yatırıma göre çok düşüktür. Herhangi bir Sun bilgisayarın hafizasını iki katına çıkarmak için harcanacak para ile bir Linux-PC'nin hafizasını iki katına çıkarmak için harcanması gereken parayı kıyaslamayı deneyin. Fakat şirketler bazında Linux'un bedava bir işletim sistemi olması genelde gözardı edilir.
+
+Bir Linux makine bu sayede sadece işletim sistemi açısından değil donanım olarak da ucuza gelmektedir.
+
+Linux hızla geliştirilmektedir. Bu gelişimin en büyük yararı, eksikliklerin kullanıcıların talepleri ve çabaları sonucunda hızla giderilmesidir. Linux diğer tüm işletim sistemlerine göre belirli bir donanım için daha hızlı destek verebilmektedir.
+
+Linux çok değişik donanımlar ve servisler icin özel olarak hazırlanır. İşletim sisteminin temelini oluşturan çekirdek kullanıcı tarafından da derlenebildiği için, bu derleme sırasında sadece kullanım amacına yönelik alt programlarla donatılır. Bu genel olarak daha sistemin performansını artırmaktadır. (Örnek olarak SCSI donanımınız yoksa çekirdeğinizde SCSI ile ilgili alt programlara yer vermezsiniz)
+
 Yazılımın sahipsiz olması farklı kullanıcılar tarafından geliştirilmesini mümkün kılar.Bu sayede kısa sürede fazla özellik kazandırılabilir. Yazılımda oluşacak hataların düzeltilmesi de daha hızlı gerçekleşir. En önemli özelliklerden biri ise, insanlar arasında yardımlaşmayı sağlamasıdır. Böylece farklı toplumlar arasındaki bağları kuvvetlendirir. Bu sayede kişisel olarak değil evrensel olarak kazanç sağlanır. Maddi kayıp olmadığı gibi manevi kazanç sağlanır ve bu, günümüzde en çok ihtiyaç duyulan şeylerden biridir.
 
 ## GNU/Linux Kullanımında Gerekli Bilgiler
