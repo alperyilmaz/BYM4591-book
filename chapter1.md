@@ -2,7 +2,7 @@
 
 ## GNU/Linux Hakkında
 
-![Veri Analizi](images/DataanalysisByAli.png)
+![Veri Analizi] (creativity_technology.png) 
 
 ![Şekil 1.1 Tanıtıcı Diyagram](images/data-analysis.png)
 
