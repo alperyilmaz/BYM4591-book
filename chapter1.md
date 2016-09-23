@@ -232,4 +232,5 @@ Bilişim veya programlama türündeki bilgilerin en hızlı öğrenilmesi pratik
 
 %%%% TODO link for downloading course materials and instructions to use them at Tutorials Point website
 
+"Linux veya GNU/Linux (telaffuz: Lin-uks); Linux çekirdeği ve çeşitli GNU araçları üzerine kurulmuş işletim sistemlerinin genel adıdır. Linux çekirdeği ve GNU araçları açık kaynak kodlu, özgür ve ücretsizdir. Kaynak kodları GNU Genel Kamu Lisansı çerçevesinde özgürce dağıtılabilir, değiştirilebilir ve kullanılabilir. Linux ismi ilk olarak Linus Torvalds tarafından yazılan ve 5 Ekim 1991'de duyurusu yapılan[1] Linux çekirdeğinden gelmektedir." [kaynak](https://tr.wikipedia.org/wiki/Linux)
 
