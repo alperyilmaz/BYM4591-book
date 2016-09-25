@@ -1,8 +1,6 @@
-# Linux İşletim Sistemi
+# Linux Operating System
 
-## GNU/Linux Hakkında
-
-![Veri Analizi] (creativity_technology.png) 
+## About GNU/Linux 
 
 ![Şekil 1.1 Tanıtıcı Diyagram](images/data-analysis.png)
 
