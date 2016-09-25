@@ -28,6 +28,18 @@ GNU/Linux'un kullanım alanlarından bazıları; Android işletim sistemine sahi
 
 ![şekil 1.2](images/zgr-yazlm-gnulinux-10-638.jpg)
 
+## Avantajları
+
+UNIX işletim sistemine sahip bir bilgisayar kullanmak istiyorsanız ve bu işletim sisteminde platforma bağımlı bir yazılım kullanmıyorsanız, Linux ideal bir çözümdür.
+
+Linux ücretsizder. Sadece işletim sisteminin maliyeti açısından değil, verdiği performans için ihtiyaç duyduğu donanım açısından da çok ucuzdur. Üstüne üstlük çok kullanılan ve bol yedek parçası bulunan bir platform altında çalıştığı için belirli bir Linux sisteminin performansını artırmak için yapılması gereken yatırım başka bir UNIX iş istasyonunu aynı oranda geliştirmek için gereken yatırıma göre çok düşüktür. Herhangi bir Sun bilgisayarın hafizasını iki katına çıkarmak için harcanacak para ile bir Linux-PC'nin hafizasını iki katına çıkarmak için harcanması gereken parayı kıyaslamayı deneyin. Fakat şirketler bazında Linux'un bedava bir işletim sistemi olması genelde gözardı edilir.
+
+Bir Linux makine bu sayede sadece işletim sistemi açısından değil donanım olarak da ucuza gelmektedir.
+
+Linux hızla geliştirilmektedir. Bu gelişimin en büyük yararı, eksikliklerin kullanıcıların talepleri ve çabaları sonucunda hızla giderilmesidir. Linux diğer tüm işletim sistemlerine göre belirli bir donanım için daha hızlı destek verebilmektedir.
+
+Linux çok değişik donanımlar ve servisler icin özel olarak hazırlanır. İşletim sisteminin temelini oluşturan çekirdek kullanıcı tarafından da derlenebildiği için, bu derleme sırasında sadece kullanım amacına yönelik alt programlarla donatılır. Bu genel olarak daha sistemin performansını artırmaktadır. (Örnek olarak SCSI donanımınız yoksa çekirdeğinizde SCSI ile ilgili alt programlara yer vermezsiniz)
+
 Yazılımın sahipsiz olması farklı kullanıcılar tarafından geliştirilmesini mümkün kılar.Bu sayede kısa sürede fazla özellik kazandırılabilir. Yazılımda oluşacak hataların düzeltilmesi de daha hızlı gerçekleşir. En önemli özelliklerden biri ise, insanlar arasında yardımlaşmayı sağlamasıdır. Böylece farklı toplumlar arasındaki bağları kuvvetlendirir. Bu sayede kişisel olarak değil evrensel olarak kazanç sağlanır. Maddi kayıp olmadığı gibi manevi kazanç sağlanır ve bu, günümüzde en çok ihtiyaç duyulan şeylerden biridir.
 
 GitHub takım üyeleri, Yahoo! merkez ofisinde 24 Şubat 2009 tarihinde yaptıkları konuşmada; henüz bir yıl olmadan 46.000 açık kaynaklı depoya ulaştıklarını, bu depolardan 17.000 tanesinin Ocak 2009 da yaratıldığını belirtmişlerdir. Bununla birlikte 6.200 deponun en az bir kez çatallandığını (fork), 4.600 adedinin tekrar birleştiğini (merge) açıklamışlardır. 5 Temmuz 2009 tarihli web günlüğü makalesinde GitHub'ın 100.000 kullanıcıya ulaştığı duyurulmuştur.Temmuz 2015 itibarı ile Github, 10.3 milyon kayıtlı kullanıcıya ve 25 milyon kaynak deposu adedine ulaşmıştır
