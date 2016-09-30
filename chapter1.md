@@ -262,5 +262,5 @@ Bilişim veya programlama türündeki bilgilerin en hızlı öğrenilmesi pratik
 
 
 %%%% TODO link for downloading course materials and instructions to use them at Tutorials Point website
-.
+..
 
