@@ -1,49 +1,20 @@
 # Linux İşletim Sistemi
 
-## GNU/Linux Hakkında
-
-![Veri Analizi] (creativity_technology.png) 
-
-![Şekil 1.1 Tanıtıcı Diyagram](images/data-analysis.png)
-
- Linux, 1991 yılında Finlandiyalı bir üniversite öğrencisi olan Linus Torvalds tarafından, daha eski işletim sistemlerinden birisi olan UNIX'ten esinlenerek geliştirilmeye başlanmıştır. Linus hâlen çekirdek geliştirme ekibindedir.
- Linus Torvalds, Unix benzeri MINIX işletim sisteminden daha iyi bir işletim sistemi yaratmak düşüncesiyle 1991 Nisan ayında işletim sistemi çekirdeğini oluşturmaya başladı. 25 Ağustos 1991'de, comp.os.minix adresli MINIX haber grubuna gönderdiği yazıda yeni bir işletim sistemi geliştirmekte olduğunu ve ilgilenen herkesin yardımını beklediğini yazdı. Daha sonra 17 Eylül 1991'de Linux'un ilk sürümü olan 0.01'i İnternet'te yayınladı. Kısa bir süre sonra, 5 EKim 1991'de temel özellikleriyle beraber ilk resmi Linux sürümü olan 0.02'yi yayınladı.
- Linux’un önemli bir yanı da GNU Projesi'nin eksik olan bir parçasını doldurmasıdır. GNU Projesi çerçevesinde yaratılacak olan Unix benzeri işletim sisteminin çoğu parçaları bitmişti. Yapılmayan en önemli parça işletim sisteminin çekirdeği idi. Bu eksikte Linux tarafından kapatılmış oldu. [KAYNAK] (https://tr.wikipedia.org/wiki/Linux)
+## GNU/Linux
 
 Açık kaynak kodlu ve özgür bir işletim sistemi çekirdeği olan Linux, Unix işletim sistemi kaynak alınarak oluşturulmuştur. İşletim sistemi çekirdeği, yazılım ve araçların tümünü ifade etmek için GNU/Linux terimi kullanılır. Linux sayesinde GNU (GNU is Not Unix) Projesi'nin en büyük eksiği olan çekirdeği tamamlanmıştır.
 
-Linux, 1991 yılında Finlandiyalı bir üniversite öğrencisi olan Linus Torvalds tarafından, daha eski işletim sistemlerinden birisi olan UNIX'ten esinlenerek geliştirilmeye başlanmıştır. Linus hâlen çekirdek geliştirme ekibindedir.
+Unix işletim sistemi ile uyumlu olarak geliştirilmeye başlanması, GNU/Linux'un taşınabilir olmasını ve kullanıcıların kolayca uyum sağlayabilmesini kolaylaştırmıştır. Bunun yanında, GNU/Linux kodları sil baştan yazılmış ve temel metin biçimlendirici olarak TeX kullanılmıştır. Yazılımın geliştirilmesi, internet üzerinden iletişim kurabilen kullanıcıların (programcıların) işbirliği ile sağlanmıştır ve günümüzde de devam etmektedir. GNU/Linux'un bağlı olduğu GNU projesi, özgür yazılımlar oldukları için kullanılmaları sağlanan ve kullanıcıların kendi amaçları doğrultusunda geliştirilen işletim sistemlerini ve programları içerir. 
 
-Linus Torvalds, Unix benzeri MINIX işletim sisteminden daha iyi bir işletim sistemi yaratmak düşüncesiyle 1991 Nisan ayında işletim sistemi çekirdeğini oluşturmaya başladı. 25 Ağustos 1991'de, comp.os.minix adresli MINIX haber grubuna gönderdiği yazıda yeni bir işletim sistemi geliştirmekte olduğunu ve ilgilenen herkesin yardımını beklediğini yazdı. Daha sonra 17 Eylül 1991'de Linux'un ilk sürümü olan 0.01'i İnternet'te yayınladı. Kısa bir süre sonra, 5 Ekim 1991'de temel özellikleriyle beraber ilk resmi Linux sürümü olan 0.02'yi yayınladı.[kaynak] (https://tr.wikipedia.org/wiki/Linux)
+Açık kaynaklı yazılımlarda, yazılımın güncellenmesi tüm kullanıcılar tarafından yapılabilir. Yazılımda değişiklik, istenilen amaç doğrultusunda uyarlama yapmak mümkündür. GNU/Linux işletim sistemi de açık kaynaklı olduğu için dünya çapında birçok geliştiricisi vardır. GNU/Linux için geçerli olarak; programcılar istedikleri şekilde yenilikler ve düzenlemeler yapar ve belli bir süre boyunca sistem kapatılarak sabit bir kurum tarafından bu düzenlemeler ve yenilikler derlenerek yeni sürümün duyurusu yapılır. 
 
-Unix işletim sistemi ile uyumlu olarak geliştirilmeye başlanması, GNU/Linux'un taşınabilir olmasını ve kullanıcıların kolayca uyum sağlayabilmesini kolaylaştırmıştır. Bunun yanında, GNU/Linux kodları sil baştan yazılmış ve temel metin biçimlendirici olarak TeX kullanılmıştır. Yazılımın geliştirilmesi, internet üzerinden iletişim kurabilen kullanıcıların (programcıların) işbirliği ile sağlanmıştır ve günümüzde de devam etmektedir. GNU/Linux'un bağlı olduğu GNU projesi, özgür yazılımlar oldukları için kullanılmaları sağlanan ve kullanıcıların kendi amaçları doğrultusunda geliştirilen işletim sistemlerini ve programları içerir.
-
-Açık kaynaklı yazılımlarda, yazılımın güncellenmesi tüm kullanıcılar tarafından yapılabilir. Yazılımda değişiklik, istenilen amaç doğrultusunda uyarlama yapmak mümkündür. GNU/Linux işletim sistemi de açık kaynaklı olduğu için dünya çapında birçok geliştiricisi vardır. GNU/Linux için geçerli olarak; programcılar istedikleri şekilde yenilikler ve düzenlemeler yapar ve belli bir süre boyunca sistem kapatılarak sabit bir kurum tarafından bu düzenlemeler ve yenilikler derlenerek yeni sürümün duyurusu yapılır.
-
-Özgür yazılımların kullanıcılar tarafından çalıştırılmaları, çoğaltılmaları, ücretli-ücretsiz dağıtımları, istenildiği şekilde kullanılarak değiştirilip, geliştirilmeleri ve kaynak alınarak yeni işletim sistemlerinin oluşturulması mümkündür.
+Özgür yazılımların kullanıcılar tarafından çalıştırılmaları, çoğaltılmaları, ücretli-ücretsiz dağıtımları, istenildiği şekilde kullanılarak değiştirilip, geliştirilmeleri ve kaynak alınarak yeni işletim sistemlerinin oluşturulması mümkündür. 
 
 Açık kaynak kodlu işletim sistemleri lisanlı veya lisanssız olabildiği gibi özgür yazılımların hepsi lisanssızdır. Buna göre, her özgür yazılım açık kaynaklı iken her açık kaynaklı yazılım özgür değildir.
 
 GNU/Linux'un kullanım alanlarından bazıları; Android işletim sistemine sahip mobil telefonlar, tabletler, televizyonlar, oyun konsolları, eğitim simülatörleri, uçaklar ve otomobillerdir.
 
-![şekil 1.2](images/zgr-yazlm-gnulinux-10-638.jpg)
-
-## Avantajları
-
-UNIX işletim sistemine sahip bir bilgisayar kullanmak istiyorsanız ve bu işletim sisteminde platforma bağımlı bir yazılım kullanmıyorsanız, Linux ideal bir çözümdür.
-
-Linux ücretsizder. Sadece işletim sisteminin maliyeti açısından değil, verdiği performans için ihtiyaç duyduğu donanım açısından da çok ucuzdur. Üstüne üstlük çok kullanılan ve bol yedek parçası bulunan bir platform altında çalıştığı için belirli bir Linux sisteminin performansını artırmak için yapılması gereken yatırım başka bir UNIX iş istasyonunu aynı oranda geliştirmek için gereken yatırıma göre çok düşüktür. Herhangi bir Sun bilgisayarın hafizasını iki katına çıkarmak için harcanacak para ile bir Linux-PC'nin hafizasını iki katına çıkarmak için harcanması gereken parayı kıyaslamayı deneyin. Fakat şirketler bazında Linux'un bedava bir işletim sistemi olması genelde gözardı edilir.
-
-Bir Linux makine bu sayede sadece işletim sistemi açısından değil donanım olarak da ucuza gelmektedir.
-
-Linux hızla geliştirilmektedir. Bu gelişimin en büyük yararı, eksikliklerin kullanıcıların talepleri ve çabaları sonucunda hızla giderilmesidir. Linux diğer tüm işletim sistemlerine göre belirli bir donanım için daha hızlı destek verebilmektedir.
-
-Linux çok değişik donanımlar ve servisler icin özel olarak hazırlanır. İşletim sisteminin temelini oluşturan çekirdek kullanıcı tarafından da derlenebildiği için, bu derleme sırasında sadece kullanım amacına yönelik alt programlarla donatılır. Bu genel olarak daha sistemin performansını artırmaktadır. (Örnek olarak SCSI donanımınız yoksa çekirdeğinizde SCSI ile ilgili alt programlara yer vermezsiniz)
-
-Yazılımın sahipsiz olması farklı kullanıcılar tarafından geliştirilmesini mümkün kılar.Bu sayede kısa sürede fazla özellik kazandırılabilir. Yazılımda oluşacak hataların düzeltilmesi de daha hızlı gerçekleşir. En önemli özelliklerden biri ise, insanlar arasında yardımlaşmayı sağlamasıdır. Böylece farklı toplumlar arasındaki bağları kuvvetlendirir. Bu sayede kişisel olarak değil evrensel olarak kazanç sağlanır. Maddi kayıp olmadığı gibi manevi kazanç sağlanır ve bu, günümüzde en çok ihtiyaç duyulan şeylerden biridir.
-
-GitHub takım üyeleri, Yahoo! merkez ofisinde 24 Şubat 2009 tarihinde yaptıkları konuşmada; henüz bir yıl olmadan 46.000 açık kaynaklı depoya ulaştıklarını, bu depolardan 17.000 tanesinin Ocak 2009 da yaratıldığını belirtmişlerdir. Bununla birlikte 6.200 deponun en az bir kez çatallandığını (fork), 4.600 adedinin tekrar birleştiğini (merge) açıklamışlardır. 5 Temmuz 2009 tarihli web günlüğü makalesinde GitHub'ın 100.000 kullanıcıya ulaştığı duyurulmuştur.Temmuz 2015 itibarı ile Github, 10.3 milyon kayıtlı kullanıcıya ve 25 milyon kaynak deposu adedine ulaşmıştır
-[kaynak](https://tr.wikipedia.org/wiki/GitHub)
+Yazılımın sahipsiz olması farklı kullanıcılar tarafından geliştirilmesinin mümkün olmasına ve bu sayede kısa sürede fazla özellik kazanmasına olanak sağlar. Yazılımda oluşacak hataların düzeltilmesi de daha hızlı gerçekleşir. En önemli özelliklerden biri ise, insanlar arasında yardımlaşma olması farklı toplumların bağlarını kuvvetlendirir. Bu sayede kişisel çıkarlar değil evrensel olarak kazanç sağlanır. Maddi kayıp olmadığı gibi manevi kazanç sağlanır ve bu, günümüzde en çok ihtiyaç duyulan insani duygulardandır.  
 
 ## GNU/Linux Kullanımında Gerekli Bilgiler
 
@@ -52,8 +23,6 @@ GitHub takım üyeleri, Yahoo! merkez ofisinde 24 Şubat 2009 tarihinde yaptıkl
 Klasörler dosyaları içeren yapılardır. Dosyalar; sistem, kullanıcı ve çalışabilir dosyalar olmak üzere üçe ayrılır. Sistem dosyaları, işletim sisteminin kullandığı metin tipinde yazılmış dosyalardır. Kullanıcı dosyaları, işletim sistemi kullanıcılarının sayısal ve alfabetik veriler içeren metin tipinde dosyalarıdır. Çalışabilir dosyalar, özel yazılım ürünleri olan ve belli amaçlar doğrultusunda oluşturulmuş programlardır.
 
 ![Şekil 1.1 Klasör yapısı](images/klasor-yapisi.png)
-
-![Ece Özmen Değişikliği](images/indir.png)
 
 Her bir klasörün içerikleri özet olarak şöyle sıralanabilir:
 bin
@@ -87,16 +56,12 @@ tmp
 var
 
  : Değişken dosyaları içeren klasördür.
- 
-![Şekil 1.2](images/nurdan.jpg)
 
-Daha detaylı klasör yapısı hakkında [akış diyagramı](http://blog.danyll.com/linux-directory-map/) resmine bakılabilir. Ayrıca, terminalde `man hier` komutu ile hiyerarşik dosya yapısı hakkında bilgi edinilebilir.
+Daha detaylı klasör yapısı hakkında [akış diyagramı](http://blog.danyll.com/linux-directory-map/) resmine bakılabilir. Ayrıca, terminalde `man hier` komutu ile hiyerarşik dosya yapısı hakkında bilgi edinilebilir. 
 
 ### Terminalin Genel Görünümü
 
 Terminalde çalışılırken genel görünüm aşağıdaki gibidir. Yeşil renkli kısımda kullanıcı adı ve çalışılan makine adı verilmektedir. Sarı renkli kısım ise şu anda çalışılan klasörün adını göstermektedir. Dolar işaretinden ($) sonraki kısımda ise istenilen komut girilmektedir. Kitapta verilecek olan örneklerde $ işaretinden sonraki kısım gösterilecektir. Bu durumda $ işareti ile başlayan satırlar, komutların yazıldığı satır; $ işareti olmayan satırlar ise terminalde görüntülenen kısımlardır.
-
-![şekil 11](images/hediye.png)
 
 {#terminal-genel-gorunum}
 ![Şekil 1.2 Terminalin genel görümü](images/terminal-genel-gorunum.png)
@@ -133,7 +98,7 @@ No space left on device
 
  : Hard diskte yer kalmamıştır.
 
-> Bazı komutlar için kullanılan karakterler önce terminal tarafından yorumlanıp sonra komut tarafından yorumlanır. Terminalde anlamı olan karakterlerin sadece komut tarafından yorumlanması isteniyorsa tırnak işareti (' ') içinde kullanılmalıdır. Tek tırnak (' ') işareti ile çalışabilen komutlar olduğu gibi, bazı komutlar ise çift tırnak ("") ile çalışabilir. Komutun kullanımının doğruluğundan emin olunduğu zaman hatanın bunlardan kaynaklanabileceği düşünülmelidir.
+> Bazı komutlar için kullanılan karakterler önce terminal tarafından yorumlanıp sonra komut tarafından yorumlanır. Terminalde anlamı olan karakterlerin sadece komut tarafından yorumlanması isteniyorsa tırnak işareti (' ') içinde kullanılmalıdır. Tek tırnak (' ') işareti ile çalışabilen komutlar olduğu gibi, bazı komutlar ise çift tırnak ("") ile çalışabilir. Komutun kullanımının doğruluğundan emin olunduğu zaman hatanın bunlardan kaynaklanabileceği düşünülmelidir. 
 
 ### Sayı aralıkları {#sayi-araliklari}
 
@@ -144,8 +109,6 @@ No space left on device
 İnput, işleme alınacak dosyalar ve komutlardır; kısaca girdi olarak tanımlanır. Output, işlemin ve komutun sonuçlarıdır; kısaca çıktı olarak tanımlanır.
 
 Herhangi bir işlemden sonra alınacak outputun ekranda görüntülenmesi isteniyorsa ekstra işlem yapılmaz. Elde edilen output ayrı bir dosya olarak kaydedilmek isteniyorsa büyüktür (>) işareti, başka bir işlemin çıktısı olarak kullanılmak isteniyorsa çubuk (|) işareti kullanılır.
-
-Leontief tarafından geliştirilen girdi-çıktı modeli, pek çok ülkenin iktisadi planlama amacı ile kullandığı ve 1950’li yıllarda son derece popüler olan bir yöntem. [kaynak](http://iibf.ogu.edu.tr/maslan/DERSLER/MATEMAT%C4%B0KSEL%20%C4%B0KT%C4%B0SAT/DERS%20NOTLARI/lecture-5%20-c%20input-output%20modeli.pdf)
 
 > Türkçe klavyelerde çubuk işareti Alt Gr ve < tuşlarına aynı anda basarak elde edilebilir.
 
@@ -203,7 +166,7 @@ Tar arşivi açıldığında, arşiv içinde bulunan tüm klasör ve alt klasör
 Terminalde dosya ve klasörleri detaylı şekilde listelediğimiz zaman aşağıdaki şekilde bilgiler sunulmaktadır:
 
 >`-rwxr-xr-x 1 ogrenci users 20974 Mar 8 2014 ascii.pdf`
-
+ 
 * İlk sütun dosya veya klasöre erişim izinlerini gösterir. İlk karakter ilgili ögenin dosya mı klasör mü olduğunu belirtir. Öge; d ise klasör, - ise dosyadır. Diğer karakterler izinleri belirtir. Bütün izinleri açılmış dosya -rwxrwxrwx şeklinde, tüm izinleri kapalı dosya ise ---------- şeklinde görünür. r: Okuma iznini, w: Yazma iznini, x: Yürütme iznini belirtir.
 
 	Buradaki ikinci, üçüncü, dördüncü ögeler sahibinin izinlerini, beşinci, altıncı, yedinci ögeler grubun izinlerini ve sekizinci, dokuzuncu, onuncu ögeler de her kulanıcının izinleri ifade eder.
@@ -221,7 +184,7 @@ Terminalde dosya ve klasörleri detaylı şekilde listelediğimiz zaman aşağı
 
 ### Boşluk karakteri {#bosluk-karakteri}
 
-Terminalde komutlar çalıştırılmak istendiğinde boşluk karakteriyle ilgili sorunlar yaşayabilirsiniz. Bu yüzden, boşluk karakteri hakkında dikkat edilmesi gereken önemli bir bilgiyi anlamak gerekmektedir.
+Terminalde komutlar çalıştırılmak istendiğinde boşluk karakteriyle ilgili sorunlar yaşayabilirsiniz. Bu yüzden, boşluk karakteri hakkında dikkat edilmesi gereken önemli bir bilgiyi anlamak gerekmektedir. 
 
 Terminal komutlarının çoğu birden fazla argüman kabul etmektedir. Örnek olarak dosya silmek için kullanılan `rm` komutuyla birden fazla dosya silinmek isteniyorsa, dosya isimleri argüman olarak kullanılabilir, `rm dosya1 dosya2` komutu dosya1 ve dosya2 adlı dosyaların silinmesi manasına gelmektedir. Fakat bu durumda boşluk karakteri içeren dosya isimlerinde sorun yaşanacaktır. Örnek olarak, `Eski dosya.txt` isimli bir dosyayı silmek istediğimizde `rm Eski dosya.txt` komutu aşağıdaki gibi bir hata mesajına sebep olacaktır:
 
@@ -240,9 +203,9 @@ Bu işleme kaçış (ing. escape) denilmektedir.
 
 ### Dosya türleri ve uzantıları {#dosya-turleri}
 
-Maalesef, Windows işletim sisteminin kullanıcıların işini kolaylaştırmak için seçtiği yöntemler yüzünden dosya türü konusunda bazı yanlış anlamalar olmaktadır. Windows sisteminde bir dosya üzerine çift tıklandığında uygun yazılım ile o dosya açılmaktadır. Mesela, .doc veya docx uzantılı bir dosya Microsoft Word ile açılmaktadır. Bu yüzden "korelasyon" ile "sebep-sonuç ilişkisi" [karıştırılmaktadır](https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation). Bir dosya, *uzantısı .doc veya .docx olduğu için Word ile açılıyor* şeklinde bir kabul ortaya çıkmaktadır. Bir dosya ancak uygun [Word binary format](https://en.wikipedia.org/wiki/Microsoft_Word#Binary_formats_.28Word_97.E2.80.932007.29) taşıyorsa Word tarafından açılabilir, uzantısı ne olursa olsun.
+Maalesef, Windows işletim sisteminin kullanıcıların işini kolaylaştırmak için seçtiği yöntemler yüzünden dosya türü konusunda bazı yanlış anlamalar olmaktadır. Windows sisteminde bir dosya üzerine çift tıklandığında uygun yazılım ile o dosya açılmaktadır. Mesela, .doc veya docx uzantılı bir dosya Microsoft Word ile açılmaktadır. Bu yüzden "korelasyon" ile "sebep-sonuç ilişkisi" [karıştırılmaktadır](https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation). Bir dosya, *uzantısı .doc veya .docx olduğu için Word ile açılıyor* şeklinde bir kabul ortaya çıkmaktadır. Bir dosya ancak uygun [Word binary format](https://en.wikipedia.org/wiki/Microsoft_Word#Binary_formats_.28Word_97.E2.80.932007.29) taşıyorsa Word tarafından açılabilir, uzantısı ne olursa olsun. 
 
-Bu durum, Linux terminalinde çalışırken daha kolay anlaşılacaktır. Terminalde çalışırken genellikle [*plain text*](https://en.wikipedia.org/wiki/Plain_text) formatında dosyalar ile çalışacağız (Windows kullanıcıları için .txt dosyası, yani *Not Defteri* programı ile açılabilen dosyalar). Komutlarımızın sonuçlarını *plain text* dosya şeklinde kaydederken istediğimiz uzantıyı seçebiliriz ve bu o dosyayı görüntülemeye engel olmaz. Bu yüzden, terminalde çalışırken "hangi uzantı ile kaydedelim?", "hangi program ile görüntüleyebiliriz?" veya "bu dosyayı açmak için gerekli software yüklü mü?" gibi sorular gereksiz olacaktır.
+Bu durum, Linux terminalinde çalışırken daha kolay anlaşılacaktır. Terminalde çalışırken genellikle [*plain text*](https://en.wikipedia.org/wiki/Plain_text) formatında dosyalar ile çalışacağız (Windows kullanıcıları için .txt dosyası, yani *Not Defteri* programı ile açılabilen dosyalar). Komutlarımızın sonuçlarını *plain text* dosya şeklinde kaydederken istediğimiz uzantıyı seçebiliriz ve bu o dosyayı görüntülemeye engel olmaz. Bu yüzden, terminalde çalışırken "hangi uzantı ile kaydedelim?", "hangi program ile görüntüleyebiliriz?" veya "bu dosyayı açmak için gerekli software yüklü mü?" gibi sorular gereksiz olacaktır. 
 
 Yukarıda anlatılanlar, terminalde çalışırken uzantılar rastgele seçilebilir, manasına gelmemektedir. Dosya oluştururkenUygun uzantılar seçilmelidir ve bu hangi yazılım tarafından açılacağına uygun olarak değil, dosya türü hakkında fikir verecek şekilde olmalıdır. Örneğin, veri dosyaları .dat olarak adlandırılabilir, Perl kodu içeren dosyalar da .pl olarak adlandırılabilir. Geçici dosyalar da .tmp olarak adlandırılabilirler.
 
@@ -250,9 +213,9 @@ Yukarıda anlatılanlar, terminalde çalışırken uzantılar rastgele seçilebi
 
 Bilişim veya programlama türündeki bilgilerin en hızlı öğrenilmesi pratik yapma ve egzersiz ile mümkün olacaktır. Bu kitabı çok kısa sürede okuyup anlayabilirsiniz fakat bir terminal karşısına geçip pratik yapmazsanız maalesef bu kitapta anlatılanları kavramanız mümkün olmayacaktır. Aşağıda, terminal komutları hakkında pratik yapabilmeniz için kullanılabilecek web tabanlı kaynaklar listelenmiştir.
 
-* [Terminus](http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html) : Bu terminal oyunu yeni başlayanlara klasör ve dosyalarda gezinme kavramlarını öğretmek amacıyla yazılmıştır. Yeni başlayanlar için, terminale alışmak için oldukça yararlı olacaktır.
+* [Terminus](http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html) : Bu terminal oyunu yeni başlayanlara klasör ve dosyalarda gezinme kavramlarını öğretmek amacıyla yazılmıştır. Yeni başlayanlar için, terminale alışmak için oldukça yararlı olacaktır. 
 * [Tutorials Point - Unix Terminal Online](http://www.tutorialspoint.com/unix_terminal_online.php) : Bu websayfasında, online olarak tam fonksiyonlu bir terminal kullanabilirsiniz. Herhangi bir program kurmadan veya sabit bir makinede kullanıcı oluşturmadan bu websayfasında Linux terminalini kullanabilirsiniz. Sol taraftaki gizli panel sayesinde klasör ile etkileşebilirsiniz, çalışma klasörünüze dosya yükleyebilir veya bu klasörden dosya indirebilirsiniz. Dilerseniz bu kitapta kullanılan dosyaları çalıştığınız klasöre indirerek hiç zaman kaybetmeden kitaptaki komutları çalışmaya başlayabilirsiniz.
-* [ExplainShell](http://explainshell.com/) : Bu websayfasında karmaşık ve uzun komutlar görsel olarak açıklanmaktadır.
+* [ExplainShell](http://explainshell.com/) : Bu websayfasında karmaşık ve uzun komutlar görsel olarak açıklanmaktadır. 
 * [OverTheWire Wargames](http://overthewire.org/wargames) : Bu site network güvenliği üzerine egzersizler yapılmak üzere kurulmuş olup *[Bandit](http://overthewire.org/wargames/bandit/)* başlıklı kısım terminale giriş için egzersizler içermektedir.
 * [ShortcutFoo](https://www.shortcutfoo.com/) : Bu sitede hesap açtıktan sonra [Command Line](https://www.shortcutfoo.com/app/dojos/command-line) ve [Awk](https://www.shortcutfoo.com/app/dojos/awk) kısımlarında pratik yapılabilir ve diğer kullanıcılarla yarışma şeklinde öğrenme gerçekleşebilir.
 * [Linux Survival](http://linuxsurvival.com/linux-tutorial-introduction/) : Oldukça interaktif olarak Linux'a dair temel konular işlenmiştir. Bazı komutların etkileri görsel bir şekilde anlatılmaya çalışılmıştır.
@@ -262,5 +225,5 @@ Bilişim veya programlama türündeki bilgilerin en hızlı öğrenilmesi pratik
 
 
 %%%% TODO link for downloading course materials and instructions to use them at Tutorials Point website
-..
+
 
