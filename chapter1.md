@@ -128,7 +128,7 @@ Daha gelişmiş arama yapmak için ctrl+r tuşlarına basılır ve aranacak harf
 ### Jokerler (Wildcards) {#jokerler}
 
 Yıldız (\*)
- : Geçerli klasördeki tüm dosyaları veya başına belli bir kelime yazılarak o kelime ile başlayan tüm dosyaları ifade eder. Örneğin klasörde sayı1, sayı2, sayı36, sayılar diye dört dosya varsa bunlar teker teker yazmak yerine sayı* şeklinde de ifade edilebilir.
+ : Geçerli klasördeki tüm dosyaları veya başına belli bir kelime yazılarak o kelime ile başlayan tüm dosyaları ifade eder. Örneğin klasörde sayı1, sayı2, sayı36, sayılar diye dört dosya varsa bunlar teker teker yazmak yerine sayı* şeklinde de ifade edilebilir.*sayı* komutu ile içinde sayı kelimesi bulunan ifadeleri bulabiliriz.
 
 Soru İşareti (?)
  : Geçerli klasördeki sadece sondaki tek bir karakteri farklı olan dosyaların tümünü ifade eder. Örneğin yine sayı1, sayı2, sayı36, sayılar diye dört dosya içeren aynı klasör için sayı? yazılırsa sayı1 ve sayı2 dosyaları belirtilmiş olur.
@@ -199,7 +199,7 @@ rm: cannot remove 'dosya.txt': No such file or directory
 
 Bu işleme kaçış (ing. escape) denilmektedir.
 
-%%%% TODO Argümaları ayırmak için kullanılmadığığ, dosya isminin bir parçası olduğu
+%%%% TODO Argümaları ayırmak için kullanılmadığı, dosya isminin bir parçası olduğu
 
 ### Dosya türleri ve uzantıları {#dosya-turleri}
 
