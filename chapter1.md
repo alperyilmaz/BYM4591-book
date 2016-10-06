@@ -209,6 +209,52 @@ Bu durum, Linux terminalinde çalışırken daha kolay anlaşılacaktır. Termin
 
 Yukarıda anlatılanlar, terminalde çalışırken uzantılar rastgele seçilebilir, manasına gelmemektedir. Dosya oluştururkenUygun uzantılar seçilmelidir ve bu hangi yazılım tarafından açılacağına uygun olarak değil, dosya türü hakkında fikir verecek şekilde olmalıdır. Örneğin, veri dosyaları .dat olarak adlandırılabilir, Perl kodu içeren dosyalar da .pl olarak adlandırılabilir. Geçici dosyalar da .tmp olarak adlandırılabilirler.
 
+Temel Lınux Komutları
+
+bc: Aritmetik işlemlerin gerçekleştirilebileceği bir programdır.
+cat: Dosyanın içeriğini görüntülemek için kullanılır.
+clear: Terminali temizler ve imleci ilk satıra taşır.
+cmp: İki dosyayı karşılaştırır ve farklılıklarını belirtir.
+cut: Belirtilen dosya(lar)daki sütunları görüntüler. -d ile sütun ayıracı, -f ile sütun numarası
+belirtilir.
+date: Sistem saatini ve tarihini (istenirse düzenlenerek) görüntüler ya da sistem yöneticisi
+olarak ayarlama işlemini gerçekleştirir.
+df: Bağlanılmış disk bölümlerinin boyut ve doluluk bilgilerini görüntüler.
+diff: İki metin dosyasını karşılaştırır.
+du: Dosya ve dizinlerin disk kullanım alanlarını görüntüler.
+expr: Aritmetik ve mantıksal işlemleri gerçekleştirir.
+echo: Karakterleri ya da değişkenlerin değerlerini görüntüler.
+  “ (çift tırnak) içindeki değişkenin değerini korur.
+  ‘ (tek tırnak) içindeki değişkenin değerini korumaz.
+  `(ters tırnak) karakter dizini içerisinde komut çalıştırılmasını sağlar.
+find: Dosya ya da dizin arama işlemlerini gerçekleştirir.
+ftp, ncftp (ncftpput, ncftpget), sftp, tftp: Dosya transfer işlemlerini gerçekleştiren programlardır.
+grep: Belirtilen dosyalar içerisinde girilen düzgün deyimin araştırılması için kullanılır. 
+gzip, gunzip, tar: Sıkıştırma ve arşivleme işlemlerini gerçekleştiren komutlardır. Linux sistemleri üzerinde
+çok büyük disk alanı kaplayan dosyalar ve dizinler daha az disk alanı kaplamaları için
+sıkıştırılarak saklanırlar. Saklama işleminin, dosyaların ya da dizinlerin silinmesi, zarar
+görmesi olasılıkları düşünülerek, farklı bir birimde (disk, teyp, kartuş vb.) arşivlenerek
+yapılması önerilir.
+head, tail: Dosyaların ilk ya da son bölümlerinin belirtilen sayıdaki satırlarını görüntüler. Herhangi
+bir seçenek girilmediğinde 10 satır görüntülenir.
+host: Girilen IP/DNS (alan adı kaydı) bilgisinin karşılığını verir.
+pine: E-posta işlemleri için kullanılan programdır. Programda kullanılabilecek komutlar
+ekranın alt tarafında gösterilmektedir.
+killall: Çalışan uygulamaları isme göre sonlandırır.
+su: Kullanıcı değiştirme (switch user) seçeneği sunar. Herhangi bir seçenek girilmediği
+durumda sistem kullanıcısı (root) olmaya çalışır. Komutu kullanan ‘root’ kullanıcısıysa
+şifre sorulmaz, diğer durumlarda değişilecek kullanıcının şifre bilgisi istenir.
+split: Dosyayı belirtilen boyutlara böler.
+sort: Belirtilen dosyaları satır satır sıralar.
+whereis, which: Komutların ve ilgili dosyaların bulundukları konumu listeler.
+w, who, finger: w ve who komutları sisteme bağlı kullanıcıları listeler. finger komutu sistemde var olan
+kullanıcı ile ilgili ayrıntılı bilgi verir.
+wc: Dosyadaki kelime ya da satır sayısını görüntüler.
+lpr, enscript: Belgelerin yazıcıdan çıktılarını alma işlemini gerçekleştirir. PostScript yazıcılarda metin
+dosyalarının çıktısının alınabilmesi için belgeler ps formatına dönüştürülmeli (text2ps)
+ya da enscript programı ile çıktı alınmalıdır. (http://file.cc.metu.edu.tr/ccweb/bidb_ccusg/Linux2002.pdf)
+
+
 ### Terminal egzersizleri için kaynaklar
 
 Bilişim veya programlama türündeki bilgilerin en hızlı öğrenilmesi pratik yapma ve egzersiz ile mümkün olacaktır. Bu kitabı çok kısa sürede okuyup anlayabilirsiniz fakat bir terminal karşısına geçip pratik yapmazsanız maalesef bu kitapta anlatılanları kavramanız mümkün olmayacaktır. Aşağıda, terminal komutları hakkında pratik yapabilmeniz için kullanılabilecek web tabanlı kaynaklar listelenmiştir.
