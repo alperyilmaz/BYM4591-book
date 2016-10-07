@@ -128,12 +128,14 @@ Daha gelişmiş arama yapmak için ctrl+r tuşlarına basılır ve aranacak harf
 ### Jokerler (Wildcards) {#jokerler}
 
 Yıldız (\*)
- : Geçerli klasördeki tüm dosyaları veya başına belli bir kelime yazılarak o kelime ile başlayan tüm dosyaları ifade eder. Örneğin klasörde sayı1, sayı2, sayı36, sayılar diye dört dosya varsa bunlar teker teker yazmak yerine sayı* şeklinde de ifade edilebilir.
+ : Geçerli klasördeki tüm dosyaları veya başına belli bir kelime yazılarak o kelime ile başlayan tüm dosyaları ifade eder. Örneğin klasörde sayı1, sayı2, sayı36, sayılar diye dört dosya varsa bunlar teker teker yazmak yerine sayı\* şeklinde de ifade edilebilir. \*sayı\* ifadesi ise içinde "sayı" kelimesi içeren dosya veya klasör isimleriyle eşlecektir.
 
 Soru İşareti (?)
- : Geçerli klasördeki sadece sondaki tek bir karakteri farklı olan dosyaların tümünü ifade eder. Örneğin yine sayı1, sayı2, sayı36, sayılar diye dört dosya içeren aynı klasör için sayı? yazılırsa sayı1 ve sayı2 dosyaları belirtilmiş olur.*sayı* komutu ile içinde sayı kelimesi bulunan ifadeleri bulabiliriz.
+ : Geçerli klasördeki sadece sondaki tek bir karakteri farklı olan dosyaların tümünü ifade eder. Örneğin yine sayı1, sayı2, sayı36, sayılar diye dört dosya içeren aynı klasör için sayı? yazılırsa sayı1 ve sayı2 dosyaları belirtilmiş olur.
 
-> Daha detaylı jokerler için [Just Enough Linux](https://leanpub.com/jelinux/read) adlı kitabın Wildcards kısmına bakılmalıdır.
+> Daha detaylı jokerler ve örnekleri için [Just Enough Linux](https://leanpub.com/jelinux/read#wildcards) adlı kitabın Wildcards kısmına bakılmalıdır.
+
+%%%% TODO Authors note: I think we need a short and sweet example here about wildcards
 
 ### Locale
 
