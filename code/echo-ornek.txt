@@ -1,0 +1,3 @@
+$ echo örnek bir cümle
+örnek bir cümle
+$

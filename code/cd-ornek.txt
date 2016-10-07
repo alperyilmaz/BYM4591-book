@@ -1,0 +1,8 @@
+kullanıcı@makina:~$ cd ders03/odev01
+kullanıcı@makina:~/ders03/odev01$ cd ~
+kullanıcı@makina:~$ cd ders05/odev03
+kullanıcı@makina:~/ders05/odev03$ cd ..
+kullanıcı@makina:~/ders05$ cd
+kullanıcı@makina:~$ cd -
+/home/kullanıcı/ders05
+kullanıcı@makina:~/ders05$

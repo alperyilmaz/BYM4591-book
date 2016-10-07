@@ -1,0 +1,21 @@
+$ mkdir tmp
+$ cd tmp
+$ ls
+$ mkdir ornek
+$ mkdir örnek/soru/bölüm1
+mkdir: cannot create directory ‘örnek/soru/bölüm1’: No such file or directory
+
+$ mkdir -p örnek/soru/bölüm1
+$ ls -R
+.:
+ornek  örnek
+
+./ornek:
+
+./örnek:
+soru
+
+./örnek/soru:
+bölüm1
+
+./örnek/soru/bölüm1:

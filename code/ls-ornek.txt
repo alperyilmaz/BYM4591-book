@@ -1,0 +1,38 @@
+$ ls
+harf  motif  öğrenci-not-dönem1  öğrenci-not-dönem2  sayı
+
+$ ls -a
+.  ..  harf  motif  öğrenci-not-dönem1  öğrenci-not-dönem2  sayı
+
+$ ls -l
+total 20
+-rw-rw---- 1 10056006 10056006   8 Eyl 21 16:55 harf
+-rw-rw---- 1 10056006 10056006  14 Eyl 21 17:43 motif
+-rw-rw---- 1 10056006 10056006 248 Eyl 21 17:18 öğrenci-not-dönem1
+-rw-rw---- 1 10056006 10056006 284 Eyl 21 16:52 öğrenci-not-dönem2
+-rw-rw---- 1 10056006 10056006   8 Eyl 21 16:55 sayı
+
+$ ls -t
+motif  öğrenci-not-dönem1  sayı  harf  öğrenci-not-dönem2
+
+$ ls -S
+öğrenci-not-dönem2  öğrenci-not-dönem1  motif  harf  sayı 
+
+$ ls -r
+sayı  öğrenci-not-dönem2  öğrenci-not-dönem1  motif  harf
+
+$ ls -h
+harf  motif  öğrenci-not-dönem1  öğrenci-not-dönem2  sayı
+
+$ ls -sh
+total 20K
+4.0K harf  4.0K motif  4.0K öğrenci-not-dönem1  4.0K öğrenci-not-dönem2  
+4.0K sayı
+
+$ ls -lrt
+total 20
+-rw-rw---- 1 10056006 10056006 284 Eyl 21 16:52 öğrenci-not-dönem2
+-rw-rw---- 1 10056006 10056006   8 Eyl 21 16:55 harf
+-rw-rw---- 1 10056006 10056006   8 Eyl 21 16:55 sayı
+-rw-rw---- 1 10056006 10056006 248 Eyl 21 17:18 öğrenci-not-dönem1
+-rw-rw---- 1 10056006 10056006  14 Eyl 21 17:43 motif

@@ -1,0 +1,6 @@
+$ touch ders1
+$ ls
+ders1
+$ cp ders1 ders2
+$ ls
+ders1  ders2

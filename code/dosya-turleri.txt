@@ -1,0 +1,5 @@
+$ seq 1 10 > fake.png
+$ seq 1 10 > fake.doc
+$ seq 1 10 > fake.xls
+$ seq -s, 10 > fake.csv
+$ seq 1 10 > fake.txt

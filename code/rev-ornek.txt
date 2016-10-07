@@ -1,0 +1,11 @@
+$ echo Deneme | rev
+emeneD
+
+$ rev ogrenci-not-donem1
+utoNfraH        laniF   2eziV   1eziV   dayoS   dA      oNicnerğÖ
+B       07      07      05      zamlıY  filE    1000000
+A       001     08      09      ulğonamsoaraK   eşyA    1010000
+C       06      06      08      kileÇ   temhA   0600000
+B       54      09      57      nihaŞ   lameK   2200000
+B       59      05      06      araK    afatsuM 9700000
+B       06      58      07      rimeD   eşyA    4500000

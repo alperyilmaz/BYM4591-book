@@ -1,0 +1,18 @@
+$ ls
+belge  klasör
+
+$ ls -l
+total 12
+-rw-rw-r-- 1 alper alper    0 Jul 30 01:23 belge
+drwxrwxr-x 2 alper alper 4096 Jul 30 01:23 klasör
+
+$ rm belge
+
+$ rm klasör
+rm: cannot remove ‘klasör’: Is a directory
+
+$ rm -r klasör
+rm: remove all arguments recursively? y
+$ ls
+$ 
+

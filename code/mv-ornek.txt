@@ -1,0 +1,9 @@
+$ ls
+belge  klasör
+
+$ mv belge klasör
+
+$ cd klasör
+
+$ ls
+belge

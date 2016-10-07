@@ -1,0 +1,2 @@
+kullanıcı@makina:~/örnek_dosyaları/örnek/soru/bölüm1$ pwd
+/home/kullanıcı/örnek_dosyaları/örnek/soru/bölüm1

@@ -1,0 +1,12 @@
+$ find
+.
+./birds
+./birds/chicken.fa
+./birds/bat.fa
+./mammals
+./mammals/human.fa
+./mammals/mouse.fa
+./fish
+./fish/zebrafish.fa
+./fish/platypus.fa
+./fish/penguen.fa
