@@ -56,10 +56,10 @@ Klasör değiştirerek, dizinler arası gezinmeyi sağlayan komuttur. Göreceli 
 
 <<[Şekil 2.3 cd komutunun farklı kullanımları](code/cd-ornek.txt)
 
-W> [Boşluk karakteri](#bosluk-karakteri) içeren dosya ve klasör isimlerine dair dikkat edilmesi gereken durum hakkında ilgili bölümü okuyunuz.
+> [Boşluk karakteri](#bosluk-karakteri) içeren dosya ve klasör isimlerine dair dikkat edilmesi gereken durum hakkında ilgili bölümü okuyunuz.
 
-X>### Sorular
-X>* `find-file` adlı klasör içinde cd ve ls komutları yardımıyla `image.jpg` dosyasını bulunuz.
+>### Sorular
+>* `find-file` adlı klasör içinde cd ve ls komutları yardımıyla `image.jpg` dosyasını bulunuz.
 
 ## mkdir komutu
 
