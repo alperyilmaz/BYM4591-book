@@ -145,17 +145,13 @@ GNU/Linux terminali ülkelere göre farklılık gösterir. Bu farklılıklardan 
 
 Bu kitapla beraber indirilecek dosya sıkıştırılmış arşiv dosyasıdır ve kitaptaki örneklerin ve soruların denenmesi için gerekli dosyalar arşiv halinde mevcuttur. Herhangi bir sıkıştırılmış tar arşiv dosyasını açmak için aşağıdaki komut kullanılmalıdır.
 
-%%%% TODO indirme linki, yukarıdaki cümleye eklenmeli
-
->`$ tar xzvf dosyaadı.tar.gz`
+>`$ tar xzf dosyaadı.tar.gz`
 
 `tar` komutundan sonra kullanılan harfler belirli opsiyonlar içindir.
 
 x - sıkıştırılmış dosyayı açmak için kullanılan opsiyon (extract)
 
 z - gz formatında sıkıştırılmış dosyalar için kullanılan opsiyon
-
-v - yapılan işlemlerin ayrıntılı gösterilmesini isteyen opsiyon
 
 f - arşiv dosyası ismi kullanılacağını gösteren opsiyon
 
@@ -196,12 +192,11 @@ rm: cannot remove 'Eski': No such file or directory
 rm: cannot remove 'dosya.txt': No such file or directory
 ```
 
+Boşluk karakterinin argümanları ayırmak için kullanılmadığı, dosya isminin bir parçası olduğunu vurgulamak için boşluktan önce `\` karakteri kullanmak gerekmektedir.
 
 `rm Eski\ dosya.txt`
 
 Bu işleme kaçış (ing. escape) denilmektedir.
-
-%%%% TODO Argümaları ayırmak için kullanılmadığığ, dosya isminin bir parçası olduğu
 
 ### Dosya türleri ve uzantıları {#dosya-turleri}
 
@@ -216,7 +211,14 @@ Yukarıda anlatılanlar, terminalde çalışırken uzantılar rastgele seçilebi
 Bilişim veya programlama türündeki bilgilerin en hızlı öğrenilmesi pratik yapma ve egzersiz ile mümkün olacaktır. Bu kitabı çok kısa sürede okuyup anlayabilirsiniz fakat bir terminal karşısına geçip pratik yapmazsanız maalesef bu kitapta anlatılanları kavramanız mümkün olmayacaktır. Aşağıda, terminal komutları hakkında pratik yapabilmeniz için kullanılabilecek web tabanlı kaynaklar listelenmiştir.
 
 * [Terminus](http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html) : Bu terminal oyunu yeni başlayanlara klasör ve dosyalarda gezinme kavramlarını öğretmek amacıyla yazılmıştır. Yeni başlayanlar için, terminale alışmak için oldukça yararlı olacaktır. 
-* [Tutorials Point - Unix Terminal Online](http://www.tutorialspoint.com/unix_terminal_online.php) : Bu websayfasında, online olarak tam fonksiyonlu bir terminal kullanabilirsiniz. Herhangi bir program kurmadan veya sabit bir makinede kullanıcı oluşturmadan bu websayfasında Linux terminalini kullanabilirsiniz. Sol taraftaki gizli panel sayesinde klasör ile etkileşebilirsiniz, çalışma klasörünüze dosya yükleyebilir veya bu klasörden dosya indirebilirsiniz. Dilerseniz bu kitapta kullanılan dosyaları çalıştığınız klasöre indirerek hiç zaman kaybetmeden kitaptaki komutları çalışmaya başlayabilirsiniz.
+* [Tutorials Point - Unix Terminal Online](http://www.tutorialspoint.com/unix_terminal_online.php) : Bu websayfasında, online olarak tam fonksiyonlu bir terminal kullanabilirsiniz. Herhangi bir program kurmadan veya sabit bir makinede kullanıcı oluşturmadan bu websayfasında Linux terminalini kullanabilirsiniz. Sol taraftaki gizli panel sayesinde klasör ile etkileşebilirsiniz, çalışma klasörünüze dosya yükleyebilir veya bu klasörden dosya indirebilirsiniz. Dilerseniz bu kitapta kullanılan dosyaları çalıştığınız klasöre indirerek hiç zaman kaybetmeden kitaptaki komutları çalışmaya başlayabilirsiniz. Bunun için aşağıdaki komutları çalıştırmanız gerekmektedir:
+
+```bash
+curl -L  https://goo.gl/i4wD9H > veri-analizi-bundle.tar.gz
+tar xzf veri-analizi-bundle.tar.gz
+source .bashrc 				# terminali ve komut satırını renklendirmek için
+```
+
 * [ExplainShell](http://explainshell.com/) : Bu websayfasında karmaşık ve uzun komutlar görsel olarak açıklanmaktadır. 
 * [OverTheWire Wargames](http://overthewire.org/wargames) : Bu site network güvenliği üzerine egzersizler yapılmak üzere kurulmuş olup *[Bandit](http://overthewire.org/wargames/bandit/)* başlıklı kısım terminale giriş için egzersizler içermektedir.
 * [ShortcutFoo](https://www.shortcutfoo.com/) : Bu sitede hesap açtıktan sonra [Command Line](https://www.shortcutfoo.com/app/dojos/command-line) ve [Awk](https://www.shortcutfoo.com/app/dojos/awk) kısımlarında pratik yapılabilir ve diğer kullanıcılarla yarışma şeklinde öğrenme gerçekleşebilir.
@@ -224,8 +226,5 @@ Bilişim veya programlama türündeki bilgilerin en hızlı öğrenilmesi pratik
 * [LearnShell.org](http://www.learnshell.org/) : İnteraktif şekilde Bash programlama anlatılmaktadır. Bu kitabın içeriğinin biraz dışındadır fakat interaktif olmasından dolayı yararlanılabilir bir kaynaktır. Bölüm sonlarındaki Quizler kendinizi değerlendirmek için kullanılabilir.
 * [Unix Tutorial For Beginners](http://www.ee.surrey.ac.uk/Teaching/Unix/) : Başlangıç seviyesinde bilgiler veren bir site. Bu kitabın içeriği ile uyumlu kısım bu websayfasındaki ilk dört kısımdır (tutorial), diğer kısımlar bu kitapta işlenen konuların dışında kalmaktadır.
 * [Ryans Tutorials - Linux](http://ryanstutorials.net/linuxtutorial/) : Bu websayfasında bu kitabın içeriğini anlamak için gerekli bilgiler mevcut olup bölüm sonlarındaki aktiviteler konuları kavramak için yararlı olacaktır. (Not: *6. Vi Text Editor* adlı kısmı gözardı ediniz)
-
-
-%%%% TODO link for downloading course materials and instructions to use them at Tutorials Point website
 
 
