@@ -1,0 +1,8 @@
+# fish klasöründe iken
+mv penguen.fa ../birds/
+
+# genomes klasöründe iken
+mv fish/penguen.fa  birds/
+
+# her hangi bir klasörde iken
+mv ~/genomes/fish/penguen.fa ~/genomes/birds/
