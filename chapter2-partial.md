@@ -13,9 +13,9 @@ Ayrıca, bu kitapta verilen komutların fazla sayıda opsiyonları (veya argüma
 
 > ### Başlamadan Önce
 >
-> Aşağıdaki komutlardaki örneklerin ve bölüm sonlarındaki soruların yapılabilmesi için kitapla beraber hazırlanmış zip dosyası indirilip açılmalıdır.
-
-%%%% TODO please provide filename and instructions to download it. A short URL would be nice
+> Aşağıdaki komutlardaki örneklerin ve bölüm sonlarındaki soruların yapılabilmesi için kitapla beraber hazırlanmış arşiv dosyası aşağıdaki komutlar yardımıyla indirilip açılmalıdır.
+> * Arşivi indirmek için komut: `curl -L  https://goo.gl/i4wD9H > veri-analizi-bundle.tar.gz`
+> * Arşivi açmak için komut: `tar xzf veri-analizi-bundle.tar.gz`
 
 ## man komutu
 
@@ -34,7 +34,6 @@ Geçerli dizindeki dosyaların alfabetik olarak sıralanmış listesini gösteri
 * **`ls -a`** (all) : Geçerli dizindeki tüm dosyaların listesini gösterir. Gizli dosya ve dizinleri de gösterir.
 * **`ls -l`** (long) : Geçerli dizindeki tüm dosyaları ayrıntılarıyla gösterir. (izin - kullanıcı - boyut - tarih - dosya adı)
 * **`ls -t`** (time) : Geçerli dizindeki dosyaları yüklenme tarihlerine göre sondan başa doğru sıralayarak gösterir.
-* **`ls -s`** (size) : Geçerli dizindeki dosyaları alfabetik sırayla ve yanında boyutlarıyla birlikte gösterir.
 * **`ls -S`** (size) : Geçerli dizindeki dosyaları boyutlarına göre büyükten küçüğe doğru sıralayarak gösterir.
 * **`ls -r`** (reverse) : Sıralama düzenini tersine çevirerek gösterir. Eğer başka bir seçenekle kullanılmamışsa alfabetik sıralamanın tersine göre.
 * **`ls -R`** (recursive) : Tüm dosyaları alt dizinleri ve içerikleri ile birlikte gösterir.
@@ -53,6 +52,9 @@ Klasör değiştirerek, dizinler arası gezinmeyi sağlayan komuttur. Göreceli 
 * **`cd ..`** : İşlem yapılan klasörün bir üst klasörüne geri dönmeyi sağlar.
 * **`cd ../..`** : İşlem yapılan klasörün iki üst klasörüne gitmeyi sağlar.
 * **`cd -`** : İşlem yapılan klasörden bir önce girilen klasöre gitmeyi sağlar.
+
+> Terminalde sadece `cd` yazarak Enter tuşuna basıldığında `cd ~` şeklinde çalışır ve kullanıcının home klasörüne geçiş yapılır.
+
 
 <<[Şekil 2.3 cd komutunun farklı kullanımları](code/cd-ornek.txt)
 
@@ -125,7 +127,7 @@ Kopyalanan dosya aynı klasör içine değil, farklı bir klasör içine kopyala
 
 <<[Şekil 2.7 cp komutunun kullanımı](code/cp-ornek.txt)
 
-%%%% TODO: cp komutu örneği geliştirilmeli
+%%%% TODO: cp komutu örneği geliştirilmeli, PATH (relative and absolute) kavramı bahsedilmeli
 
 ##  mv komutu
 
