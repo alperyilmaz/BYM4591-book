@@ -1,8 +1,8 @@
 # fish klasöründe iken
 mv penguen.fa ../birds/
 
-# genomes klasöründe iken
+# genomes klasöründe iken (göreceli PATH kullanarak)
 mv fish/penguen.fa  birds/
 
-# her hangi bir klasörde iken
+# her hangi bir klasörde iken (mutlak PATH kullanarak)
 mv ~/genomes/fish/penguen.fa ~/genomes/birds/
