@@ -149,6 +149,10 @@ Dosyaların aynı isimle ya da ismi değiştirilerek farklı bir klasör içine 
 
 ![Ulaşılması gereken klasör yapısı](images/genomes-folder2.png)
 
+> Yukarıdaki soruda, `fish` klasörü altında bulunan `penguen.fa` dosyasının `birds` adlı klasörün altına taşınması için `fish` klasörü içinde olmak şart değildir. Herhangi bir klasörde iken uygun `mv` komutu ile taşıma gerçekleştirilebilir. Taşınacak dosyanın bulunduğu klasör veya hedef klasör mutlak veya göreceli olarak belirtilebilir. Aşağıdaki örnekte üç farklı geçerli dizinde bulunurken `mv` komutunun nasıl yazılacağı gösterilmiştir.
+
+<<[Şekil 2.8a mv komutunun geçerli dizine göre değişmesi](code/mv-path.txt)
+
 > universiteler.tar.gz adlı arşiv dosyasının içeriği ÖSYM'nin [2015 tarihli kılavuzuna](http://dokuman.osym.gov.tr/pdfdokuman/2015/OSYS/OSYS2015YerlestirmeMinMaxTablo-423072015.pdf) göre hazırlanmıştır. Her bir üniversite ve içerdiği fakülteler klasör olarak, bölümler de dosya olarak gösterilmiştir. Arşiv dosyasını açtıktan sonra aşağıdaki soruları cevaplayınız:
 >
 >* YTU altında "Tip Fakultesi" açınız.
