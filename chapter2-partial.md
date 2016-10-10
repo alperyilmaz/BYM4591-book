@@ -14,8 +14,10 @@ Ayrıca, bu kitapta verilen komutların fazla sayıda opsiyonları (veya argüma
 > ### Başlamadan Önce
 >
 > Aşağıdaki komutlardaki örneklerin ve bölüm sonlarındaki soruların yapılabilmesi için kitapla beraber hazırlanmış arşiv dosyası aşağıdaki komutlar yardımıyla indirilip açılmalıdır.
-> * Arşivi indirmek için komut: `curl -L  https://goo.gl/i4wD9H > veri-analizi-bundle.tar.gz`
-> * Arşivi açmak için komut: `tar xzf veri-analizi-bundle.tar.gz`
+>
+>    curl -L  https://goo.gl/i4wD9H > veri-analizi-bundle.tar.gz
+>    tar xzf veri-analizi-bundle.tar.gz
+
 
 ## man komutu
 
@@ -57,6 +59,8 @@ Klasör değiştirerek, dizinler arası gezinmeyi sağlayan komuttur. Göreceli 
 
 
 <<[Şekil 2.3 cd komutunun farklı kullanımları](code/cd-ornek.txt)
+
+%%%% TODO cd example is not clear
 
 > [Boşluk karakteri](#bosluk-karakteri) içeren dosya ve klasör isimlerine dair dikkat edilmesi gereken durum hakkında ilgili bölümü okuyunuz.
 
@@ -138,6 +142,8 @@ Dosyaların aynı isimle ya da ismi değiştirilerek farklı bir klasör içine 
 * **`mv <dosya.adı> <hedef.klasör.adı>`** : Geçerli dizin içindeki dosya hedef klasöre kopyalanıp geçerli dizindeki kopyası silinir, böylelikle dosya hedef klasöre taşınmış olur. Bu işlem aynı klasör içinde gerçekleştirilirse dosya ismi değiştirilmiş olur. 
 
 <<[Şekil 2.8 mv komutunun kullanımı](code/mv-ornek.txt)
+
+%%%% TODO mv example was not clear
 
 > [Boşluk karakteri](#bosluk-karakteri) içeren dosya ve klasör isimlerine dair dikkat edilmesi gereken durum hakkında ilgili bölümü okuyunuz.
 

@@ -213,11 +213,9 @@ Bilişim veya programlama türündeki bilgilerin en hızlı öğrenilmesi pratik
 * [Terminus](http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html) : Bu terminal oyunu yeni başlayanlara klasör ve dosyalarda gezinme kavramlarını öğretmek amacıyla yazılmıştır. Yeni başlayanlar için, terminale alışmak için oldukça yararlı olacaktır. 
 * [Tutorials Point - Unix Terminal Online](http://www.tutorialspoint.com/unix_terminal_online.php) : Bu websayfasında, online olarak tam fonksiyonlu bir terminal kullanabilirsiniz. Herhangi bir program kurmadan veya sabit bir makinede kullanıcı oluşturmadan bu websayfasında Linux terminalini kullanabilirsiniz. Sol taraftaki gizli panel sayesinde klasör ile etkileşebilirsiniz, çalışma klasörünüze dosya yükleyebilir veya bu klasörden dosya indirebilirsiniz. Dilerseniz bu kitapta kullanılan dosyaları çalıştığınız klasöre indirerek hiç zaman kaybetmeden kitaptaki komutları çalışmaya başlayabilirsiniz. Bunun için aşağıdaki komutları çalıştırmanız gerekmektedir:
 
-```bash
-curl -L  https://goo.gl/i4wD9H > veri-analizi-bundle.tar.gz
-tar xzf veri-analizi-bundle.tar.gz
-source .bashrc 				# terminali ve komut satırını renklendirmek için
-```
+        curl -L  https://goo.gl/i4wD9H > veri-analizi-bundle.tar.gz
+        tar xzf veri-analizi-bundle.tar.gz
+        source .bashrc 	# terminali ve komut satırını renklendirmek için
 
 * [ExplainShell](http://explainshell.com/) : Bu websayfasında karmaşık ve uzun komutlar görsel olarak açıklanmaktadır. 
 * [OverTheWire Wargames](http://overthewire.org/wargames) : Bu site network güvenliği üzerine egzersizler yapılmak üzere kurulmuş olup *[Bandit](http://overthewire.org/wargames/bandit/)* başlıklı kısım terminale giriş için egzersizler içermektedir.
