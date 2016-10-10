@@ -98,7 +98,7 @@ Geçerli dizinde boş bir dosya açmayı sağlayan komuttur.
 
 ![genomes adlı klasör yapısı](images/genomes-folder.png)
 
->* Doğru klasör yapısı oluşturulduğunda `genomes` klasörü içinde `find` komutunun çıktısı aşağıdaki gibi olmalıdır:
+> Doğru klasör yapısı oluşturulduğunda `genomes` klasörü içinde `find` komutunun çıktısı aşağıdaki gibi olmalıdır:
 
 <<[genomes klasörü içeriği - find komutu çıktısı](code/genomes-folder.txt)
 
