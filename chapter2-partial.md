@@ -359,6 +359,8 @@ Geçerli dizinde bulunan bir dosyanın içeriğinin alfabetik olarak sıralanmas
 
 <<[Şekil 2.19 seq ve sort komutlarının birlikte farklı kullanımları](code/seq-sort-ornek.txt)
 
+%%%% TODO double sort example
+
 >### Sorular
 >* Sayı50 dosyasını alfabetik olarak sıralayın.
 >* Sayı50 dosyasını sayısal olarak sıralayın ve ilk 15 tanesini ekranda görüntüleyin.
