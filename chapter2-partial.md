@@ -143,6 +143,8 @@ Dosyaların aynı isimle ya da ismi değiştirilerek farklı bir klasör içine 
 
 <<[Şekil 2.8 mv komutunun kullanımı](code/mv-ornek.txt)
 
+<<[Şekil 2.9 mv komutu ile ilgili örnekler](https://github.com/bestebayar/mv_command/blob/master/mv_command.md)
+
 %%%% TODO mv example was not clear.. mv-ornek.txt has been updated by gamzebagımsız, can be improved further..
 
 > [Boşluk karakteri](#bosluk-karakteri) içeren dosya ve klasör isimlerine dair dikkat edilmesi gereken durum hakkında ilgili bölümü okuyunuz.
