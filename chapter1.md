@@ -159,6 +159,8 @@ Tar arşivi açıldığında, arşiv içinde bulunan tüm klasör ve alt klasör
 
 > Arşiv dosyasını açarken doğru klasörde olduğunuzdan emin olunuz. Eğer **`tar`** komutunu `Masaüstü` klasöründeyken çalıştırırsanız arşiv içerikleri `Masaüstü` klasörünün içine açılır.
 
+<<[Şekil 1.4b Örneklerle tar arşivi oluşturulması](code/tar-ornek.txt)
+
 ### Dosya ve Klasör İzinleri {#dosya-klasor-izin}
 
 Terminalde dosya ve klasörleri detaylı şekilde listelediğimiz zaman aşağıdaki şekilde bilgiler sunulmaktadır:
