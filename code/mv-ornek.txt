@@ -1,9 +1,12 @@
+$ mkdir depo
 $ ls
-belge  klasör
+genome     harfler      liste 
+harf       sayılar      liste1
 
-$ mv belge klasör
+$ mv sayılar depo
+$ ls 
+genome     harfler      liste 
+harf       liste1
 
-$ cd klasör
-
-$ ls
-belge
+$ ls depo
+sayılar
