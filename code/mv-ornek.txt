@@ -1,12 +1,15 @@
-$ mkdir depo
 $ ls
-genome     harfler      liste 
-harf       sayılar      liste1
+harf  harfler  list  liste1  sayilar
 
-$ mv sayılar depo
-$ ls 
-genome     harfler      liste 
-harf       liste1
+$ mkdir depo
+
+$ ls
+depo  harf  harfler  list  liste1  sayilar
+
+$ mv sayilar depo
+
+$ ls
+depo  harf  harfler  list  liste1
 
 $ ls depo
-sayılar
+sayilar
