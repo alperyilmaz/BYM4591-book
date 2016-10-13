@@ -76,6 +76,9 @@ Geçerli dizinde klasör açmayı sağlayan komuttur.
 * **`mkdir <klasör.adı>`** : Geçerli dizin içine \<klasör.adı\> isimli klasörün açılmasını sağlar.
 * **`mkdir -p <klasör.adı1>/<klasör.adı2>/<klasör.adı3>`** : Geçerli klasör içine \<klasör.adı1\> isimli klasör, alt klasörü olarak \<klasör.adı2\> isimli bir klasör ve onun da alt klasörü olarak \<klasör.adı3\> isimli klasör açar. Komutun çalışabilmesi için klasör sayılarında bir sınırlama yoktur.
 
+! **`mkdir`** komutu ile olmayan bir klasöre alt klasör açılmak istendiğinde hata mesajı ile karşılaşılabilir.Ancak **`mkdir -p`**komutu ile yeni bir klasöre alt klasör açılabilir.
+[kaynak](http://docplayer.biz.tr/60171-Linux-server-temel-komutlar.html)
+
 <<[Şekil 2.4 mkdir komutunun kullanımı](code/mkdir-ornek.txt)
 
 ## pwd komutu
