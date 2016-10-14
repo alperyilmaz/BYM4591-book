@@ -98,6 +98,10 @@ Geçerli dizinde boş bir dosya açmayı sağlayan komuttur.
 
 ![genomes adlı klasör yapısı](images/genomes-folder.png)
 
+> 'tree' komutu kullanılarak resimdeki ağaç şeması elde edilebilr.
+* **`tree <dosya.adı>`** : \<dosya.adı\> isimli dosyanın ağaç şeması şeklinde görünmesini sağlar.
+
+
 > Doğru klasör yapısı oluşturulduğunda `genomes` klasörü içinde `find` komutunun çıktısı aşağıdaki gibi olmalıdır:
 
 <<[genomes klasörü içeriği - find komutu çıktısı](code/genomes-folder.txt)
