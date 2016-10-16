@@ -1,0 +1,14 @@
+$ ls
+sayi sayı sayi1000 sayi50 karışık-sayılar harfler
+
+$ ls sayi*
+sayi sayi1000 sayi50
+
+$ ls *say*
+sayi sayı sayi1000 sayi50 karışık-sayılar
+
+$ ls say?
+sayi sayı
+
+$ ls sayi??
+sayi50
