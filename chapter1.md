@@ -146,6 +146,14 @@ Soru işareti jokeri ile yıldız jokeri arasındaki en büyük fark yıldız jo
 %%%% TODO instead of giving link to just enough linux, can we put a concise table about jokers in bash?
 %%%% TODO the examples above is using ls only. we can make a jokers folder in bundle and put many files in it so that students can use it as a playground
 
+### Tab tuşu kullanımı
+
+Windows ortamında klasöre girmek veya dosyaları açmak, taşımak için üzerlerine tıklamak yeterli olmaktadır. Ama Linux terminalinde her komutu yazarak çalıştırmak zorundayız. Örneğin, kopyalamak istediğimiz bir dosyanın adını, hedef klasörünü adını komut satırına yazmamız gerekmektedir. Böyle bir durumda uzun dosya veya klasör isimlerini yazmak hem zahmetli hem de vakit kaybettirecektir. Bu zorluğu `Tab` tuşu yardımıyla aşmak mümkündür. Dosya veya klasör isminden birkaç karakter yazıldıktan sonra `Tab` tuşuna basıldığında isim tamamlanacaktır. 
+
+`Tab` tuşunu kullanmak sadece yazma hızını arttırmakla kalmayıp hatalı komut yazmamıza da engel olacaktır. Eğer `Tab` tuşuyla dosya veya klasör ismi tamamlanmıyorsa ya dosya veya klasör mevcut değildir veya ismi yanlış yazılmıştır.
+
+%%%% TODO give a good example of tab usage, single tab, double tab. etc
+
 ### Locale
 
 GNU/Linux terminali ülkelere göre farklılık gösterir. Bu farklılıklardan en belirgini Türkçe yazım kurallarında sayısal veriler yazılırken binler basamağını belirtmek için nokta ve sayının ondalık kısmını belirtmek için virgül ayıracı kullanılırken Amerikan İngilizcesi yazım kurallarına göre bu terstir. Örneğin; bin iki yüz elli lira seksen kuruş sayısal olarak yazılırken TR standartlarına göre 1.250,80 TL şeklinde yazılırken, US standartlarına göre 1,250.80 şeklinde ifade edilir. **`sort`** komutu ile sayısal sıralama yapılırken locale önemlidir. Yanlış locale kullanıldığında yanlış sıralama gerçekleşir.
