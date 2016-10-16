@@ -242,11 +242,20 @@ Bilişim veya programlama türündeki bilgilerin en hızlı öğrenilmesi pratik
 * [OverTheWire Wargames](http://overthewire.org/wargames) : Bu site network güvenliği üzerine egzersizler yapılmak üzere kurulmuş olup *[Bandit](http://overthewire.org/wargames/bandit/)* başlıklı kısım terminale giriş için egzersizler içermektedir.
 * [ShortcutFoo](https://www.shortcutfoo.com/) : Bu sitede hesap açtıktan sonra [Command Line](https://www.shortcutfoo.com/app/dojos/command-line) ve [Awk](https://www.shortcutfoo.com/app/dojos/awk) kısımlarında pratik yapılabilir ve diğer kullanıcılarla yarışma şeklinde öğrenme gerçekleşebilir.
 * [Linux Survival](http://linuxsurvival.com/linux-tutorial-introduction/) : Oldukça interaktif olarak Linux'a dair temel konular işlenmiştir. Bazı komutların etkileri görsel bir şekilde anlatılmaya çalışılmıştır.
+* [The Linux Command Line](http://linuxcommand.org/lc3_learning_the_shell.php) : Terminalin kullanımına dair temel bilgileri ve dosya klasör yapısı konularını örneklerle anlatan bir websitesi.
 * [LearnShell.org](http://www.learnshell.org/) : İnteraktif şekilde Bash programlama anlatılmaktadır. Bu kitabın içeriğinin biraz dışındadır fakat interaktif olmasından dolayı yararlanılabilir bir kaynaktır. Bölüm sonlarındaki Quizler kendinizi değerlendirmek için kullanılabilir.
 * [Unix Tutorial For Beginners](http://www.ee.surrey.ac.uk/Teaching/Unix/) : Başlangıç seviyesinde bilgiler veren bir site. Bu kitabın içeriği ile uyumlu kısım bu websayfasındaki ilk dört kısımdır (tutorial), diğer kısımlar bu kitapta işlenen konuların dışında kalmaktadır.
 * [Ryans Tutorials - Linux](http://ryanstutorials.net/linuxtutorial/) : Bu websayfasında bu kitabın içeriğini anlamak için gerekli bilgiler mevcut olup bölüm sonlarındaki aktiviteler konuları kavramak için yararlı olacaktır. (Not: *6. Vi Text Editor* adlı kısmı gözardı ediniz)
 
-Bunlara ek olarak Linux u kullanabileceğimiz 3 tane daha farklı seçenek sunabiliriz:
-1) Putty yoluyla Linux a ulaşmak
-2) Kendi bilgisayarınızda "virtualbox" içine linux u kurmak (internet olmayan durumlarda bile linux u kullanmamıza yarar!)
-3) Akıllı telefonunuza Android üzerinden "juiceSSH" veya "Termux" adlı aplikasyonları indirmek (Telefonunuzun klavyesi yeterli gelmeyeceğinden bluetooth klavye ile kullanımı daha uygundur) 
+### Terminale erişim
+
+Dersimizde, Windows bilgisayarlarda [Putty](http://www.putty.org/) adlı program yardımıyla Linux kurulu bir makineye bağlantı kurup ders için açılan hesabınıza erişim sağlayacaksınız. Çalıştırdığınız komutların listesi, oluşturduğunuz dosyalar gibi bilgiler hesabınızda kalıcı olarak tutulmaktadır. Bu erişim metoduna ek olarak aşağıdaki yöntemler ile de terminalde egzersiz yapmanız mümkün olacaktır.
+
+1. [Tutorials Point](http://www.tutorialspoint.com/unix_terminal_online.php) sayfasında ders kitabında kullanılan örnek dosyalar ile çalışabilirsiniz. Fakat, çalıştırdığınız komutlar listesi ve oluşturduğunuz dosyalar oturum kapandıktan sonra kaybolacaktır.
+
+2. [Virtualbox](https://www.virtualbox.org/) adlı programı [bilgisayarınıza kurarak](https://www.youtube.com/watch?v=GyJH86uXZw8), programın içinde çalışacak şekilde herhangi bir Linux sürümünü kurabilirziniz (Ubuntu kurulumunu anlatan video [link](https://www.youtube.com/watch?v=5q0zuo2ED1s)). Bu şekilde, internet bağlantısı olmadan, kişisel bilgisayarınızda Linux çalıştırıp kullanabilirsiniz.
+
+3. Android telefon veya tabletlerinizde de terminal egzersizi yapabilir veya ders hesabınıza erişebilirsiniz. Aşağıdaki uygulamalar ile terminalde çalışmak isterseniz bluetooth klavye kullanmanız gerekebilir. Telefon veya tabletteki sanal klavye ile terminalde komut girişi pratik olmayacaktır.
+
+    * [juiceSSH](https://play.google.com/store/apps/details?id=com.sonelli.juicessh) adlı uygulama ile ders hesabınıza erişim  sağlayabilirsiniz
+    * [termux](https://play.google.com/store/apps/details?id=com.termux) adlı uygulama, telefonunuz veya tabletinizde çalışan terminal olarak kullanılabilir ([video link](https://www.youtube.com/watch?v=h_aWUpF9_Yo)).
