@@ -132,22 +132,19 @@ Jokerler aynı isimde birçok dosya veya döküman arasından istediğimizi bulm
 Yıldız (\*)
  : Geçerli klasördeki tüm dosyaları veya başına belli bir kelime yazılarak o kelime ile başlayan tüm dosyaları ifade eder. Örneğin klasörde sayı1, sayı2, sayı36, sayılar diye dört dosya varsa bunlar teker teker yazmak yerine sayı\* şeklinde de ifade edilebilir. \*sayı\* ifadesi ise içinde "sayı" kelimesi içeren dosya veya klasör isimleriyle eşlecektir.
  
-Örnek:ls komutu kullanarak içinde say geçen tüm dosyaların görüntülenmesi
-![Yıldız jokerinin kullanımı](images/yıldızjoker2.PNG)
-
 Soru İşareti (?)
  : Geçerli klasördeki sadece sondaki tek bir karakteri farklı olan dosyaların tümünü ifade eder. Örneğin yine sayı1, sayı2, sayı36, sayılar diye dört dosya içeren aynı klasör için sayı? yazılırsa sayı1 ve sayı2 dosyaları belirtilmiş olur.
  
- Örnek:ls komutu kullanılarak say ile başlayan tüm dosyaların görüntülenmesi
- ![Soru işareti jokerinin kullanımı](images/sorujoker.PNG)
-       ls komutu kullanılarak sayi ile başlayan ve adının yanında 2 karakter bulunduran dosyaların görüntülenmesi
- ![Soru işareti jokerinin kullanımı](images/sorujoker2.PNG)
+Soru işareti jokeri ile yıldız jokeri arasındaki en büyük fark yıldız jokeri sıfır veya daha fazla karakteri temsil edebilirken soru işareti jokerinin sadece tek karakteri temsil edebilmesidir. Aşağıdaki örnekte sırasıyla, `sayi` ile başlayan, `say` içeren, `say` yanında tek karakter veya iki karakter içeren dosya isimleri joker yardımıyla listelenmiştir.
 
-  Soru işareti jokeri ile yıldız jokeri arasındaki en büyük fark yıldız jokeri sıfır veya daha fazla karakteri temsil edebilirken soru işareti jokerinin sadece sayısı kadar karakteri temsil edebilmesidir.
->Jokerlere ek olarak aradığımız dosya ismi sonrasında klavyedeki "Tab" tuşuna basarak aradığımız isimle başlayan tüm dosyaları görebiliriz. "Tab" tuşunun çıktısı kodu veya ismi tamamlama yönünde olacaktır. 
+<<[Şekil 1.4b Jokerlerin kullanımı](code/joker-ornek.txt)
+
+%%%% TODO either delete or move this sentence "Jokerlere ek olarak aradığımız dosya ismi sonrasında klavyedeki "Tab" tuşuna basarak aradığımız isimle başlayan tüm dosyaları görebiliriz. "Tab" tuşunun çıktısı kodu veya ismi tamamlama yönünde olacaktır."
+
 > Daha detaylı jokerler ve örnekleri için [Just Enough Linux](https://leanpub.com/jelinux/read#wildcards) adlı kitabın Wildcards kısmına bakılmalıdır.
 
-%%%% TODO Authors note: I think we need a short and sweet example here about wildcards
+%%%% TODO instead of giving link to just enough linux, can we put a concise table about jokers in bash?
+%%%% TODO the examples above is using ls only. we can make a jokers folder in bundle and put many files in it so that students can use it as a playground
 
 ### Locale
 
