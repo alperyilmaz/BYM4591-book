@@ -1,25 +1,15 @@
->`kullanıcı@makine:~/örnek$ ls`
->`mavi turuncu yeşil pembe mor siyah renkler.doc `
+# Öncelikle ls komutu ile şu an bulunduğumuz dizini görüntüleyelim
 
-Öncelikle ls komutu ile şuan bulunduğumuz diziyi görüntüleyelim.
+kullanıcı@makine:~/örnek$ ls
+mavi turuncu yeşil pembe mor siyah renkler-eski.doc
 
->`kullanıcı@makine:~/örnek$ tar -cvf etekler.tar mavi turuncu yeşil pembe mor siyah`
+# mavi turuncu yeşil pembe mor siyah dosyalarını renkler.tar.gz adlı sıkıştırılmış arşive ekleyelim
 
-Yukarıdaki komut ile mavi turuncu yeşil pembe mor siyah dosyaları etekler.tar dosyasında arşivlenir.
+kullanıcı@makine:~/örnek$ tar -czvf renkler.tar.gz mavi turuncu yeşil pembe mor siyah
 
->`kullanıcı@makine:~/örnek$ ls`
->`mavi turuncu yeşil pembe mor siyah etekler.tar`
+kullanıcı@makine:~/örnek$ ls
+mavi turuncu yeşil pembe mor siyah renkler.tar.gz renkler-eski.doc
 
-Artık yenidizin, etekler.tar arşiv dosyasına da sahiptir.
+# arşiv dosyası başka bir klasöre taşınıp açılabilir, mavi turuncu yeşil pembe mor siyah dosyaları açığa çıkartılabilir
 
->`kullanıcı@makine:~/örnek$ tar xvf etekler.tar`
-
-tar xvf etekler.tar komutu vererek arşivdeki dosyaları tekrar dışarı çıkarabiliriz.
-
->`kullanıcı@makine:~/örnek$ gzip etekler.tar`
-
-gzip etekler.tar komutu tar dosyalarını sıkıştırmaya yarar.Bu komutla etekler.tar dosyanızın adı artık örnek.tar.gz olur
-
->`kullanıcı@makine:~/örnek$ gzip -d etekler.tar`
-
-Bu komutla sıkıştırılan arşiv geri eski haline gelir.
+kullanıcı@makine:~/başka-klasör$ tar -czvf renkler.tar.gz
