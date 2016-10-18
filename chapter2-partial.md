@@ -57,7 +57,6 @@ Klasör değiştirerek, dizinler arası gezinmeyi sağlayan komuttur. Göreceli 
 
 > Terminalde sadece `cd` yazarak Enter tuşuna basıldığında `cd ~` şeklinde çalışır ve kullanıcının home klasörüne geçiş yapılır.
 
-
 <<[Şekil 2.3 cd komutunun farklı kullanımları](code/cd-ornek.txt)
 
 %%%% TODO cd example is not clear
@@ -98,8 +97,7 @@ Geçerli dizinde boş bir dosya açmayı sağlayan komuttur.
 
 ![genomes adlı klasör yapısı](images/genomes-folder.png)
 
-> 'tree' komutu kullanılarak resimdeki ağaç şeması elde edilebilr.
-* **`tree <dosya.adı>`** : \<dosya.adı\> isimli dosyanın ağaç şeması şeklinde görünmesini sağlar.
+> `tree` komutu kullanılarak resimdeki ağaç şeması elde edilebilir. **tree klasör.adı** şeklinde kullanıldığında istenen klasörün ağaç şeması şeklinde görünmesini sağlar.
 
 
 > Doğru klasör yapısı oluşturulduğunda `genomes` klasörü içinde `find` komutunun çıktısı aşağıdaki gibi olmalıdır:
