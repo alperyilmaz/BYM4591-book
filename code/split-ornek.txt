@@ -1,0 +1,24 @@
+$ split sayı
+$ ls
+sayı  xaa
+$ cat xaa 
+1
+2
+3
+4
+
+$ split -l2 sayı
+$ ls
+sayı  xaa  xab
+$ cat xaa
+1
+2
+
+$ split -n4 sayı
+$ cat xad
+4
+
+$ split -n2 sayı isim
+$ cat isimaa 
+1
+2

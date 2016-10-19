@@ -1,0 +1,13 @@
+$ sort ogrenci-not-donem1 > ogrenci-not-donem1-sıralı
+$ sort ogrenci-not-donem2 > ogrenci-not-donem2-sıralı
+
+$ comm -1 -2 ogrenci-not-donem1-sıralı ogrenci-not-donem2-sıralı
+0000054 Ayşe    Demir   70      85      60      B
+ÖğrenciNo       Ad      Soyad   Vize1   Vize2   Final   HarfNotu
+
+$ comm -2 -3 ogrenci-not-donem1-sıralı ogrenci-not-donem2-sıralı
+0000001 Elif    Yılmaz  50      70      70      B
+0000022 Kemal   Şahin   75      90      45      B
+0000060 Ahmet   Çelik   80      60      60      C
+0000079 Mustafa Kara    60      50      95      B
+0000101 Ayşe    Karaosmanoğlu   90      80      100     A

@@ -1,0 +1,15 @@
+$ wc ogrenci-not-donem1
+  7  49 248 ogrenci-not-donem1
+
+$ wc -l ogrenci-not-donem1
+7 ogrenci-not-donem1
+
+$ cat ogrenci-not-donem1 | wc -l
+7
+
+$ wc -l ogrenci*
+   7 ogrenci-not-donem1
+   7 ogrenci-not-donem1-sıralı
+   7 ogrenci-not-donem2
+   7 ogrenci-not-donem2-sıralı
+  28 total

@@ -1,0 +1,19 @@
+$ echo "Veri analizi dersi" | fold 
+Veri analizi dersi
+
+$ echo "Veri analizi dersi" | fold -w3
+Ver
+i a
+nal
+izi
+ de
+rsi
+
+$ echo "Veri analizi dersi" | fold -sw3
+Ver
+i 
+ana
+liz
+i 
+der
+si

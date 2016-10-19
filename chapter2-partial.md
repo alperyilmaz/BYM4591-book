@@ -311,17 +311,99 @@ Boşluk, enter ve tab gibi özel karakterlerin de değiştirilmesi mümkündür.
 
 Kriptoloji sayesinde herhangi bir mesaj belirli bir algoritma ile farklı bir hale dönüştürülüp güvenli olmayan kanaldan iletilebilir hale getirilmektedir. Bu tür dönüştürülmüş mesajlar üçüncü kişiler tarafından ele geçirilse çözümlenmesi gerekir (kriptoanaliz) ve kullanılan algoritmaya göre bu işlem basit veya çok zor olabilmektedir. 
 
-Oldukça eski ve ilkel bir yöntem olan [Sezar şifresi](https://en.wikipedia.org/wiki/Caesar_cipher), her bir karakterin alfabetik olarak belirli ve sabit sayıda kaydırılması ile yapılmaktadır. Eğer, üç harf kaydırma kullanılacak olursa "Zebra" kelimesi "Cheud" şekline dönüşmektedir. [ROT13 adlı şifreleme](https://en.wikipedia.org/wiki/ROT13), Sezar şefrelemesinin özel bir hali olup her karakter alfabetik olarak 13 karakter ilerletilmektedir. ROT13 kullanıldığında "Zebra" kelimesi "Mroen" şeklinde yazılmaktadır. 
+Aşağıda verilen şifreli mesaj üzerinden basit bir kriptoanalizin nasıl yapıldığını anlamaya çalışalım.
 
+```
+d rnxht vhrvck vkkxow fyvf v ovfy genbwkkne'k pwec bvpnedfw twkkwef dk gd.
+```
 
+Eğer yukarıdaki şifreli mesaj [monoalfabetik yerdeğiştirme](https://en.wikipedia.org/wiki/Substitution_cipher) ile üretildi ise, yani her harf her seferinde sabit başka bir harfle yer değiştiriyorsa, şifrenin çözülmesi nispeten daha kolay olacaktır.
+Şifreli mesaj İngilizce dilinde olduğundan İngilizce kelimelere ait özellikler kullanılarak şifre çözülmeye çalışılmalıdır. Aşağıdaki tabloda harf ve kelime görülme sıklıkları listelenmiştir ([kaynak](http://practicalcryptography.com/ciphers/simple-substitution-cipher/).
 
+{title="Tablo 2.1a İngilizce diline ait kelime ve harf özellikleri"}
+| Özellik | Liste       |
+|:------|:------------|
+| Tek harfli kelimeler     | I,a      |
+| Sık kullanılan iki harfli kelimeler     | of, to, in, it, is, be, as, at, so, we, he, by, or, on, do, if, me, my, up, an, go, no, us, am|
+| Sık kullanılan üç harfli kelimeler     | the, and, for, are, but, not, you, all, any, can, had, her, was, one, our, out, day, get, has, him, his, how, man, new, now, old, see, two, way, who, boy, did, its, let, put, say, she, too, use     |
+| Sırasıyla en sık kullanılan harfler | E T A O I N S H R D L U     |
+| Sırasıyla en sık kullanılan iki harfler (digraph)     | th er on an re he in ed nd ha at en es of or nt ea ti to it st io le is ou ar as de rt ve       |
+| Sırasıyla en çok karşılaşılan çift harfler     | ss ee tt ff ll mm oo   |
+| Sırasıyla kelime başında en sık kullanılan harfler     | T O A W B C D S F M R H I Y E G L N P U J K      |
+| Sırasıyla kelime sonunda en sık kullanılan harfler     | E S T D N R Y F L O G H A K M P U W      |
 
-Info from Krypton Level 1 -> Level 2 and Krypton Level 2 -> Level 3
+Şifreli mesajda tek harfli kelime olarak "d" ve "v" bulunmaktadır. O halde bu iki harf ya "a" ya da "i" harflerine denk düşmektedir. Tablodaki karakteristik özelliklere göre harflerin karşılıkları bulunduğunda aşağıdaki eşleşme tablosu ortaya çıkar:
 
-[Frequency Analysis](http://www.cryptool-online.org/index.php?option=com_content&view=article&id=96&Itemid=117&lang=en)
+```
+Input   b c d e f g h k n o p r t v w x y
+Output  f y i r t p l s o m v w d a e u h
+```
 
-[N-Gram Analysis](http://www.cryptool-online.org/index.php?option=com_content&view=article&id=94&Itemid=112&lang=en)
+Şifreli mesajda kelimelerin formları aynen korunduğundan dolayı, tek harfli kelimler veya üç harfli sık kullanılan kelimeleri saptamak kolay olmaktadır. Bu yüzden, şifrenin çözülmesini zorlaştırmak için, kelimelerin sınırları belirli olmayacak hale getirilmelidir:
 
+```
+drnxh tvhrv ckvkk xowfy vfvov fygen bwkkn ekpwe cbvpn edfwt wkkwe fdkgd
+```
+
+> Alfebedeki harfler 26! sayısında permütasyonlar ile a-z arası harflerle eşleştirilebilir. 
+
+Oldukça eski ve ilkel bir yöntem olan [Sezar şifresi](https://en.wikipedia.org/wiki/Caesar_cipher), her bir karakterin alfabetik olarak belirli ve sabit sayıda kaydırılması ile yapılmaktadır. Eğer, üç harf kaydırma kullanılacak olursa "Zebra" kelimesi "Cheud" şekline dönüşmektedir. [ROT13 adlı şifreleme](https://en.wikipedia.org/wiki/ROT13), Sezar şefrelemesinin özel bir hali olup her karakter alfabetik olarak 13 karakter ilerletilmektedir. ROT13 kullanıldığında "Zebra" kelimesi "Mroen" şeklinde yazılmaktadır.
+
+```
+ROT1
+Input   ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Output  BCDEFGHIJKLMNOPQRSTUVWXYZA
+
+ROT13
+Input   ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Output  NOPQRSTUVWXYZABCDEFGHIJKLM
+```
+
+ROT13, diğer anahtarlara göre özel bir yere sahiptir çünkü ROT13 için hem şifreleme hem de sifre çözme işlemi aynı anahtarla yapılmaktadır. Bu yüzden diğer anahtarlara göre çok daha yaygın olarak kullanılmaktadır.
+
+Sezar şifresi çok kolaylıkla çözülebilir çünkü 25 farklı anahtar deneyerek sonuca ulaşılabilir (ROT1 -- > ROT25). [Decrypting Text](http://www.richkni.co.uk/php/crypta/caesar.php) adlı websayfasında, kutuya yazılan yazı 25 farklı kaydırma ile denenip deşifre edilmektedir. Harfleri rastgele karıştırmak mümkün olsa da, sırası unutulmayacak bir karıştırma daha çok tercih edilmektedir. Bunun için kullanılan yöntemlerden biri, anahtar kelime  kullanmaktır. Aşağıdaki eşleşme tablosu `LINUX` kelimesi kullanılarak oluşturulmuştur. Anahtar kelime ilk önce yazılmış ardından da anahtar kelimede olmayan harfler sırasıyla yazılmıştır. "Y" ve "Z" harflerinin yerleri değiştirilmiştir çünkü eşleşme tablosunda hiçbir harf kendiyle eşleşmemelidir.
+
+```
+Input   ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Output  LINUXABCDEFGHJKMOPQRTUVWZY
+```
+
+Böyle bir durumda şifrelenmiş yazıda harflerin frekansını inceleyip eşleşme tablosu tahmin edilmeye çalışılabilir. `sort` ve `uniq` komutlarını öğrendikten sonra bu tür analizin nasıl yapıldığına dair örnekler göreceksiniz.
+
+Polialfabetik şifreleme, monoalfabetik yöntemlere göre çözümlemesi çok zor bir tekniktir. Bir harf, birden fazla karaktere eşlendiğinden dolayı yukarıda anlatılan tekniklerin hiçbirisi işe yaramayacaktır. En ünlü polialfabetik şifreleme 2. Dünya Savaşı sırasında kullanılan [Enigma](https://en.wikipedia.org/wiki/Enigma_machine) makinesidir. Bu makinenin nasıl çalıştığına dair [videoyu](https://www.youtube.com/watch?v=G2_Q9FoD-oQ) ve deşifre edilmesinde kullanılan kusuru anlatan [video](https://www.youtube.com/watch?v=V4V2bpZlqx8)ları izleyebilirsiniz.
+
+X>### Sorular
+X>* `HELLO` kelimesini ROT1 ile şifreleyin.
+X>* ROT1 ile şifrelenmiş `MJOVY SPDLT` mesajını çözümleyiniz.
+X>* `HELLO` kelimesini ROT13 ile şifreleyin.
+X>* ROT13 ile şifrelenmiş `YVAHK EBPXF` mesajını çözümleyiniz.
+X>* `Hello World` ifadesini ROT13 ile şifreleyiniz.
+X>* `gizli_mesaj` adlı dosyadaki şifreyi, yukarıdaki örnekte verilen eşleşme tablosuna göre çözümleyiniz.
+X>* `data analysis and visualization` ifadesini `TERMINAL` kelimesini anahtar kullanarak şifreleyiniz.
+
+> ### MD5 digest ve SHAsum
+> Bir websayfasından indireceğimiz veya emaille gelen bir dosyanın gerçekten de yazarı tarafından oluşturulmuş dosya olup olmadığından emin olmak için kullanılan yöntemler vardır. Bunlardan en basiti ve en yaygın olanı dosya ile beraber MD5 digest veya SHAsum değerlerini de yayınlamaktır. Elde ettiğimiz dosyada her hangi bir gizli değiştirme olup olmadığını dosya üzerinde MD5 veya SHA hesabı yaparak anlayabiliriz. Dosyada tek bir bit veya karakter değiştiğinde MD5 ve SHA değerleri tamamen değişmektedir.
+>
+> 3,147,289,058 karakterden oluşan insan genomu dosyası (hg19.fa) ile tek bir mutan taşıyan dosya (hg19_mutant.fa) arasında sadece karakterlik fark vardır, 168. satırda üçüncü A, G ile yer değiştirmiştir.
+>
+> ~~~~~~~~~~~~~~~
+>    $ diff hg19.fa hg19_mutant.fa 
+>    168c168
+>    < NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNTAACCCTAACCCTAACCCTA
+>    ---
+>    > NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNTAACCCTGACCCTAACCCTA
+> ~~~~~~~~~~~~~~~
+>
+> İki dosya için SHAsum hesaplandığında çok farklı değerler bulunmaktadır:
+>
+> ~~~~~~~~~~~~~~~ 
+>    $ sha256sum hg19.fa
+>    492c8d6337990dd017b065abb4559509e0853521976868c57dc6634d1d1796d7  hg19.fa
+>    
+>    $ sha256sum hg19_mutant.fa
+>    b8145a245624395c7d41671d8ed3d4a1afd3032ac9a5ff37e23ced3c3898fa60  hg19_mutant.fa
+> ~~~~~~~~~~~~~~~
+>
 
 ## column komutu
 
@@ -352,7 +434,6 @@ Geçerli dizinde bulunan bir dosyanın içeriğinin alfabetik olarak sıralanmas
 * **`sort -k<kolon.numarası> <dosya.adı>`** : Sıralamanın belirlenen kolona göre yapılması sağlar.
 * **`sort -u <dosya.adı>`** : Sıralamayı yaparken birden fazla olan modellerin bir kere gösterilmesini sağlar.
 
-
 <<[Şekil 2.18 sort komutunun kullanımı](code/sort-ornek1.txt)
 
 <<[Şekil 2.18 sort komutunun kullanımı (devamı)](code/sort-ornek2.txt)
@@ -370,5 +451,243 @@ Geçerli dizinde bulunan bir dosyanın içeriğinin alfabetik olarak sıralanmas
 >* english_words adlı dosyadaki kelimeleri kafiye oluşturacak şekilde sıralayın.
 >* emma ve oliver_twist kitaplarında en çok görünen 5 kelimeyi ayrı ayrı bulun.
 >* emma ve oliver_twist kitaplarında en çok bulunan 150. kelimeleri bulun. 
+>* english_words adlı dosyada bulunan kelimeleri kafiyeli olarak sıralayın.
 
 %%%% TODO: kitap1 ve kitap2 emma_sayım ve oliver_twist_sayım dosyaları mı olacak? Yoksa emma ve oliver_twist kitapları şeklinde mi olacak? (şu an ikinci duruma göre ayarlandı)
+
+## cut komutu
+
+İngilizce orijinal tarifi: "remove sections from each line of files"
+
+Geçerli dizindeki bir dosya ya da girdinin içeriğinden istenen bölümlerin alınmasını sağlar.
+
+* **`cut -f<sayı> <dosya.adı>`** : Dosya içindeki, sayı ile belirlenen kolonların kesilip alınmasını sağlar.
+* **`cut -c<sayı> <dosya.adı>`** : Dosya içindeki sayı ile belirtilen karakterlerin kesilip alınmasını sağlar.
+* **`cut -d'<karakter>' <dosya.adı>`** : Dosya içinde bulunan sütunların belirtilen \<karakter\> ile ayrıldığını belirtmek için kullanılır. Tek başına bir fonksiyonu yoktur. Komutun hangi bölgeleri kesip görüntülemesi isteniyorsa belirtilmelidir. Komut satırına yazılan \<karakter\>in terminal de farklı bir anlamı olabilir. Bu nedenle, komutun doğru çalışabilmesi için \<karakter\> tırnak işareti (' ') içinde yazılmalıdır. Bazı komutlar tek tırnak (') bazı komutlar ise çift tırnak ("") ile çalışmaya uygundur.
+* **`cut --complement <dosya.adı>`** : Dosya içindeki çağırılan karakter veya kolonlar dışındakilerin kesilip alınmasını sağlar. Tek başına bir fonksiyonu yoktur, diğer seçeneklerden biri ile, `-f` veya `-c` gibi, birlikte kullanılmalıdır.
+
+<<[Şekil 2.20 cut komutunun farklı kullanımları](code/cut-ornek.txt)
+
+%%%% TODO cut -d',' -f2 test ve tab replacement example should be destructed, better prepare small file with comma
+%%%% TODO export LC_ALL=C might be needed for sort
+
+> `-f` ve `-c` seçeneklerinde kullanılan `<sayı>` değişkeni için birinci bölümdeki [sayı aralıkları](#sayi-araliklari) hakkındaki açıklamalara bakınız.
+
+%%%% WARNING mysteriously code above might not be included in texti please make sure it's included
+
+>### Sorular
+>* Movies ve ratings dosyalarındaki çift numaralı sütunları ekranda görüntüleyin.
+>* Movies ve ratings dosyalarının üçüncü sütunları hariç ekranda görüntüleyin.
+>* Movies ve ratings dosyalarındaki ikinci kolonların üçüncü harflerini ekranda görüntüleyin.
+>* Movies dosyasındaki ikinci kolonda sondan ikinci harfleri ekranda görüntüleyin.
+>* Movies dosyasında, toplam sütun sayısını bilmeden, son sütunu nasıl ekrana yazdırırız?
+>* Movies ve ratings dosyalarındaki dördüncü kolonlarda yazılı olanları alfabetik sıralamaya göre üçüncü sırada olan kelimelerini bulup sadece ikinci ve dördüncü harflerini ekranda görüntüleyin.
+>* Movies dosyasında her satır için 25. karakteri ekranda görüntüleyin. Boş satırların neden olduğunu açıklayın.
+
+%%%% Bu soru çıkartıldı: Tek komut satırında movies dosyasının üçüncü sütunu ve ratings dosyasının ikinci sütunu hariç ekranda görüntüleyin. (Kitapta bulunmayan ek bir bilgi gerekmektedir) 
+
+## uniq komutu
+
+İngilizce orijinal tarifi: "report or omit repeated lines"
+
+Geçerli dizinde bulunan dosya içindeki peş peşe dizilmiş aynı olan modelleri birleştirir ve sayılarını gösterir. Tek başına kullanılabildiği gibi, farklı bir komut ile birlikte de çalıştırılabilir. Böyle durumlarda sadece ilk komutun çalışabilmesi için \<dosya.adı\> belirlenmesi yeterlidir, `uniq` komutundan sonra tekrar \<dosya.adı\> yazılmasına gerek yoktur.  
+
+* **`uniq <dosya.adı>`** : Geçerli dizindeki \<dosya.adı\> isimli dosya içinde peş peşe gelip aynı olan modelleri birleştirerek görüntüler.
+* **`uniq -c <dosya.adı>`** : Geçerli dizindeki \<dosya.adı\> isimli dosya içinde peş peşe gelip aynı olan modelleri birleştirerek ve yanlarında sayılarını vererek görüntüler.
+* **`uniq -d <dosya.adı>`** : Geçerli dizindeki \<dosya.adı\> isimli dosya içinde sadece peş peşe aynı gelen modelleri görüntüler.
+* **`uniq -f<sayı> <dosya.adı>`** : Geçerli dizindeki \<dosya.adı\> isimli dosya içinde peş peşe gelip aynı olan modelleri belirtilen sayıda kolondan sonraki kolona göre birleştirerek görüntüler.
+* **`uniq -s <dosya.adı>`** : Geçerli dizindeki \<dosya.adı\> isimli dosya içinde sadece peş peşe gelip aynı olan modelleri belirtilen sayıda karakterden sonrasına göre birleştirerek görüntüler.
+
+<<[Şekil 2.21 cut ve uniq komutlarının kullanımı](code/cut-uniq-ornek.txt)
+
+>### Sorular
+>* Ratings dosyasında 4. kolon rating verilen gün ve saati gösterdiğine göre, en çok rating yapılan gün ve saat hangisidir (cevap: 01-03-1996 00:00:00'da 432 rating kaydedilmiştir)
+>* movies dosyasında 2.kolon film adını, 3.kolon da yılını göstermektedir. İkinci kolonda birden fazla kere görünen film isimleri hangileridir? (farklı yıllarda aynı isimle çekilmiş filmler)
+>* Sayı50 dosyasında hangi sayıdan kaç tane olduğunu ekranda görüntüleyin.
+>* Harfler dosyasında hangi harften kaç tane olduğunu çoktan aza doğru gösteriniz.
+>* Harfler dosyasında en çok bulunan harfi ekranda görüntüleyin.
+>* Harfler dosyasında en çok bulunan beş harfi alfabetik sırayla ekranda görüntüleyin.
+>* Movies dosyasını son iki sütuna göre en çok sayıda görünenleri ekranda görüntüleyin.
+
+Sorularda kullanılan movies ve ratings dosyalarının içeriklerine dair açıklamalar [bölüm sonundaki sorular kısmında](#movies-ratings-desc) açıklanmıştır.
+
+## Kriptoloji ve Kriptoanaliz - Frekans analizi
+
+Info from Krypton Level 1 -> Level 2 and Krypton Level 2 -> Level 3
+
+[Frequency Analysis](http://www.cryptool-online.org/index.php?option=com_content&view=article&id=96&Itemid=117&lang=en)
+
+[N-Gram Analysis](http://www.cryptool-online.org/index.php?option=com_content&view=article&id=94&Itemid=112&lang=en)
+
+## Bakteri genomunda GC adaları
+
+Şimdiye kadar öğrendiğimiz komutlar yardımıyla *E.coli* bakteri genomundaki GC adalarının uzunluklarının dağılımını analiz edelim. Genom dosyasının ilk on satırına bakıp dosya içeriği hakkında bilgi sahibi olalım.
+
+> Aşağıdaki örneklerde, dosyadan veya komut çıktılarından içeriğini anlamaya yetecek kadar satır, sadece 10 veya 20 satır, gösterilmiştir.
+
+<<[Genom dosyası içeriği](code/gc-island-step1.txt)
+
+tr komutu yardımıyla G ve C nükleotidlerini alt çizgi ve A ile T nükleotidlerini boşluk karakteri ile yerdeğiştirdiğimizde aşağıdaki gibi bir sonuç elde etmekteyiz:
+
+<<[Genom dosyasında nükleotidlerin tr komutu ile yer değiştirilmesi](code/gc-island-step2.txt)
+
+Bu işlemden sonra yanyana olan G ve C nükleotidlerinden oluşan GC adaları, terminalde görünür hale gelmiştir. Örneğin, 5 tane G ve C nükleotidi yanyana olan kısımlar (GGCCG, GCGCG, GGGCC gibi) 5 tane alt çizgi yanyana olarak görünecektir. Adaların uzunluklarına göre sıralamak için, adaların tek sütun haline getirmek gerekmektedir. Bunun için, yine tr komutu ile karakter değişikliği yapılacak, boşluk karakteri yeni satır (enter) karakteri ile yer değiştirilecektir. Böylelikle, her satırda sadece bir tane ada olacak şekilde çıktı düzenlenmiş olacaktır. Gereksiz yere boş satırlar üretmemek için tr komutu kullanılırken "-s" (squeeze) opsiyonu da eklenmiş yanyana olan boşluk karakterleri yapıştırılıp tek bir boşluk karakteri haline getirilmiştir. 
+
+<<[GC adalarının tek sütun haline getirilmesi](code/gc-island-step3.txt)
+
+Bundan sonra sort komutu ile benzer olan satırlar alt alta gelecek şekilde sıralanabilir.
+
+<<[GC adalarının sıralanmış tek sütun haline getirilmesi](code/gc-island-step4.txt)
+
+Daha önceki örneklerde gördüğümüz üzere, bir sütunda bulunan öğelerin kaçar defa bulunduğu `sort | uniq -c` kombinasyonu ile hesaplanabilmektedir. 
+5 tane G ve C nükleotidi yanyana olan ada sayısı 48958 olarak bulunmuştur.
+
+<<[GC adalarının uzunluklarının dağılımı](code/gc-island-step5.txt)
+
+Daha kesin hesap yapabilmek için:
+
+* Genom dosyasındaki ilk satırın gözardı edilmesi gerekmektedir. Bu da, ileriki bölümlerde öğrenecegimiz `grep`, `sed` veya `awk` komutları ile mümkün olacaktır. Bu örnek için, kullandığımız komuta, `grep -v ">"` komutu eklenirse daha doğru sonuç elde edebiliriz.
+* Genom dosyası tek satır halinde olmayıp birçok satır halindedir, bu yüzden satır sonlarına gelen GC adaları ortadan bölünmektedir. Yine ek bir tr komutu sayesinde bu sorun aşılabilir ve bunun sonucunda daha doğru sonuç elde edilebilir (5 tane G ve C nükleotidi yanyana olan ada sayısı aslında 50292 tanedir).
+
+Bu yönteme ait orijinal fikir Martin Krzywinski tarafından hazırlanan [perl workshop](http://mkweb.bcgsc.ca/perlworkshop/data/courses/2.1.2.4/01/pdf/2.1.2.4.1.a1.pdf) içeriğinden alınmıştır.
+
+## fold komutu
+
+Geçerli dizinde bulunan dosyaların içindeki bilgileri belirli yerlerden kırarak yeni satırlar oluşmasını sağlar. Tek başına fonksiyonu yoktur ve belirli seçeneklerle birlikte kullanılmalıdır.
+
+* **`fold -s`** : Dosyaların içindeki yazıları boşluk olan yerlerden kırar. Tek başına kullanıldığında bir fonksiyonu yoktur. Komutun farklı seçenekleri ile birlikte kullanılmalıdır.
+* **`fold -w<sayı>`** : Dosya içeriği veya çıktı belirtilen sayıda karakter uzunluğunda ekrana yazılır.
+
+<<[Şekil 2.22 echo ve fold komutlarının kullanımı](code/echo-fold-ornek.txt)
+
+>### Sorular
+>* Oliver Twist kitabında toplam kaç karakter (tüm harfler ve noktalama işaretleri) kullanıldığını bulun ve bunların kullanım sayılarını ekranda görüntüleyin.
+
+## Genomda kelime sayımı
+
+%%%% TODO Martin's example here
+
+## comm komutu
+
+İngilizce orijinal tarifi: "compare two sorted files line by line"
+
+Geçerli dizinde bulunan iki dosya arasındaki ortak satırların bulunmasını sağlar.
+
+* **`comm -1 -2 <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli iki klasör arasındaki ortak olan model veya ortak olan satırların görüntülenmesini sağlar.
+* **`comm -2 -3 <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> dosyalarındaki satırlardan \<dosya.adı2\> de olmayıp sadece \<dosya.adı1\> de olanların görüntülenmesini sağlar.
+* **`comm -1 -3 <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> dosyalarındaki satırlardan \<dosya.adı1\> de olmayıp sadece \<dosya.adı2\> de olanların görüntülenmesini sağlar.
+
+<<[Şekil 2.23 comm komutunun kullanımı](code/comm-ornek.txt)
+
+>### Sorular
+>* Sayı50 ve sayı1000 dosyalarındaki ortak satırları bulun.
+>* Sadece sayı1000'de olan satırları bulun.
+>* Kitap1'de ve kitap2'de ortak olarak bulunan ve alfabetik sıralamaya göre en sonda bulunan 5 kelimeyi bulun.
+>* Kitap2'de olup kitap1'de olmayan ve alfabetik sıralamaya göre ilk 5 kelimeyi bulun.
+>* Kitap1'de bulunup kitap2'de bulunmayan kelimelerin alfabetik sıralamaya göre 50. sırada olan kelimeyi bulun.
+
+## paste komutu
+
+İngilizce orijinal tarifi: "merge lines of files"
+
+Geçerli klasördeki iki dosyanın içindekilerin tamamen birbiri üzerine yapıştırılmasını sağlar.
+
+* **`paste <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli iki klasördeki bilgilerin değiştirilmeden, yan yana yapıştırılmasını sağlar.
+* **`paste <dosya.adı1> <dosya.adı2> -d'ayıraç'`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli iki klasördeki bilgilerin değiştirilmeden, yan yana yapıştırılmasını ve berlirtilen ayıraç ile ayrılmasını sağlar. Bu komut ile peş peşe farklı ayıraçlar da yapılabilir.
+* **`paste <dosya.adı1> <dosya.adı2> -s`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli iki klasördeki bilgilerin değiştirilmeden ama satırlar sütun, sütunlar satır yapılarak yapıştırılması sağlanır.
+
+<<[Şekil 2.24 paste komutunun farklı kullanımları](code/paste-ornek.txt)
+
+%%%% WARNING Artık harf ve sayı dosyası oluşturulmuş durumda. Uyarı kaldırılabilir. 
+
+> Örnekteki "harf" veya "sayı" dosyaları kitapla gelen zip dosyasında mevcut değildir. İçeriklerinin sırasıyla 4 tane harf ve sayı içeren dosyalar olduğu varsayılabilir.
+
+>### Sorular
+>* Sayı50 ve harfler dosyalarını kolon ayıracı virgül (,) olarak birleştirin.
+>* Sayı50 ve harfler dosyalarını seri halde birleştirin.
+>* Sayı50 ve harfler dosyalarını birleştirip iki kolon haline getirin ve sayı.harf ismi ile ayrı bir dosya olarak kaydedin. 
+>* Sayı.harf dosyasında harflerin bulunduğu sütuna göre sıralamada ilk beş satırı ekranda görüntüleyin. 
+>* Harfler dosyasının alfabetik olarak sıralanmış halini sayı50 dosyası ile birleştirip 8. satırını ekranda görüntüleyin. 
+>* Sayı50 ve harfler dosyalarının seri olarak birleştirilmesi ile oluşan dosyanın 25, 28 ve 32. sütunlarını ekranda görüntüleyin.
+>* Sayı50 ve harfler dosyalarını ayıracı yıldız (*) olacak şekilde birleştirip son 8 satırını ekranda görüntüleyin. 
+>* Sayı50 ve harfler dosyasının tek satır halinde birleştirilmesi ile oluşan listenin 175-180. sütunlarını tek satır halinde görüntüleyin. 
+
+## Bi-gram analizi
+
+Kelime sayımının ileri boyutu olan N-gram analizine dair.
+
+```bash
+cat emma.txt | tr -sc 'A-Za-z' '\n'  > emma.words
+tail -n +2 emma.words > emma.nextwords
+paste emma.words emma.nextwords | sort | uniq -c > emma.bigrams
+```
+
+>### Soru
+> Bu çalışmanın bir adım ötesi olan trigram analizini yapıp en çok bulunan trigramı bulunuz.
+
+## split komutu
+
+Geçerli klasördeki dosyaların parçalara bölünmesini sağlar. Yeni parçalara verilecek isim belirtilmezse x diye atama yapılır ve sırasıyla; xaa, xab, xac, xad, xae ... şeklinde devam eder. Dosya ismi verilirse x yerine yazılarak aynı şekilde devam eder. Aynı klasör içinde birden fazla split komutu kullanılır ve yeni oluşacak dosyalar için isim belirlenmezse, her kullanımda bir önceki parçalar silinerek yeni parçalar tekrar xaa ismi ile başlayarak kaydedilir. Parça dosyalara verilecek isim komut satırının sonuna yazılır.
+
+* **`split<dosya.adı> isim`** : Geçerli klasörde bulunan \<dosya.adı\> dosyası tek parça halinde yeni bir dosya olarak kaydedilir ve adı `isimaa` olur.
+* **`split -l<sayı> <dosya.adı> isim`** : Geçerli klasörde bulunan \<dosya.adı\>, belirtilen sayı kadar satırlarda parçalara ayrılarak yeni dosyalar olarak kaydedilirler ve isimleri `isimaa, isimab, isimac,...` olur.
+* **`split -n<sayı>  <dosya.adı> isim`** : Geçerli klasörde bulunan \<dosya.adı\> dosyası, belirtilen sayı kadar eşit parçalara bölünerek yeni dosyalar olarak kaydedilirler ve isimleri `isimaa, isimab, isimac,...` olur.
+
+<<[Şekil 2.25 split komutunun farklı kullanımları](code/split-ornek.txt)
+
+>### Sorular
+>* Sayı1000 dosyasını 13er satır olarak bölün.
+>* Sayı50 dosyasını 10 eşit parçalaya bölün. 
+>* Harfler dosyasını, her dosya 8 satır olacak şekilde bölün ve oluşan dosyaların isimlerini 'parça' ile başlayacak şekilde ayarlayın. 
+>* Sayı50 ve harfler dosyalarını alfabetik olarak sıralanmış şekilde birleştirip her bir dosya 10 satır olacak şekilde bölün.
+>* Split komutunu kullanarak sayı50 dosyasını kopyalayın. 
+
+## join komutu
+
+İngilizce orijinal tarifi: "join lines of two files on a common field"
+
+Geçerli klasördeki iki dosyayı ortak kolonları üzerinden birleştirir. Ekstra bir seçenek belirtilmediği sürece, sadece ilk kolonu ortak olan satırları gösterir. 
+
+* **`join <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli klasörleri ilk kolondaki ortak olanlara göre yan yana yapıştırır.
+* **`join -1 <kolon.no1> -2 <kolon.no2> <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli klasörleri birinci dosyanın \<kolon.no1\> kolonuna ikinci dosyanın da \<kolon.no2\> kolonuna göre birleştirilir.
+* **`join -a 1 <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli klasörleri ilk kolondaki ortak olanlara göre yan yana yapıştırır ve birinci dosyada bulunan tüm satırları gösterir.
+* **`join -a 2 <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli klasörleri ilk kolondaki ortak olanlara göre yan yana yapıştırır ve sadece ikinci dosyada olan satırları da gösterir.
+* **`join -v 1 <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli klasörleri ilk kolondaki ortak olanlara göre inceleyerek ve ortak olmayıp sadece birinci dosyada olan satırları gösterir.
+* **`join -v 2 <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli klasörleri ilk kolondaki ortak olanlara göre inceleyerek ve sadece ikinci dosyada olan satırları gösterir.
+* **`join -o dosya-no.kolon-no <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli klasörleri ilk kolondaki ortak olanlara göre yan yana yapıştırır ve belirtilen dosyaların belirtilen kolonlarının görüntülenmesini sağlar.
+* **`join -e 'işaret' <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli dosyalar birleştirildiğinde karışıklığı önlemek için, ortak olmayan kısımlara belirli işaretler konulmasını sağlar. Dosyalar sadece join ile birleştirildiğinde yalnızca ortak komutların satırları geldiği için e seçeneğinin bir fonksiyonu olmaz. Bu nedenle önce -a seçeneği ile hangi dosyada olmayan satır çağrılacaksa o belirtilmelidir.
+
+> `join` ve `comm` komutu için kullanılan dosyaların `sort` komutu ile sıralı hale getirilmiş olması gerekir. Özellikle `join` komutu için, hangi ortak kolon üzerinde birleştirme yapılacaksa her iki dosyanın da o kolona göre alfabetik sıralanması gerekmektedir. Dosyalar sıralanarak farklı birer dosya olarak kaydedilebilecekleri gibi aşağıdaki örnekte olduğu gibi de yapılabilir.
+>
+> `join <(sort öğrenci-not-dönem1) <(sort öğrenci-not-dönem2)`
+
+<<[Şekil 2.26 join komutunun farklı kullanımları](code/join-ornek.txt)
+
+> Yukarıdaki örnek çıktıda, uzun satırların bir sonraki satıra taşan kısımları \ ile gösterilmiştir, komutlar çalıştırıldığında terminal ekranında görünmeyecektir.
+
+>### Sorular
+>* Kitap1'de ve kitap2'de ortak olarak en çok görünen 5 kelimeyi bulun.
+>* Kitap1'de olup kitap2'de olmayan ve en çok sayıda bulunan ilk 5 kelimeyi bulun. 
+>* Sayı.harf dosyasında sadece bir kez görünen harfleri yanlarındaki sayılar ile birlikte ekranda görüntüleyin. [asciicast](https://asciinema.org/a/29681?speed=1&theme=solarized-dark&size=medium)
+
+%%%% TODO wc command can be mentioned earlier
+
+## wc komutu
+
+Geçerli klasördeki dosyaların veya girdideki satır, kelime ve karakter sayımını gerçekleştirir.
+
+* **`wc <dosya.adı>`** : Geçerli klasördeki \<dosya.adı\> isimli dosya için sırasıyla; satır, kelime ve karakter sayılarını gösterir.
+* **`wc -l <dosya.adı>`** : Geçerli klasördeki \<dosya.adı\> isimli dosya için toplam satır sayısını ve dosya adını gösterir. Sadece satır sayısı gösterimi için çok tercih edilen kullanımı; **`cat <dosya.adı> | wc -l`** şeklindedir. Bir çok farklı sayım için oldukça yaygın olarak kullanılır.
+
+> Birçok komut için kullanılan \<dosya.adı\> ifadesi birden çok dosya da içerebilir, jokerler sayesinde. Daha detaylı bilgi için [jokerler](#jokerler) açıklamasına bakınız.
+
+<<[Şekil 2.27 wc komutunun kullanımı](code/wc-ornek.txt)
+
+>### Sorular
+>* Kitap1 ve kitap2'de kitapta bulunma sayısına göre sıralamada ortada olan kelime veya kelimeleri ayrı ayrı bulun.
+>* Oliver twist kitabında toplam kaç kelime olduğunu bulun. (C: 166675)
+>* Oliver Twist ve Emma kitapları arasında kaç karakter fark olduğunu bulun. (C: 4) [asciicast](https://asciinema.org/a/30496?speed=1&theme=monokai&size=medium)
+>* Oliver Twist ve Emma kitapları arasında toplam  kaç harf fark olduğunu bulun. (C: 13657)
+>* Emma kitabında toplam kaç cümle olduğunu bulun. (C: 10568)
+
+%%%% TODO the numbers do not match with anticipated results. do them again.

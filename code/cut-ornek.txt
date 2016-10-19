@@ -1,0 +1,35 @@
+$ cut -f2,3 ogrenci-not-donem1
+Ad      Soyad
+Elif    Yılmaz
+Ayşe    Karaosmanoğlu
+Ahmet   Çelik
+Kemal   Şahin
+Mustafa Kara
+Ayşe    Demir
+
+$ cut -c5,7 ogrenci-not-donem1
+rn
+01
+11
+00
+02
+09
+04
+
+$ cut -d',' -f2 ogrenci-not-donem1.csv
+Ad
+Elif
+Ayşe
+Ahmet
+Kemal
+Mustafa
+Ayşe
+
+$ cut -f4,5 --complement ogrenci-not-donem1
+ÖğrenciNo       Ad      Soyad   Final   HarfNotu
+0000001 Elif    Yılmaz  70      B
+0000101 Ayşe    Karaosmanoğlu   100     A
+0000060 Ahmet   Çelik   60      C
+0000022 Kemal   Şahin   45      B
+0000079 Mustafa Kara    95      B
+0000054 Ayşe    Demir   60      B

@@ -1,0 +1,21 @@
+$ cat Ecoli-genome.fa | tr "ACGT" " __ "  | tr -s " " "\n" | head -20
+>U00096.2
+Escherichia
+coli
+K-12
+M_1655
+complete
+genome
+(4639675
+bp)
+__
+_
+_
+_
+_
+__
+_____
+_
+_
+_
+_
