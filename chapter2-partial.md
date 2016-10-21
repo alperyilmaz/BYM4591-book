@@ -307,6 +307,127 @@ Boşluk, enter ve tab gibi özel karakterlerin de değiştirilmesi mümkündür.
 >* 'Yarın' kelimesini değiştirerek 'kadın' kelimesi olarak ekranda görüntüleyin.
 >* AGTCAGCTACGACTACGACTACGACTAGCATCAA dizisinin ters eşleniğini (reverse complement) hesaplayınız.
 
+## Dökümanların kelimelere ayrılması
+
+Dökümanlara yönelik analizlerde (örn. [Sentiment Analysis](https://en.wikipedia.org/wiki/Sentiment_analysis), [döküman sınıflandırma](https://en.wikipedia.org/wiki/Document_classification), [spam filtresi](https://en.wikipedia.org/wiki/Email_filtering), [otomatik özetleme](https://en.wikipedia.org/wiki/Automatic_summarization)), [NLP](https://en.wikipedia.org/wiki/Natural_language_processing) çalışmalarında cümleleri simgelere ayırmak (ing. [tokenization](https://en.wikipedia.org/wiki/Tokenization_(lexical_analysis))) ilk adımdır. Terminalde bu adım `tr` komutu ile yapılabilmektedir. Bir dökümandaki yabancı öğeler (noktalama işaretleri) ayıklanarak kelimeler sayılabilir, analiz edilebilir hale getirilir.
+
+`tr -d` opsiyonu ile noktalama işaretleri ve sembolleri silmek aşağıdaki gibi mümkündür:
+
+```
+tr -d ".,:;!?/+-&%()"
+```
+
+Fakat böyle bir komutta, terminalde özel anlamı olan karakterler `tr` komutunun yanlış çalışmasına sebep olabilir. Bu yüzden `tr` komutu için tanımlanmış özel kümeleri kullanmak daha güvenli ve pratik olacaktır. Noktalama işaretleri için kullanılan küme `[[:punct:]]` şeklinde ifade edilebilir. Noktalama işaretlerinin silinmesi, dökümanda daha önce olmayan kelimeler ortaya çıkarıp yanlış hesap yapmaya sebep olabilir, bu yüzden noktalama işaretlerini silmek yerine boşluk karakteri ile yerdeğiştirmek daha doğru olacaktır. 
+
+W> Maalesef `I'm, I've, I'd, Emma's` gibi durumlarda noktalama işaretinin silinmesi ekstra harfler oluşturacaktır.
+
+Birden fazla boşluk karakteri yanyana iken tek boşluk haline getirmek için `tr -s` (squeeze) opsiyonu kullanılabilir. 
+
+```
+tr [[:punct:]] " " | tr -s " "
+```
+
+Kelimelerin sayılabilmesi için tek sütun haline getirmek, ayrıca büyük küçük harf farkından dolayı yanlış sayım yapmamak için, boşluk karakterini satır sonu karakteri ile yer değiştirip, büyük harfleri de küçük harfe çevirmeliyiz.
+
+```
+tr [[:punct:]] " " | tr -s " " | tr " " "\n" | tr A-Z a-z
+```
+
+Bütün bu işlemler çok daha pratik bir şekilde aşağıdaki komutla gerçekleştirilebilir.
+
+```
+tr -sc [A-Za-z] "\n" | tr A-Z a-z
+```
+
+Yukarıdaki komutları daha iyi anlayabilmek için adım adım örnek dosya üzerinde komutları inceleyelim. Örnek dosya adı `cumle-noktalama` olup içeriği aşağıdaki gibidir:
+
+```
+$ cat cumle-noktalama 
+'Goodness gracious!  Is that you, Mr. Bumble, sir?' said Mrs. Mann, 
+thrusting her head out of the window in well-affected ecstasies of 
+joy. '(Susan, take Oliver and them two brats upstairs, and wash 'em
+directly.)--My heart alive!  Mr. Bumble, how glad I am to see you, 
+sure-ly!'
+```
+
+Bazı noktalama işaretlerinin terminalde özel manası olduğundan yanlış yorumlanabilir.
+
+```
+$ cat cumle-noktalama | tr -d ".,:;!?/+-&%()"
+bash: !?/+-&%()": event not found
+
+$ cat cumle-noktalama | tr -d '.,:;!?/+-&%()'
+tr: range-endpoints of '+-&' are in reverse collating sequence order
+```
+
+`[[:punct:]]` kısayolu ile bütün noktalama işaretlerini silebilir veya değiştirebiliriz.
+
+```
+$ cat cumle-noktalama | tr -d [[:punct:]]
+Goodness gracious  Is that you Mr Bumble sir said Mrs Mann 
+thrusting her head out of the window in wellaffected ecstasies of 
+joy Susan take Oliver and them two brats upstairs and wash em
+directlyMy heart alive  Mr Bumble how glad I am to see you 
+surely
+```
+
+Noktalama işaretlerini silmek bazı kelimeleri ve harfleri kaynaştırıp daha önce olmayan kelimeler ortaya çıkarabildiğinden boşluk karakteri ile yerdeğiştirmek daha güvenli olacaktır.
+
+```
+$ cat cumle-noktalama | tr [[:punct:]] " " 
+ Goodness gracious   Is that you  Mr  Bumble  sir   said Mrs  Mann  
+thrusting her head out of the window in well affected ecstasies of 
+joy    Susan  take Oliver and them two brats upstairs  and wash  em
+directly    My heart alive   Mr  Bumble  how glad I am to see you  
+sure ly
+```
+
+Yanyana bulunan birçok boşluk karakteri tek bir boşluk karakterine dönüştürülebilir.
+
+```
+$ cat cumle-noktalama | tr [[:punct:]] " " | tr -s " "
+ Goodness gracious Is that you Mr Bumble sir said Mrs Mann 
+thrusting her head out of the window in well affected ecstasies of 
+joy Susan take Oliver and them two brats upstairs and wash em
+directly My heart alive Mr Bumble how glad I am to see you 
+sure ly
+```
+
+Kelimelerin daha kolay sayılabilmesi için tek sütun haline getirmeliyiz, bunun da en pratik yolu boşluk karakterini `\n` yani satır sonu (Enter) karakteri ile yerdeğiştirmektir. (Çıktının sadece 5 satırı gösterilmiştir)
+
+```
+$ cat cumle-noktalama | tr [[:punct:]] " " | tr -s " " | tr " " "\n" | head -5
+
+Goodness
+gracious
+Is
+that
+```
+
+Kelime sayımının doğru olabilmesi için küçük harf ve büyük harf farkının ortadan kaldırılması gerekmektedir. Örneğin "You" ve "you" kelimelerinin ayrı ayrı sayılmaması gerekir.
+
+```
+$ cat cumle-noktalama | tr [[:punct:]] " " | tr -s " " | tr " " "\n" | tr A-Z a-z | head -5
+
+goodness
+gracious
+is
+that
+```
+
+`tr` komutunun farklı özelliklerini aynı anda kullanarak daha kısa komut yazabiliriz. `tr -c` opsiyonu tamamlayan küme manasında kullanılmaktadır. `tr -c A-Za-z` şeklindeki ifade büyük ve küçük harflerin dışında kalan bütün karakterler manasına denk gelir. Aşağıdaki komut çok pratik şekilde kelime ayırma ve saymaya hazır hale getirmek için kullanılabilir. 
+
+```
+$ cat cumle-noktalama | tr -sc [A-Za-z] "\n" | tr A-Z a-z | head -5
+
+goodness
+gracious
+is
+that
+```
+
+İlerleyen sayfalarda `sort` ve ` uniq` komutlarını öğrendikten sonra bir dökümanda kelimelerin kaç defa gözüktüğünü hesaplayacağız. 
+
 ## Kriptoloji ve Kriptoanaliz
 
 Kriptoloji sayesinde herhangi bir mesaj belirli bir algoritma ile farklı bir hale dönüştürülüp güvenli olmayan kanaldan iletilebilir hale getirilmektedir. Bu tür dönüştürülmüş mesajlar üçüncü kişiler tarafından ele geçirilse çözümlenmesi gerekir (kriptoanaliz) ve kullanılan algoritmaya göre bu işlem basit veya çok zor olabilmektedir. 
