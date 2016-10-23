@@ -482,7 +482,7 @@ Output  NOPQRSTUVWXYZABCDEFGHIJKLM
 
 ROT13, diğer anahtarlara göre özel bir yere sahiptir çünkü ROT13 için hem şifreleme hem de sifre çözme işlemi aynı anahtarla yapılmaktadır. Bu yüzden diğer anahtarlara göre çok daha yaygın olarak kullanılmaktadır.
 
-Sezar şifresi çok kolaylıkla çözülebilir çünkü 25 farklı anahtar deneyerek sonuca ulaşılabilir (ROT1 -- > ROT25). [Decrypting Text](http://www.richkni.co.uk/php/crypta/caesar.php) adlı websayfasında, kutuya yazılan yazı 25 farklı kaydırma ile denenip deşifre edilmektedir. Harfleri rastgele karıştırmak mümkün olsa da, sırası unutulmayacak bir karıştırma daha çok tercih edilmektedir. Bunun için kullanılan yöntemlerden biri, anahtar kelime  kullanmaktır. Aşağıdaki eşleşme tablosu `LINUX` kelimesi kullanılarak oluşturulmuştur. Anahtar kelime ilk önce yazılmış ardından da anahtar kelimede olmayan harfler sırasıyla yazılmıştır. "Y" ve "Z" harflerinin yerleri değiştirilmiştir çünkü eşleşme tablosunda hiçbir harf kendiyle eşleşmemelidir.
+Sezar şifresi çok kolaylıkla çözülebilir çünkü 25 farklı anahtar deneyerek sonuca ulaşılabilir (ROT1 -- > ROT25). [Decrypting Text](http://www.richkni.co.uk/php/crypta/caesar.php) adlı websayfasında, kutuya yazılan yazı 25 farklı kaydırma ile denenip deşifre edilmektedir. Harfleri rastgele karıştırmak mümkün olsa da, sırası unutulmayacak bir karıştırma daha çok tercih edilmektedir. Bunun için kullanılan yöntemlerden biri, anahtar kelime  kullanmaktır. Aşağıdaki eşleşme tablosu `LINUX` kelimesi kullanılarak oluşturulmuştur. Anahtar kelime ilk önce yazılmış ardından da anahtar kelimede olmayan harfler sırasıyla yazılmıştır. "Y" ve "Z" harflerinin yerleri değiştirilmiştir çünkü **eşleşme tablosunda hiçbir harf kendiyle eşleşmemelidir**.
 
 ```
 Input   ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -493,14 +493,16 @@ Böyle bir durumda şifrelenmiş yazıda harflerin frekansını inceleyip eşle�
 
 Polialfabetik şifreleme, monoalfabetik yöntemlere göre çözümlemesi çok zor bir tekniktir. Bir harf, birden fazla karaktere eşlendiğinden dolayı yukarıda anlatılan tekniklerin hiçbirisi işe yaramayacaktır. En ünlü polialfabetik şifreleme 2. Dünya Savaşı sırasında kullanılan [Enigma](https://en.wikipedia.org/wiki/Enigma_machine) makinesidir. Bu makinenin nasıl çalıştığına dair [videoyu](https://www.youtube.com/watch?v=G2_Q9FoD-oQ) ve deşifre edilmesinde kullanılan kusuru anlatan [video](https://www.youtube.com/watch?v=V4V2bpZlqx8)ları izleyebilirsiniz.
 
-X>### Sorular
-X>* `HELLO` kelimesini ROT1 ile şifreleyin.
-X>* ROT1 ile şifrelenmiş `MJOVY SPDLT` mesajını çözümleyiniz.
-X>* `HELLO` kelimesini ROT13 ile şifreleyin.
-X>* ROT13 ile şifrelenmiş `YVAHK EBPXF` mesajını çözümleyiniz.
-X>* `Hello World` ifadesini ROT13 ile şifreleyiniz.
-X>* `gizli_mesaj` adlı dosyadaki şifreyi, yukarıdaki örnekte verilen eşleşme tablosuna göre çözümleyiniz.
-X>* `data analysis and visualization` ifadesini `TERMINAL` kelimesini anahtar kullanarak şifreleyiniz.
+>### Sorular
+>* `HELLO` kelimesini ROT1 ile şifreleyin.
+>* ROT1 ile şifrelenmiş `MJOVY SPDLT` mesajını çözümleyiniz.
+>* `HELLO` kelimesini ROT13 ile şifreleyin.
+>* ROT13 ile şifrelenmiş `YVAHK EBPXF` mesajını çözümleyiniz.
+>* `Hello World` ifadesini ROT13 ile şifreleyiniz.
+>* `gizli_mesaj` adlı dosyadaki şifreyi, yukarıdaki örnekte verilen eşleşme tablosuna göre çözümleyiniz.
+>* `data analysis and visualization` ifadesini `TERMINAL` kelimesini anahtar kullanarak şifreleyiniz.
+
+%%%% TODO terminal example has problem; either replace with another keyword or find out the rule about what to do during matches
 
 > ### MD5 digest ve SHAsum
 > Bir websayfasından indireceğimiz veya emaille gelen bir dosyanın gerçekten de yazarı tarafından oluşturulmuş dosya olup olmadığından emin olmak için kullanılan yöntemler vardır. Bunlardan en basiti ve en yaygın olanı dosya ile beraber MD5 digest veya SHAsum değerlerini de yayınlamaktır. Elde ettiğimiz dosyada her hangi bir gizli değiştirme olup olmadığını dosya üzerinde MD5 veya SHA hesabı yaparak anlayabiliriz. Dosyada tek bir bit veya karakter değiştiğinde MD5 ve SHA değerleri tamamen değişmektedir.
