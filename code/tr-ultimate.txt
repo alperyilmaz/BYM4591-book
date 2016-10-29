@@ -10,14 +10,17 @@ echo abcddd2eff1 | tr -s d              # abcd2eff1
 echo abcddd2eff1 | tr -s df             # abcd2ef1
 echo abcddd2eff1 | tr -s a-z            # abcd2ef1
 echo abcddd2eff1 | tr -cs d             # abcddd2ef1
-echo abcddd2eff1 | tr -c b-d +          # +bcddd++++++ (not:kelimeden daha uzun)
+echo abcddd2eff1 | tr -c b-d +          # +bcddd++++++ (*)
 echo abcddd2eff1 | tr [:alpha:] -       # ------2---1
 echo abcddd2eff1 | tr '[:alpha:]' -     # ------2---1
-echo abcddd2eff1 | tr -c [:alnum:] X    # abcddd2eff1X (not:kelimeden daha uzun)
-echo abcddd2eff1 | tr -c [:digit:] A    # AAAAAA2AAA1A (not:kelimeden daha uzun)
-echo abcddd2eff1 | tr -sc [:digit:] A   # A2A1A (not:daha uzun kelime kullanılmıştır)
+echo abcddd2eff1 | tr -c [:alnum:] X    # abcddd2eff1X (*)
+echo abcddd2eff1 | tr -c [:digit:] A    # AAAAAA2AAA1A (*)
+echo abcddd2eff1 | tr -sc [:digit:] A   # A2A1A (**)
 echo abcddd2eff1 | tr -s d "\n"         # abc
                                         # 2eff1
 echo abcddd2eff1 | tr -c [:alpha:] "\n" # abcddd
                                         # eff
                                         #       (not: boş satır)
+
+(*  çıktı kelime uzunluğuna dikkat ediniz)
+(** çıktının kullanığı kelime uzunluğuna dikkat ediniz)

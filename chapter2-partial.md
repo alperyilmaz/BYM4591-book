@@ -163,11 +163,11 @@ Dosyaların aynı isimle ya da ismi değiştirilerek farklı bir klasör içine 
 
 > universiteler.tar.gz adlı arşiv dosyasının içeriği ÖSYM'nin [2015 tarihli kılavuzuna](http://dokuman.osym.gov.tr/pdfdokuman/2015/OSYS/OSYS2015YerlestirmeMinMaxTablo-423072015.pdf) göre hazırlanmıştır. Her bir üniversite ve içerdiği fakülteler klasör olarak, bölümler de dosya olarak gösterilmiştir. Arşiv dosyasını açtıktan sonra aşağıdaki soruları cevaplayınız:
 >
->* YTU altında "Tip Fakultesi" açınız.
->* YTU Tip Fakultesi altına Dahiliye ve Cildiye bölümleri açınız.
->* YTU'den "Iktisadi ve Idari Bilimler Fakultesi"ni kaldırınız.
->* YTU'ye Isik Univ. "Guzel Sanatlar Fakultesi"ni bölümleriyle beraber kopyalayınız.
->* IPEK UNIVERSITESI, Insan ve  Toplum Bilimleri Fakultesi altındaki bütün ingilizce bölümleri kapatınız.
+> * YTU altında "Tip Fakultesi" açınız.
+> * YTU Tip Fakultesi altına Dahiliye ve Cildiye bölümleri açınız.
+> * YTU'den "Iktisadi ve Idari Bilimler Fakultesi"ni kaldırınız.
+> * YTU'ye Isik Univ. "Guzel Sanatlar Fakultesi"ni bölümleriyle beraber kopyalayınız.
+> * IPEK UNIVERSITESI, Insan ve  Toplum Bilimleri Fakultesi altındaki bütün ingilizce bölümleri kapatınız.
 
 %%%% TODO we need more questions for cp, mv, mkdir
 
@@ -302,12 +302,18 @@ Boşluk, enter ve tab gibi özel karakterlerin de değiştirilmesi mümkündür.
 
 > "ABCDEFGHJKLMNOPRSTUVYZ" şeklindeki karakter listesi [A-Z] şeklinde yazılabilir. Ayrıca, tr komutunda [:alpha:] , [:alnum:] gibi belirli karakter dizilerinin kısa gösterimleri kullanılabilir. Listenin tamamı için tr komutunun kullanma talimatını okuyunuz.
 
+
+
+`tr` komutu ile karakter silme veya değiştirme yapılırken tekrarları ortadan kaldırmak (squeeze) ve tamamlayan küme (complement) özellikleri tek başına veya beraber kullanılabilir. Aşağıdaki örneklerde farklı `tr` özelliklerinin karıştırılarak nasıl beraber kullanılabileceği gösterilmiştir.
+
 <<[Şekil 2.16b tr komutunun delete, squeeze, complement özellikleri](code/tr-ultimate.txt)
 
 >### Sorular
 >* 'fark' kelimesinden 'pile' kelimesine kadar dört kademede olarak her kademede bir harf değiştirerek anlamlı kelimeler oluşturun. Örnek olarak kal kelimesinden sek kelimesine inmek şu şekilde gerçekleşir: kal - sal - sel - sek.
 >* 'Yarın' kelimesini değiştirerek 'kadın' kelimesi olarak ekranda görüntüleyin.
 >* AGTCAGCTACGACTACGACTACGACTAGCATCAA dizisinin ters eşleniğini (reverse complement) hesaplayınız.
+
+%%%% TODO we should have plenty of tr questions for practicing
 
 ## Dökümanların kelimelere ayrılması
 
@@ -444,22 +450,22 @@ Eğer yukarıdaki şifreli mesaj [monoalfabetik yerdeğiştirme](https://en.wiki
 Şifreli mesaj İngilizce dilinde olduğundan İngilizce kelimelere ait özellikler kullanılarak şifre çözülmeye çalışılmalıdır. Aşağıdaki tabloda harf ve kelime görülme sıklıkları listelenmiştir ([kaynak](http://practicalcryptography.com/ciphers/simple-substitution-cipher/).
 
 {title="Tablo 2.1a İngilizce diline ait kelime ve harf özellikleri"}
-| Özellik | Liste       |
-|:------|:------------|
-| Tek harfli kelimeler     | I,a      |
-| Sık kullanılan iki harfli kelimeler     | of, to, in, it, is, be, as, at, so, we, he, by, or, on, do, if, me, my, up, an, go, no, us, am|
-| Sık kullanılan üç harfli kelimeler     | the, and, for, are, but, not, you, all, any, can, had, her, was, one, our, out, day, get, has, him, his, how, man, new, now, old, see, two, way, who, boy, did, its, let, put, say, she, too, use     |
-| Sırasıyla en sık kullanılan harfler | E T A O I N S H R D L U     |
-| Sırasıyla en sık kullanılan iki harfler (digraph)     | th er on an re he in ed nd ha at en es of or nt ea ti to it st io le is ou ar as de rt ve       |
-| Sırasıyla en çok karşılaşılan çift harfler     | ss ee tt ff ll mm oo   |
-| Sırasıyla kelime başında en sık kullanılan harfler     | T O A W B C D S F M R H I Y E G L N P U J K      |
-| Sırasıyla kelime sonunda en sık kullanılan harfler     | E S T D N R Y F L O G H A K M P U W      |
+| Özellik                                  | Liste                                    |
+| :--------------------------------------- | :--------------------------------------- |
+| Tek harfli kelimeler                     | I,a                                      |
+| Sık kullanılan iki harfli kelimeler      | of, to, in, it, is, be, as, at, so, we, he, by, or, on, do, if, me, my, up, an, go, no, us, am |
+| Sık kullanılan üç harfli kelimeler       | the, and, for, are, but, not, you, all, any, can, had, her, was, one, our, out, day, get, has, him, his, how, man, new, now, old, see, two, way, who, boy, did, its, let, put, say, she, too, use |
+| Sırasıyla en sık kullanılan harfler      | E T A O I N S H R D L U                  |
+| Sırasıyla en sık kullanılan iki harfler (digraph) | th er on an re he in ed nd ha at en es of or nt ea ti to it st io le is ou ar as de rt ve |
+| Sırasıyla en çok karşılaşılan çift harfler | ss ee tt ff ll mm oo                     |
+| Sırasıyla kelime başında en sık kullanılan harfler | T O A W B C D S F M R H I Y E G L N P U J K |
+| Sırasıyla kelime sonunda en sık kullanılan harfler | E S T D N R Y F L O G H A K M P U W      |
 
 Şifreli mesajda tek harfli kelime olarak "d" ve "v" bulunmaktadır. O halde bu iki harf ya "a" ya da "i" harflerine denk düşmektedir. Tablodaki karakteristik özelliklere göre harflerin karşılıkları bulunduğunda aşağıdaki eşleşme tablosu ortaya çıkar:
 
 ```
-Input   b c d e f g h k n o p r t v w x y
-Output  f y i r t p l s o m v w d a e u h
+Input   bcdefghknoprtvwxy
+Output  fyirtplsomvwdaeuh
 ```
 
 Şifreli mesajda kelimelerin formları aynen korunduğundan dolayı, tek harfli kelimler veya üç harfli sık kullanılan kelimeleri saptamak kolay olmaktadır. Bu yüzden, şifrenin çözülmesini zorlaştırmak için, kelimelerin sınırları belirli olmayacak hale getirilmelidir:
@@ -502,9 +508,10 @@ Polialfabetik şifreleme, monoalfabetik yöntemlere göre çözümlemesi çok zo
 >* ROT13 ile şifrelenmiş `YVAHK EBPXF` mesajını çözümleyiniz.
 >* `Hello World` ifadesini ROT13 ile şifreleyiniz.
 >* `gizli_mesaj` adlı dosyadaki şifreyi, yukarıdaki örnekte verilen eşleşme tablosuna göre çözümleyiniz.
->* `data analysis and visualization` ifadesini `TERMINAL` kelimesini anahtar kullanarak şifreleyiniz.
+>* `data analysis and visualization` ifadesini `ZEBRA` kelimesini anahtar kullanarak şifreleyiniz.
+>* [Obfuscation](https://en.wikipedia.org/wiki/Obfuscation) örneği olan komutun çıktısını irdeleyiniz: `echo wftedskaebjgdBstbdbsmnjgz  | tr "a-z" 'oh, turtleneck Phrase Jar!'`
 
-%%%% TODO terminal example has problem; either replace with another keyword or find out the rule about what to do during matches
+
 
 > ### MD5 digest ve SHAsum
 > Bir websayfasından indireceğimiz veya emaille gelen bir dosyanın gerçekten de yazarı tarafından oluşturulmuş dosya olup olmadığından emin olmak için kullanılan yöntemler vardır. Bunlardan en basiti ve en yaygın olanı dosya ile beraber MD5 digest veya SHAsum değerlerini de yayınlamaktır. Elde ettiğimiz dosyada her hangi bir gizli değiştirme olup olmadığını dosya üzerinde MD5 veya SHA hesabı yaparak anlayabiliriz. Dosyada tek bir bit veya karakter değiştiğinde MD5 ve SHA değerleri tamamen değişmektedir.
@@ -547,6 +554,8 @@ Dosyaların veya girdinin ekranda sütunlar halinde düzenli görüntülenmesini
 
 %%%% TODO: uzun satırlar wrap yapılıp satır numarası açılabilir.
 
+> `column` komutu pipe içerisinde kullanırsa ardından gelen komutların doğru çalışmasını engeller, ardından gelen komutların sütunları algılayıp ayırabilmesine mani olur. Bu yüzden, görsel olarak düzeltme gerekmedikçe `column` komutunu kullanmamaya özen gösteriniz.
+
 ## sort komutu
 
 İngilizce orijinal tarifi: "sort lines of text files"
@@ -565,9 +574,34 @@ Geçerli dizinde bulunan bir dosyanın içeriğinin alfabetik olarak sıralanmas
 
 > Kitaptaki örneklerde çıktının daha düzgün görünmesi için `column -t` komutu eklenmektedir. Çıktının düzeni önemli değilse `column -t` komutunun kullanılmasına gerek yoktur. 
 
+Her ne kadar `sort` komutunun sayısal sıralama özelliği olsa da, sayıları alfabetik olarak sıralamak da mümkündür. Sayılara sıfır ile soldan dolgu yapılırsa, alfabetik olarak sıralanabilir hale gelirler.
+
 <<[Şekil 2.19 seq ve sort komutlarının birlikte farklı kullanımları](code/seq-sort-ornek.txt)
 
-%%%% TODO double sort example
+`sort` komutu aksi belirtilmedikçe bütün satırı değerlendirerek sıralama yapar, satırdaki karakterler sırasıyla karşılaştırılırlar. Bu durum, "ilk sütuna göre sıralama yapıldı" şeklinde yorumlanabilir. Aşağıdaki örnek, bütün satıra göre sıralamak ile ilk sütuna göre sıralamak arasında fark olduğunu göstermektedir.
+
+```
+$ echo -e "ab defgh\nabc efgh\na zcefgh" 
+ab defgh
+abc efgh
+a zcefgh
+
+$ echo -e "ab defgh\nabc efgh\na zcefgh"  | sort
+abc efgh
+ab defgh
+a zcefgh
+
+$ echo -e "ab defgh\nabc efgh\na zcefgh"  | sort -k1,1
+a zcefgh
+ab defgh
+abc efgh
+
+```
+
+`sort` komutu aynı anda iki sütuna göre sıralama yapabilir. Aşağıdaki örnekte, filmler yıllara göre ters olarak (yeni çekilen filmler) ve ardından alfabetik olarak sıralanmışlardır. `sort -k3r movies | sort -k2` şeklindeki komut yanlış sonuç verecektir çünkü üçüncü kolona göre sıralanan içerik ikinci kolona göre sıralanacaktır ve bu sırada ilk sıralama kaybolacaktır.
+
+<<[Şekil 2.19b İki sütuna göre aynı anda sıralama örneği](code/sort-double.txt)
+
 
 >### Sorular
 >* Sayı50 dosyasını alfabetik olarak sıralayın.
