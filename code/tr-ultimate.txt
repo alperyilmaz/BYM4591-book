@@ -23,4 +23,4 @@ echo abcddd2eff1 | tr -c [:alpha:] "\n" # abcddd
                                         #       (not: boş satır)
 
 (*  çıktı kelime uzunluğuna dikkat ediniz)
-(** çıktının kullanığı kelime uzunluğuna dikkat ediniz)
+(** çıktının kullandığı kelime uzunluğuna dikkat ediniz)

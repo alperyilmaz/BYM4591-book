@@ -447,7 +447,7 @@ d rnxht vhrvck vkkxow fyvf v ovfy genbwkkne'k pwec bvpnedfw twkkwef dk gd.
 ```
 
 Eğer yukarıdaki şifreli mesaj [monoalfabetik yerdeğiştirme](https://en.wikipedia.org/wiki/Substitution_cipher) ile üretildi ise, yani her harf her seferinde sabit başka bir harfle yer değiştiriyorsa, şifrenin çözülmesi nispeten daha kolay olacaktır.
-Şifreli mesaj İngilizce dilinde olduğundan İngilizce kelimelere ait özellikler kullanılarak şifre çözülmeye çalışılmalıdır. Aşağıdaki tabloda harf ve kelime görülme sıklıkları listelenmiştir ([kaynak](http://practicalcryptography.com/ciphers/simple-substitution-cipher/).
+Şifreli mesaj İngilizce dilinde olduğundan İngilizce kelimelere ait özellikler kullanılarak şifre çözülmeye çalışılmalıdır. Aşağıdaki tabloda harf ve kelime görülme sıklıkları listelenmiştir ([kaynak](http://practicalcryptography.com/ciphers/simple-substitution-cipher/)).
 
 {title="Tablo 2.1a İngilizce diline ait kelime ve harf özellikleri"}
 | Özellik                                  | Liste                                    |
