@@ -245,8 +245,6 @@ Dosya içeriğinin sonundan kaç satır görüntüleneceğini belirler. Satırla
 >* sayı1000 dosyasındaki ilk çift sayıdan sonraki 24. sayıyı ekranda görüntüleyin.
 >* harfler dosyasındaki 15. satırdaki harfi bulunuz.
 
-
-
 ## less komutu
 
 Geçerli dizinde bulunan dosyaların interaktif şekilde görüntülenmesini sağlar. Ok tuşları ile ekran kaydırılabilir, > tuşu ile dosya sonuna, < tuşuyla dosyanın başına gidilebilir. Ayrıca, dosya içinde arama yapmak da mümkündür. Açılan ekrandan q tuşuna basılarak çıkış yapılır.
@@ -301,7 +299,6 @@ Boşluk, enter ve tab gibi özel karakterlerin de değiştirilmesi mümkündür.
 <<[Şekil 2.16 tr komutunun kullanımı](code/tr-ornek.txt)
 
 > "ABCDEFGHJKLMNOPRSTUVYZ" şeklindeki karakter listesi [A-Z] şeklinde yazılabilir. Ayrıca, tr komutunda [:alpha:] , [:alnum:] gibi belirli karakter dizilerinin kısa gösterimleri kullanılabilir. Listenin tamamı için tr komutunun kullanma talimatını okuyunuz.
-
 
 
 `tr` komutu ile karakter silme veya değiştirme yapılırken tekrarları ortadan kaldırmak (squeeze) ve tamamlayan küme (complement) özellikleri tek başına veya beraber kullanılabilir. Aşağıdaki örneklerde farklı `tr` özelliklerinin karıştırılarak nasıl beraber kullanılabileceği gösterilmiştir.
@@ -447,7 +444,7 @@ d rnxht vhrvck vkkxow fyvf v ovfy genbwkkne'k pwec bvpnedfw twkkwef dk gd.
 ```
 
 Eğer yukarıdaki şifreli mesaj [monoalfabetik yerdeğiştirme](https://en.wikipedia.org/wiki/Substitution_cipher) ile üretildi ise, yani her harf her seferinde sabit başka bir harfle yer değiştiriyorsa, şifrenin çözülmesi nispeten daha kolay olacaktır.
-Şifreli mesaj İngilizce dilinde olduğundan İngilizce kelimelere ait özellikler kullanılarak şifre çözülmeye çalışılmalıdır. Aşağıdaki tabloda harf ve kelime görülme sıklıkları listelenmiştir ([kaynak](http://practicalcryptography.com/ciphers/simple-substitution-cipher/)).
+Şifreli mesaj İngilizce dilinde olduğundan İngilizce kelimelere ait özellikler kullanılarak şifre çözülmeye çalışılmalıdır. Aşağıdaki tabloda harf ve kelime görülme sıklıkları listelenmiştir ([kaynak](http://practicalcryptography.com/ciphers/simple-substitution-cipher/)). Ayrıca, [Google Books](https://books.google.com/googlebooks/about/) projesinden ortaya çıkan Google N-Gram verisini ([interaktif görüntülenebilir](https://books.google.com/ngrams) ve [indirilebilir](http://storage.googleapis.com/books/ngrams/books/datasetsv2.html) halleri mevcuttur) kelime ve harfler açısından değerlendiren [sayfayı](http://norvig.com/mayzner.html) da ziyaret edebilirsiniz.
 
 {title="Tablo 2.1a İngilizce diline ait kelime ve harf özellikleri"}
 | Özellik                                  | Liste                                    |
@@ -511,8 +508,6 @@ Polialfabetik şifreleme, monoalfabetik yöntemlere göre çözümlemesi çok zo
 >* `data analysis and visualization` ifadesini `ZEBRA` kelimesini anahtar kullanarak şifreleyiniz.
 >* [Obfuscation](https://en.wikipedia.org/wiki/Obfuscation) örneği olan komutun çıktısını irdeleyiniz: `echo wftedskaebjgdBstbdbsmnjgz  | tr "a-z" 'oh, turtleneck Phrase Jar!'`
 
-
-
 > ### MD5 digest ve SHAsum
 > Bir websayfasından indireceğimiz veya emaille gelen bir dosyanın gerçekten de yazarı tarafından oluşturulmuş dosya olup olmadığından emin olmak için kullanılan yöntemler vardır. Bunlardan en basiti ve en yaygın olanı dosya ile beraber MD5 digest veya SHAsum değerlerini de yayınlamaktır. Elde ettiğimiz dosyada her hangi bir gizli değiştirme olup olmadığını dosya üzerinde MD5 veya SHA hesabı yaparak anlayabiliriz. Dosyada tek bir bit veya karakter değiştiğinde MD5 ve SHA değerleri tamamen değişmektedir.
 >
@@ -554,7 +549,30 @@ Dosyaların veya girdinin ekranda sütunlar halinde düzenli görüntülenmesini
 
 %%%% TODO: uzun satırlar wrap yapılıp satır numarası açılabilir.
 
-> `column` komutu pipe içerisinde kullanırsa ardından gelen komutların doğru çalışmasını engeller, ardından gelen komutların sütunları algılayıp ayırabilmesine mani olur. Bu yüzden, görsel olarak düzeltme gerekmedikçe `column` komutunu kullanmamaya özen gösteriniz.
+> `column` komutu pipe içerisinde kullanırsa ardından gelen komutların doğru çalışmasını engeller, ardından gelen komutların sütunları algılayıp ayırabilmesine mani olur. Bu yüzden, görsel olarak düzeltme gerekmedikçe `column` komutunu kullanmamaya özen gösteriniz. Aşağıdaki örnek, tab karakterinin özel bir karakter olduğunu vurgulayıp, `column -t` ile boşluklara çevrildiğini, bunun ardından da artık kolon ayıracının ortadan kalktığını göstermektedir. (`what-is-tab.txt` adlı dosya klasörünüzde bulunmamaktadır fakat kolaylıkla oluşturulabilir)
+
+```
+$ cat what-is-tab.txt            | $ column -t what-is-tab.txt
+abc     3                        | abc               3
+abcde   5                        | abcde             5
+abcdefg 7                        | abcdefg           7
+abcdefgh        8                | abcdefgh          8
+abcdefghijklmnop        16       | abcdefghijklmnop  16
+                                 |
+$ cat -A what-is-tab.txt         | $ column -t what-is-tab.txt | cat -A
+abc^I3$                          | abc               3$
+abcde^I5$                        | abcde             5$
+abcdefg^I7$                      | abcdefg           7$
+abcdefgh^I8$                     | abcdefgh          8$
+abcdefghijklmnop^I16$            | abcdefghijklmnop  16$
+                                 | 
+$ cut -f2 what-is-tab.txt        | $ column -t what-is-tab.txt | cut -f2
+3                                | abc               3
+5                                | abcde             5
+7                                | abcdefg           7
+8                                | abcdefgh          8
+16                               | abcdefghijklmnop  16
+```
 
 ## sort komutu
 
@@ -578,35 +596,40 @@ Her ne kadar `sort` komutunun sayısal sıralama özelliği olsa da, sayıları 
 
 <<[Şekil 2.19 seq ve sort komutlarının birlikte farklı kullanımları](code/seq-sort-ornek.txt)
 
-`sort` komutu aksi belirtilmedikçe bütün satırı değerlendirerek sıralama yapar, satırdaki karakterler sırasıyla karşılaştırılırlar. Bu durum, "ilk sütuna göre sıralama yapıldı" şeklinde yorumlanabilir. Aşağıdaki örnek, bütün satıra göre sıralamak ile ilk sütuna göre sıralamak arasında fark olduğunu göstermektedir.
+`sort` komutu aksi belirtilmedikçe bütün satırı değerlendirerek sıralama yapar, satırdaki karakterler sırasıyla karşılaştırılırlar. Bu durum, "ilk sütuna göre sıralama yapıldı" şeklinde yorumlanabilir. Aşağıdaki örnek, bütün satıra göre sıralamak ile ilk sütuna göre sıralamak arasında fark olduğunu göstermektedir. Ayrıca kolonların nasıl belirleneceği kullanıcıya aittir, kullanıcı herhangi bir kolon ayıracı belirtmemişse boşluk veya tab karakteri ayıraç olarak kullanılır. Aşağıdaki örnekte kolon ayıracı olarak `f` karakteri kullanıldığında sonuçların nasıl değiştiğini gözlemleyiniz.
 
 ```
-$ echo -e "ab defgh\nabc efgh\na zcefgh" 
+$ echo -e "ab defgh\nabc efjk\na zcefhi"
 ab defgh
-abc efgh
-a zcefgh
+abc efjk
+a zcefhi
 
-$ echo -e "ab defgh\nabc efgh\na zcefgh"  | sort
-abc efgh
-ab defgh
-a zcefgh
+$ echo -e "ab defgh\nabc efjk\na zcefhi" > sort-test
 
-$ echo -e "ab defgh\nabc efgh\na zcefgh"  | sort -k1,1
-a zcefgh
-ab defgh
-abc efgh
-
+$ sort sort-test                  | $ sort -t'f' sort-test
+abc efjk                          | abc efjk
+ab defgh                          | ab defgh
+a zcefhi                          | a zcefhi
+                                  |
+$ sort -k1,1 sort-test            | $ sort -t'f' -k1,1 sort-test
+a zcefhi                          | abc efjk
+ab defgh                          | ab defgh
+abc efjk                          | a zcefhi
+                                  |
+$ sort -k2 sort-test              | $ sort -t'f' -k2 sort-test
+ab defgh                          | ab defgh
+abc efjk                          | a zcefhi
+a zcefhi                          | abc efjk
 ```
 
 `sort` komutu aynı anda iki sütuna göre sıralama yapabilir. Aşağıdaki örnekte, filmler yıllara göre ters olarak (yeni çekilen filmler) ve ardından alfabetik olarak sıralanmışlardır. `sort -k3r movies | sort -k2` şeklindeki komut yanlış sonuç verecektir çünkü üçüncü kolona göre sıralanan içerik ikinci kolona göre sıralanacaktır ve bu sırada ilk sıralama kaybolacaktır.
 
 <<[Şekil 2.19b İki sütuna göre aynı anda sıralama örneği](code/sort-double.txt)
 
-
 >### Sorular
->* Sayı50 dosyasını alfabetik olarak sıralayın.
->* Sayı50 dosyasını sayısal olarak sıralayın ve ilk 15 tanesini ekranda görüntüleyin.
->* Sayı50 dosyasının alfabetik sıralamaya göre son 25 tanesi hariç ekranda görüntüleyin.
+>* `sayi50` dosyasını alfabetik olarak sıralayın.
+>* `sayi50` dosyasını sayısal olarak sıralayın ve ilk 15 tanesini ekranda görüntüleyin.
+>* `sayi50` dosyasının alfabetik sıralamaya göre son 25 tanesi hariç ekranda görüntüleyin.
 >* english_words adlı dosyadaki kelimeleri kafiye oluşturacak şekilde sıralayın.
 >* emma ve oliver_twist kitaplarında en çok görünen 5 kelimeyi ayrı ayrı bulun.
 >* emma ve oliver_twist kitaplarında en çok bulunan 150. kelimeleri bulun. 
@@ -659,6 +682,59 @@ Geçerli dizinde bulunan dosya içindeki peş peşe dizilmiş aynı olan modelle
 
 <<[Şekil 2.21 cut ve uniq komutlarının kullanımı](code/cut-uniq-ornek.txt)
 
+`sort` komutunda olduğu gibi, `uniq` komutu da satır üzerinde çalışır. Ancak bütün satır aynıysa birleştirme yapabilir. Aşağıdaki örnekte bu özellik gösterilmiştir.
+
+```
+$ echo -e "a\t1\nb\t1\na\t1\nb\t1\na\t1\nc\t2"
+a   1
+b   1
+a   1
+b   1
+a   1
+c   2
+
+$ echo -e "a\t1\nb\t1\na\t1\nb\t1\na\t1\nc\t2" | sort | uniq
+a   1
+b   1
+c   2
+
+$ echo -e "a\t1\nb\t1\na\t1\nb\t1\na\t1\nc\t2" | sort | uniq -c
+      3 a   1
+      2 b   1
+      1 c   2
+```
+
+`uniq` komutu `-f` opsiyonu ile kolonlarda, `-s` opsiyonu ile de karakterlerde baştan verilen sayı kadar gözardı ederek işlem yapabilir. Kolon ayıracı olarak boşluk veya tab karakteri kabul edilir. Aşağıdaki örneklerde bu özellik gösterilmiştir.
+
+```
+$ echo -e "abc\ndbc\nefc"
+abc
+dbc
+efc
+
+$ echo -e "abc\ndbc\nefc" | uniq  -s1
+abc
+efc
+
+$ echo -e "abc\ndbc\nefc" | uniq  -s2
+abc
+
+$ echo -e "a b c\nde b c\nf gh c"
+a b c
+de b c
+f gh c
+
+$ echo -e "a b c\nde b c\nf gh c" | uniq -f1
+a b c
+f gh c
+
+$ echo -e "a b c\nde b c\nf gh c" | uniq -f2
+a b c
+
+$ echo -e "a b c\nde b c\nf gh c" | uniq -c -f2
+      3 a b c
+```
+
 >### Sorular
 >* Ratings dosyasında 4. kolon rating verilen gün ve saati gösterdiğine göre, en çok rating yapılan gün ve saat hangisidir (cevap: 01-03-1996 00:00:00'da 432 rating kaydedilmiştir)
 >* movies dosyasında 2.kolon film adını, 3.kolon da yılını göstermektedir. İkinci kolonda birden fazla kere görünen film isimleri hangileridir? (farklı yıllarda aynı isimle çekilmiş filmler)
@@ -667,6 +743,7 @@ Geçerli dizinde bulunan dosya içindeki peş peşe dizilmiş aynı olan modelle
 >* Harfler dosyasında en çok bulunan harfi ekranda görüntüleyin.
 >* Harfler dosyasında en çok bulunan beş harfi alfabetik sırayla ekranda görüntüleyin.
 >* Movies dosyasını son iki sütuna göre en çok sayıda görünenleri ekranda görüntüleyin.
+>* `uniq -f` ile baştan belirten sayı kadar kolon gözardı edilerek benzer satır araması yapıldığını görmüştük. `echo -e "a b c\na d e\na f g"` komutunun çıktısında **son iki kolon** gözardı edilerek benzerlik araması nasıl yapılabilir?
 
 Sorularda kullanılan movies ve ratings dosyalarının içeriklerine dair açıklamalar [bölüm sonundaki sorular kısmında](#movies-ratings-desc) açıklanmıştır.
 
@@ -724,7 +801,7 @@ Geçerli dizinde bulunan dosyaların içindeki bilgileri belirli yerlerden kıra
 
 ## Genomda kelime sayımı
 
-%%%% TODO Martin's example here
+%%%% TODO Martin's example here: http://mkweb.bcgsc.ca/perlworkshop/data/courses/2.1.2.4/03/pdf/2.1.2.4.3.1.a1.pdf
 
 ## comm komutu
 
@@ -776,7 +853,7 @@ Geçerli klasördeki iki dosyanın içindekilerin tamamen birbiri üzerine yapı
 Kelime sayımının ileri boyutu olan N-gram analizine dair.
 
 ```bash
-cat emma.txt | tr -sc 'A-Za-z' '\n'  > emma.words
+cat emma.txt | tr -sc '[:alnum:]' '\n' | tr A-Z a-z  > emma.words
 tail -n +2 emma.words > emma.nextwords
 paste emma.words emma.nextwords | sort | uniq -c > emma.bigrams
 ```
@@ -850,3 +927,53 @@ Geçerli klasördeki dosyaların veya girdideki satır, kelime ve karakter sayı
 >* Emma kitabında toplam kaç cümle olduğunu bulun. (C: 10568)
 
 %%%% TODO the numbers do not match with anticipated results. do them again.
+
+## grep,egrep komutu 
+
+İngilizce orijinal tarifi: "print lines matching a pattern"
+
+Geçerli klasördeki dosya içindeki motiflerin bulunmasını sağlar.
+
+* **`grep 'motif' <dosya.adı>`** : Geçerli klasördeki \<dosya.adı\> isimli dosya içinde belirtilen motifin bulunduğu satırları görüntüler.
+* **`grep -f 'motif' <dosya.adı1><dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> isimli dosya içinde belirtilen motiflerin \<dosya.adı2\> isimli klasörde bulunan satırları görüntüler. \<dosya.adı1\> isimli dosya içindeki tüm motifler aranır. Aynı dosya için grep komutunu aynı anda birkaç kez kullanmak gibi düşünülebilir.
+* **`grep -v 'motif' <dosya.adı>`** : Geçerli klasördeki \<dosya.adı\> isimli dosya içinde belirtilen motifi içermeyen satırları görüntüler.
+* **`grep -w 'motif' <dosya.adı>`** : Geçerli klasördeki \<dosya.adı\> isimli dosya içinde belirtilen motifin bulunduğu satırları görüntüler. grep komutundan farklı olarak tamamen aynı motif aranır. Örneğin motif eğer alp ise alperen ya da gökalp gibi olanlar görüntülenmez.
+* **`grep -c 'motif' <dosya.adı>`** : Geçerli klasördeki \<dosya.adı\> isimli dosya içinde belirtilen motifin bulunduğu satırların sayısını görüntüler.
+* **`grep -o 'motif' <dosya.adı>`** : Geçerli klasördeki \<dosya.adı\> isimli dosya içinde belirtilen motifin bulunduğu satırların sadece motiflerini görüntüler. Örneğin satırdaki kelime şener şen ise; şen şen şeklinde sayım gerçekleşir. Bu sayede aranan motiften aynı satırda birden fazla varsa, bunlar da sayılmış olur.
+* **`grep -n 'motif' <dosya.adı>`** : Geçerli klasördeki \<dosya.adı\> isimli dosya içinde belirtilen motifin bulunduğu satırları ve satır numaralarını görüntüler.
+* **`grep -A<sayı>'motif' <dosya.adı>`** : Geçerli klasördeki \<dosya.adı\> isimli dosya içinde belirtilen motifin bulunduğu satırdan belirtilen sayı kadar sonraki satırı görüntüler.
+* **`grep -B<sayı>'motif' <dosya.adı>`** : Geçerli klasördeki \<dosya.adı\> isimli dosya içinde belirtilen motifin bulunduğu satırdan belirtilen sayı kadar önceki satırı görüntüler. Motifin bulunduğu satır ve belirtilene göre öncesinde ya da sonrasında belirli miktarda görüntülenen satırlarda karışıklık olmaması için satır aralarına -- ayıracı konularak ekranda görüntülenir.
+
+Grep komutu ile aranan motiflerin, tüm satırların görüntülendiği durumlarda kolaylıkla bulunabilmesi için renkli olması büyük avantaj sağlar. Bu, komut satırı eksiksiz yazılıp sonuna `--colour` yazılarak yapılabilir. Kitaptaki çıktılarda renkler görünmediğinden ilgili [asciicast](https://asciinema.org/a/30240?speed=1&theme=solarized-dark&size=medium) videosunu izleyiniz.
+
+Grep komutunun yetersiz kaldığı ve çalışmadığı bazı durumlar da egrep komutu kullanılabilir. İki komut da tamamen aynıdır fakat `egrep` komutu `grep` komutunun biraz geliştirilmiş versiyonu şeklinde tanımlanabilir. Karmaşık aramalar yapılırken egrep komutunun kullanılması daha doğru sonuç verebilir.
+
+<<[Şekil 2.28 grep komutunun kullanımı](code/grep-ornek.txt)
+
+### Regular Expressions (Kurallı İfadeler)
+
+* **`.`** : Herhangi bir karakteri ifade eder.
+* **`<karakter>*`** : Belirtilen karakterin sıfır veya sıfırdan fazla görünmesini ifade eder.
+* **`<karakter>+`** : Belirtilen karakterin en az bir kez görünmesini ifade eder.
+* **`<karakter>{<sayı1,sayı2>}`** : Belirtilen \<karakter\>in minimum \<sayı1\>, maksimum \<sayı2\> kadar görüntülenmesini ifade eder.
+* **`[<karakter>]`** : Belirtilen \<karakter\>lerden herhangi birinin, bir kere görünmesini ifade eder. Birden fazla karakter yazılacağı zaman aralara virgül (,) veya boşluk ( ) koyulmamalıdır. Bu gibi durumlarda virgül (,) ve boşluk ( ) karakterini de belirtilen dosya içerisinde ve kural da arar.
+* **` (<motif>)`** : Belirtilen \<motif\>in bir bütün olarak görünmesini ifade eder. Birden fazla motif aranacaksa çubuk ( | ) karakteri kullanılmalıdır. Örneğin (motif1|motif2) ifadesi motif1 ve motif2 ifadelerinin aranmasını sağlar.
+* **` <karakter>$`** : Belirtilen \<karakter\>in satır sonlarında aranmasını sağlar.
+* **` ^<karakter>`** : Belirtilen karakterin satır başlarında aranmasını sağlar.
+
+<<[Şekil 2.29 egrep komutunun kurallı ifadeler ile farklı kullanımları](code/grep-ornek2.txt)
+
+Kitaptaki çıktılarda renkler görünmediğinden ilgili [asciicast](https://asciinema.org/a/30240?speed=1&theme=solarized-dark&size=medium) videosunu izleyiniz.
+
+I> [egrep for linguists](http://stts.se/egrep_for_linguists/egrep_for_linguists.pdf) adlı dökümanda grep ile ilgili (ve `tr`, `cut` gibi komutlarla ilgili) detaylı açıklamalar ve örnekler bulabilirsiniz.
+
+X>### Sorular
+X>* Emma adlı kitapta kaç tane büyük harfli kelime vardır? (örn. ÖRNEK)
+X>* Emma adlı kitapta kaç tane 4 harfli kelime vardır?
+X>* Emma adlı kitapta kaç tane tek heceli (sadece bir tane sesli harf içeren) kelime vardır? 
+X>* Emma adlı kitapta en çok kullanılan ilk 10 kelimeyi, İngilizce'de çok kullanılan kelimeleri ([stop words](https://en.wikipedia.org/wiki/Stop_words)) çıkartarak tekrar hesaplayınız. (`stop_words` adlı dosyada çok kullanılan kelimelerin listesi mevcuttur)
+X>* Emma adlı kitapta bi-gram sayımını, İngilizce'de çok kullanılan kelimeleri çıkartarak tekrar hesaplayınız.
+
+%%%% TODO we can carry regex topic after awk and include a table showing diffs between regex of grep sed and awk, idea for table is here: http://www.sqlite.org/src/artifact/af92cdaa5058fcec
+
+%%%% TODO add tweet example and then ask for popular hashtag (both tr and grep needs #) for example: tr -sc '[:alnum:]@#'' '\n'
