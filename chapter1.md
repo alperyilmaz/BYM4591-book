@@ -249,6 +249,8 @@ Bilişim veya programlama türündeki bilgilerin en hızlı öğrenilmesi pratik
 
 ### Terminale erişim
 
+> MAC kullanıcıları için aşağıdaki programları kurmaya veya kullanmaya gerek yoktur. Bilgisayarınızda zaten Terminal programı yüklü olup, Applications altında Terminal programını bulup çalıştırarak terminal kullanmaya başlayabilirsiniz. Eğer bu ders için açılan hesabınıza erişmek isterseniz `ssh KULLANICIADI@IPNO` komutunu çalıştırmanız, ardından şifrenizi girmeniz yeterlidir. KULLANICIADI öğrenci numaranız olup, IPNO ise dönem başında belirtilmiş olan IP numarasıdır.
+
 Dersimizde, Windows bilgisayarlarda [Putty](http://www.putty.org/) adlı program yardımıyla Linux kurulu bir makineye bağlantı kurup ders için açılan hesabınıza erişim sağlayacaksınız. Çalıştırdığınız komutların listesi, oluşturduğunuz dosyalar gibi bilgiler hesabınızda kalıcı olarak tutulmaktadır. Bu erişim metoduna ek olarak aşağıdaki yöntemler ile de terminalde egzersiz yapmanız mümkün olacaktır.
 
 1. [Tutorials Point](http://www.tutorialspoint.com/unix_terminal_online.php) sayfasında ders kitabında kullanılan örnek dosyalar ile çalışabilirsiniz. Fakat, çalıştırdığınız komutlar listesi ve oluşturduğunuz dosyalar oturum kapandıktan sonra kaybolacaktır.
