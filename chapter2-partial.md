@@ -433,7 +433,7 @@ that
 
 İlerleyen sayfalarda `sort` ve ` uniq` komutlarını öğrendikten sonra bir dökümanda kelimelerin kaç defa gözüktüğünü hesaplayacağız. 
 
-## Kriptoloji ve Kriptoanaliz
+## Kriptoloji ve Kriptoanaliz {#kriptoloji-intro}
 
 Kriptoloji sayesinde herhangi bir mesaj belirli bir algoritma ile farklı bir hale dönüştürülüp güvenli olmayan kanaldan iletilebilir hale getirilmektedir. Bu tür dönüştürülmüş mesajlar üçüncü kişiler tarafından ele geçirilse çözümlenmesi gerekir (kriptoanaliz) ve kullanılan algoritmaya göre bu işlem basit veya çok zor olabilmektedir. 
 
@@ -487,7 +487,7 @@ Output  NOPQRSTUVWXYZABCDEFGHIJKLM
 
 ROT13, diğer anahtarlara göre özel bir yere sahiptir çünkü ROT13 için hem şifreleme hem de sifre çözme işlemi aynı anahtarla yapılmaktadır. Bu yüzden diğer anahtarlara göre çok daha yaygın olarak kullanılmaktadır.
 
-Sezar şifresi çok kolaylıkla çözülebilir çünkü 25 farklı anahtar deneyerek sonuca ulaşılabilir (ROT1 -- > ROT25). [Decrypting Text](http://www.richkni.co.uk/php/crypta/caesar.php) adlı websayfasında, kutuya yazılan yazı 25 farklı kaydırma ile denenip deşifre edilmektedir. Harfleri rastgele karıştırmak mümkün olsa da, sırası unutulmayacak bir karıştırma daha çok tercih edilmektedir. Bunun için kullanılan yöntemlerden biri, anahtar kelime  kullanmaktır. Aşağıdaki eşleşme tablosu `LINUX` kelimesi kullanılarak oluşturulmuştur. Anahtar kelime ilk önce yazılmış ardından da anahtar kelimede olmayan harfler sırasıyla yazılmıştır. "Y" ve "Z" harflerinin yerleri değiştirilmiştir çünkü **eşleşme tablosunda hiçbir harf kendiyle eşleşmemelidir**.
+Sezar şifresi çok kolaylıkla çözülebilir çünkü 25 farklı anahtar deneyerek sonuca ulaşılabilir (ROT1 -- > ROT25). Terminalde bunun güzel bir örneği [bu sayfada](https://sandilands.info/sgordon/classical-ciphers-frequency-analysis-examples) gösterilmiştir. [Decrypting Text](http://www.richkni.co.uk/php/crypta/caesar.php) adlı websayfasında, kutuya yazılan yazı 25 farklı kaydırma ile denenip deşifre edilmektedir. Harfleri rastgele karıştırmak mümkün olsa da, sırası unutulmayacak bir karıştırma daha çok tercih edilmektedir. Bunun için kullanılan yöntemlerden biri, anahtar kelime  kullanmaktır. Aşağıdaki eşleşme tablosu `LINUX` kelimesi kullanılarak oluşturulmuştur. Anahtar kelime ilk önce yazılmış ardından da anahtar kelimede olmayan harfler sırasıyla yazılmıştır. "Y" ve "Z" harflerinin yerleri değiştirilmiştir çünkü **eşleşme tablosunda hiçbir harf kendiyle eşleşmemelidir**.
 
 ```
 Input   ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -631,11 +631,6 @@ a zcefhi                          | abc efjk
 >* `sayi50` dosyasını sayısal olarak sıralayın ve ilk 15 tanesini ekranda görüntüleyin.
 >* `sayi50` dosyasının alfabetik sıralamaya göre son 25 tanesi hariç ekranda görüntüleyin.
 >* english_words adlı dosyadaki kelimeleri kafiye oluşturacak şekilde sıralayın.
->* emma ve oliver_twist kitaplarında en çok görünen 5 kelimeyi ayrı ayrı bulun.
->* emma ve oliver_twist kitaplarında en çok bulunan 150. kelimeleri bulun. 
->* english_words adlı dosyada bulunan kelimeleri kafiyeli olarak sıralayın.
-
-%%%% TODO: kitap1 ve kitap2 emma_sayım ve oliver_twist_sayım dosyaları mı olacak? Yoksa emma ve oliver_twist kitapları şeklinde mi olacak? (şu an ikinci duruma göre ayarlandı)
 
 ## cut komutu
 
@@ -736,6 +731,8 @@ $ echo -e "a b c\nde b c\nf gh c" | uniq -c -f2
 ```
 
 >### Sorular
+>* emma ve oliver_twist kitaplarında en çok görünen 5 kelimeyi ayrı ayrı bulun.
+>* emma ve oliver_twist kitaplarında en çok bulunan 150. kelimeleri bulun.
 >* Ratings dosyasında 4. kolon rating verilen gün ve saati gösterdiğine göre, en çok rating yapılan gün ve saat hangisidir (cevap: 01-03-1996 00:00:00'da 432 rating kaydedilmiştir)
 >* movies dosyasında 2.kolon film adını, 3.kolon da yılını göstermektedir. İkinci kolonda birden fazla kere görünen film isimleri hangileridir? (farklı yıllarda aynı isimle çekilmiş filmler)
 >* Sayı50 dosyasında hangi sayıdan kaç tane olduğunu ekranda görüntüleyin.
@@ -746,14 +743,6 @@ $ echo -e "a b c\nde b c\nf gh c" | uniq -c -f2
 >* `uniq -f` ile baştan belirten sayı kadar kolon gözardı edilerek benzer satır araması yapıldığını görmüştük. `echo -e "a b c\na d e\na f g"` komutunun çıktısında **son iki kolon** gözardı edilerek benzerlik araması nasıl yapılabilir?
 
 Sorularda kullanılan movies ve ratings dosyalarının içeriklerine dair açıklamalar [bölüm sonundaki sorular kısmında](#movies-ratings-desc) açıklanmıştır.
-
-## Kriptoloji ve Kriptoanaliz - Frekans analizi
-
-Info from Krypton Level 1 -> Level 2 and Krypton Level 2 -> Level 3
-
-[Frequency Analysis](http://www.cryptool-online.org/index.php?option=com_content&view=article&id=96&Itemid=117&lang=en)
-
-[N-Gram Analysis](http://www.cryptool-online.org/index.php?option=com_content&view=article&id=94&Itemid=112&lang=en)
 
 ## Bakteri genomunda GC adaları
 
@@ -798,6 +787,75 @@ Geçerli dizinde bulunan dosyaların içindeki bilgileri belirli yerlerden kıra
 
 >### Sorular
 >* Oliver Twist kitabında toplam kaç karakter (tüm harfler ve noktalama işaretleri) kullanıldığını bulun ve bunların kullanım sayılarını ekranda görüntüleyin.
+
+## Kriptoloji ve Kriptoanaliz - Frekans analizi
+
+Bir önceki Kriptoloji [bölümünde](#kriptoloji-intro), Sezar şifresinin çok kolay kırılabildiğini, sadece 25 denemenin yeterli olacağını görmüştük. Fakat anahtar kelime kullanılarak yer değiştirme yapıldığında şifreyi çözmenin daha zor olacağını, 26! gibi bir ihtimal olduğundan, teker teker ihtimalleri deneyerek ([brute force](https://en.wikipedia.org/wiki/Brute-force_search)) çözmenin çok uzun zaman alacağını farketmiştik. Böyle bir durumda harflerin kullanım frekansından yardım alarak şifre çözülebilir.
+
+İngilizce dilindeki metinler incelendiğinde aşağıdaki harf frekansı verisi ortaya çıkmaktadır. 
+
+{title="Tablo 2.1b İngilizce diline ait harf frekansları"}
+|  **a**  |  **b**  |  **c**  |  **d**  |   **e**  |  **f**  |  **g**  |  **h**  |  i  |  j  |  k  |  l  |  m  |
+|:---:|:---:|:---:|:---:|:----:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 8.2 | 1.5 | 2.8 | 4.3 | 12.7 | 2.2 | 2.0 | 6.1 | 7.0 | 0.2 | 0.8 | 4.0 | 2.4 |
+|  **n**  |  **o**  |  **p**  |  **q**  |   **r**  |  **s**  |  **t**  |  **u**  |  **v**  |  **w**  |  **x**  |  **y**  |  **z**  |
+| 6.7 | 7.5 | 1.9 | 0.1 |  6.0 | 6.3 | 9.1 | 2.8 | 1.0 | 2.4 | 0.2 | 2.0 | 0.1 |
+
+Frekansa göre dizilmiş hali de şöyledir:
+
+{title="Tablo 2.1c İngilizce diline ait harf frekansları - çoktan aza göre"}
+|   **e**  |  **t**  |  **a**  |  **o**  |  **i**  |  **n**  |  **s**  |  **h**  |  **r**  |  **d**  |  **l**  |  **u**  |  **c**  |
+|:----:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 12.7 | 9.1 | 8.2 | 7.5 | 7.0 | 6.7 | 6.3 | 6.1 | 6.0 | 4.3 | 4.0 | 2.8 | 2.8 |
+|   **m**  |  **w**  |  **f**  |  **y**  |  **g**  |  **p**  |  **b**  |  **v**  |  **k**  |  **x**  |  **j**  |  **q**  |  **z**  |
+|  2.4 | 2.4 | 2.2 | 2.0 | 2.0 | 1.9 | 1.5 | 1.0 | 0.8 | 0.2 | 0.2 | 0.1 | 0.1 |
+
+Diğer dillerdeki harf frekanslarını tablo ve görsel olarak [bu sayfada](https://en.wikipedia.org/wiki/Letter_frequency#Relative_frequencies_of_letters_in_other_languages) inceleyebilirsiniz. Ayrıca WordCreator(http://www.sttmedia.com/wordcreator) adlı yazılımın geliştiricileri tarafından birçok dildeki harf(http://www.sttmedia.com/characterfrequencies) ve hece(http://www.sttmedia.com/syllablefrequencies) analizi sayfaları da incelenebilir.
+
+Terminalde tek harfi analizi yapmak oldukça kolaydır. `fold -w1` komutu, herhangi bir metni tek harften oluşan bir sütun haline getirmektedir. Bunun ardından `sort` komutu ile benzer harfler alt alta getirilip `uniq -c` ile sayılabilir. Örnek olarak, `cümle-noktalama` dosyasındaki cümlenin harfleri aşağıdaki komutla sayılabilir:
+
+```
+cat cumle-noktalama | fold -w1 | sort | uniq -c
+```
+
+Noktalama işaretleri ve boşluk karakteri temizlendikten sonra daha temiz çıktı elde edilebilir.
+
+Wikipedia [Frekans Analizi](https://en.wikipedia.org/wiki/Frequency_analysis) sayfasında tek harf frekansı kullanılarak adım adım şifre çözümü örneği verilmiştir.
+
+Tek harf frekansı bilgisine ek olarak, iki harflerin frekansı (bigram frequency) da şifre çözümünde yardımcı olabilmektedir. Bir metni `fold -w2` ile katlayıp çiftleri saymak yeterli olmayacaktır çünkü ikinci çerçevedeki çiftler sayılamayacaktır. Bu yüzden metinde çift harf sayımı kayan pencere (sliding window) şeklinde sayılmalıdır. Örneğin, TERMINAL kelimesini `fold -w2` `TE RM IN AL` şeklinde parçalar ama bigram sayımı için doğru parçalama şu şekilde olmalıdır: `TE ER RM MI IN NA AL`. Bu şekilde parçalamayı terminalde yine basit bir komuttan yardım alarak yapabiliriz. `cut -c2-` komutu, metni 2. karakterden itibaren gösterir, eğer bunu da `fold -w2` komutu ile parçalarsak, her iki çerçevedeki bigramları toplamış oluruz.
+
+```
+$ echo TERMINAL | fold -w2
+TE
+RM
+IN
+AL
+
+$ echo TERMINAL | cut -c2- |fold -w2
+ER
+MI
+NA
+L
+```
+
+Yukarıdaki bilgileri kullanarak Emma romanında çift harf sayımı yapmayı deneyiniz. (*Sorular* kısmında ikinci soru)
+
+Tek harf, çift harf sayımına ek olarak, 3, 4, 5'li sayımlar yapılabilir. Bu analizlerin hepsine birden [N-gram analizi](http://www.cryptool-online.org/index.php?option=com_content&view=article&id=94&Itemid=112&lang=en) denir.
+
+Polialfabetik, transpozisyon veya Vinegre şifrelemeleri, eşit harf frekansı ortaya çıkardığından frekans analizi ile çözülmeleri mümkün değildir. Ayrıca harf frekansı dile göre metin içeriğine göre değişebilir. Örneğin, "z" harfi çok kullanıldığı halde, "zebra" konulu bir metinde oldukça çok sayıda "z" harfi bulunacaktır. Metne göre frekansın değişmesine örnek olarak 5. soru gösterilebilir.
+
+%%%% TODO Info from Krypton Level 1 -> Level 2 and Krypton Level 2 -> Level 3
+%%%% TODO find a sentence or paragraph showing standard etaoin..kxjqz distribution
+
+X>### Sorular
+X>* Emma ve Oliver Twist romanlarındaki tek harf frekanslarını hesaplayınız.
+X>* Emma ve Oliver Twist romanlarındaki çift harf frekanslarını hesaplayınız.
+X>* *E.coli* genomundaki nükleotid ve dinükleotid frekanslarını hesaplayınız.
+X>* "*the quick brown fox jumps over the lazy dog*" ifadesinin İngilizce dili açısından özelliği nedir?
+X>* Gadsby adlı romanın [birinci bölümü](http://spinelessbooks.com/gadsby/01.html)nü içeren `gadsby_chp1.txt` adlı dosyada hangi harf eksiktir?
+X>* Klasörünüzdeki `gizli_mesaj2` adlı dosyadaki mesajı tek harf ve çift harf frekanslarını kullanarak çözünüz. (Not: Her bir harf çözümünü tr komutu ile büyük harf ile gösterirseniz, terminalde çözmeniz kolaylaşacaktır)
+
+%%%% TODO add a question, in which, the text is cyphered with zombie. however, the text should have good etaoin distribution.
 
 ## Genomda kelime sayımı
 
