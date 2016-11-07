@@ -163,11 +163,11 @@ Dosyaların aynı isimle ya da ismi değiştirilerek farklı bir klasör içine 
 
 > universiteler.tar.gz adlı arşiv dosyasının içeriği ÖSYM'nin [2015 tarihli kılavuzuna](http://dokuman.osym.gov.tr/pdfdokuman/2015/OSYS/OSYS2015YerlestirmeMinMaxTablo-423072015.pdf) göre hazırlanmıştır. Her bir üniversite ve içerdiği fakülteler klasör olarak, bölümler de dosya olarak gösterilmiştir. Arşiv dosyasını açtıktan sonra aşağıdaki soruları cevaplayınız:
 >
-> * YTU altında "Tip Fakultesi" açınız.
-> * YTU Tip Fakultesi altına Dahiliye ve Cildiye bölümleri açınız.
-> * YTU'den "Iktisadi ve Idari Bilimler Fakultesi"ni kaldırınız.
-> * YTU'ye Isik Univ. "Guzel Sanatlar Fakultesi"ni bölümleriyle beraber kopyalayınız.
-> * IPEK UNIVERSITESI, Insan ve  Toplum Bilimleri Fakultesi altındaki bütün ingilizce bölümleri kapatınız.
+>* YTU altında "Tip Fakultesi" açınız.
+>* YTU Tip Fakultesi altına Dahiliye ve Cildiye bölümleri açınız.
+>* YTU'den "Iktisadi ve Idari Bilimler Fakultesi"ni kaldırınız.
+>* YTU'ye Isik Univ. "Guzel Sanatlar Fakultesi"ni bölümleriyle beraber kopyalayınız.
+>* IPEK UNIVERSITESI, Insan ve  Toplum Bilimleri Fakultesi altındaki bütün ingilizce bölümleri kapatınız.
 
 %%%% TODO we need more questions for cp, mv, mkdir
 
@@ -650,7 +650,7 @@ Geçerli dizindeki bir dosya ya da girdinin içeriğinden istenen bölümlerin a
 
 > `-f` ve `-c` seçeneklerinde kullanılan `<sayı>` değişkeni için birinci bölümdeki [sayı aralıkları](#sayi-araliklari) hakkındaki açıklamalara bakınız.
 
-%%%% WARNING mysteriously code above might not be included in texti please make sure it's included
+%%%% WARNING mysteriously code above might not be included in text please make sure it's included
 
 >### Sorular
 >* Movies ve ratings dosyalarındaki çift numaralı sütunları ekranda görüntüleyin.
@@ -733,7 +733,16 @@ $ echo -e "a b c\nde b c\nf gh c" | uniq -c -f2
 >### Sorular
 >* emma ve oliver_twist kitaplarında en çok görünen 5 kelimeyi ayrı ayrı bulun.
 >* emma ve oliver_twist kitaplarında en çok bulunan 150. kelimeleri bulun.
+>* emma kitabında kelime başında en çok bulunan 5 harf hangileridir?
+>* emma kitabında kelime sonunda en çok bulunan 5 harf hangileridir?
+>* *Ecoli-genome.fa* dosyasında birden fazla bulunan iki diziyi bulunuz.
+>* Movies dosyasından gerekli sütunu kullanarak, en çok film çekilen yılı bulunuz.
 >* Ratings dosyasında 4. kolon rating verilen gün ve saati gösterdiğine göre, en çok rating yapılan gün ve saat hangisidir (cevap: 01-03-1996 00:00:00'da 432 rating kaydedilmiştir)
+>* Ratings dosyasında ilk kolon kullanıcı numarasını gösterdiğine göre, en çok puanlama yapan kullanıcı numarası nedir?
+>* Ratings dosyasında ikinci kolon oylama yapılan filmin numarasını göstermektedir, bu halde en çok oy verilen filmin numarası nedir?
+>* Ratings dosyasından gerekli sütunu kullanarak hangi puandan kaçar tane verildiğini bulunuz (örn. kaç tane 3.5 , 4 ve 4.5 puanları verilmiştir).
+>* Ratings dosyasından faydalanarak en çok oylama yapılan **yılı** bulunuz.
+>* Ratings dosyasından faydalanarak en çok oylama yapılan **saati** bulunuz.
 >* movies dosyasında 2.kolon film adını, 3.kolon da yılını göstermektedir. İkinci kolonda birden fazla kere görünen film isimleri hangileridir? (farklı yıllarda aynı isimle çekilmiş filmler)
 >* Sayı50 dosyasında hangi sayıdan kaç tane olduğunu ekranda görüntüleyin.
 >* Harfler dosyasında hangi harften kaç tane olduğunu çoktan aza doğru gösteriniz.
@@ -742,7 +751,9 @@ $ echo -e "a b c\nde b c\nf gh c" | uniq -c -f2
 >* Movies dosyasını son iki sütuna göre en çok sayıda görünenleri ekranda görüntüleyin.
 >* `uniq -f` ile baştan belirten sayı kadar kolon gözardı edilerek benzer satır araması yapıldığını görmüştük. `echo -e "a b c\na d e\na f g"` komutunun çıktısında **son iki kolon** gözardı edilerek benzerlik araması nasıl yapılabilir?
 
-Sorularda kullanılan movies ve ratings dosyalarının içeriklerine dair açıklamalar [bölüm sonundaki sorular kısmında](#movies-ratings-desc) açıklanmıştır.
+%%%% TODO some of the questions overlap with questions at the end of Chapter 2.. filter them (or these) out..
+
+> Sorularda kullanılan movies ve ratings dosyalarının içeriklerine dair açıklamalar [bölüm sonundaki sorular kısmında](#movies-ratings-desc) açıklanmıştır. `ratings` dosyası boyut olarak fazla yer kapladığından, klasörünüzde şıkıştırılmış halde `ratings.gz` adıyla bulunabilir. `gunzip ratings.gz` komutuyla dosyayı açabilirsiniz. `ratings` dosyası 10 milyon satırdan oluştuğundan dolayı `sort` komutunun sonucunu almak için bir miktar beklemeniz gerekebilir.
 
 ## Bakteri genomunda GC adaları
 
