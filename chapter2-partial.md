@@ -491,7 +491,7 @@ Sezar şifresi çok kolaylıkla çözülebilir çünkü 25 farklı anahtar deney
 
 ```
 Input   ABCDEFGHIJKLMNOPQRSTUVWXYZ
-Output  LINUXABCDEFGHJKMOPQRTUVWZY
+Output  LINUXABCDEFGHJKMOPQRSTVWZY
 ```
 
 Böyle bir durumda şifrelenmiş yazıda harflerin frekansını inceleyip eşleşme tablosu tahmin edilmeye çalışılabilir. `sort` ve `uniq` komutlarını öğrendikten sonra bu tür analizin nasıl yapıldığına dair örnekler göreceksiniz.
