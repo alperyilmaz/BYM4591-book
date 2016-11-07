@@ -324,7 +324,7 @@ tr -d ".,:;!?/+-&%()"
 
 Fakat böyle bir komutta, terminalde özel anlamı olan karakterler `tr` komutunun yanlış çalışmasına sebep olabilir. Bu yüzden `tr` komutu için tanımlanmış özel kümeleri kullanmak daha güvenli ve pratik olacaktır. Noktalama işaretleri için kullanılan küme `[[:punct:]]` şeklinde ifade edilebilir. Noktalama işaretlerinin silinmesi, dökümanda daha önce olmayan kelimeler ortaya çıkarıp yanlış hesap yapmaya sebep olabilir, bu yüzden noktalama işaretlerini silmek yerine boşluk karakteri ile yerdeğiştirmek daha doğru olacaktır. 
 
-W> Maalesef `I'm, I've, I'd, Emma's` gibi durumlarda noktalama işaretinin silinmesi ekstra harfler oluşturacaktır.
+> Maalesef `I'm, I've, I'd, Emma's` gibi durumlarda noktalama işaretinin silinmesi ekstra harfler oluşturacaktır.
 
 Birden fazla boşluk karakteri yanyana iken tek boşluk haline getirmek için `tr -s` (squeeze) opsiyonu kullanılabilir. 
 
@@ -847,13 +847,13 @@ Polialfabetik, transpozisyon veya Vinegre şifrelemeleri, eşit harf frekansı o
 %%%% TODO Info from Krypton Level 1 -> Level 2 and Krypton Level 2 -> Level 3
 %%%% TODO find a sentence or paragraph showing standard etaoin..kxjqz distribution
 
-X>### Sorular
-X>* Emma ve Oliver Twist romanlarındaki tek harf frekanslarını hesaplayınız.
-X>* Emma ve Oliver Twist romanlarındaki çift harf frekanslarını hesaplayınız.
-X>* *E.coli* genomundaki nükleotid ve dinükleotid frekanslarını hesaplayınız.
-X>* "*the quick brown fox jumps over the lazy dog*" ifadesinin İngilizce dili açısından özelliği nedir?
-X>* Gadsby adlı romanın [birinci bölümü](http://spinelessbooks.com/gadsby/01.html)nü içeren `gadsby_chp1.txt` adlı dosyada hangi harf eksiktir?
-X>* Klasörünüzdeki `gizli_mesaj2` adlı dosyadaki mesajı tek harf ve çift harf frekanslarını kullanarak çözünüz. (Not: Her bir harf çözümünü tr komutu ile büyük harf ile gösterirseniz, terminalde çözmeniz kolaylaşacaktır)
+>### Sorular
+>* Emma ve Oliver Twist romanlarındaki tek harf frekanslarını hesaplayınız.
+>* Emma ve Oliver Twist romanlarındaki çift harf frekanslarını hesaplayınız.
+>* *E.coli* genomundaki nükleotid ve dinükleotid frekanslarını hesaplayınız.
+>* "*the quick brown fox jumps over the lazy dog*" ifadesinin İngilizce dili açısından özelliği nedir?
+>* Gadsby adlı romanın [birinci bölümü](http://spinelessbooks.com/gadsby/01.html)nü içeren `gadsby_chp1.txt` adlı dosyada hangi harf eksiktir?
+>* Klasörünüzdeki `gizli_mesaj2` adlı dosyadaki mesajı tek harf ve çift harf frekanslarını kullanarak çözünüz. (Not: Her bir harf çözümünü tr komutu ile büyük harf ile gösterirseniz, terminalde çözmeniz kolaylaşacaktır)
 
 %%%% TODO add a question, in which, the text is cyphered with zombie. however, the text should have good etaoin distribution.
 
@@ -1023,14 +1023,14 @@ Grep komutunun yetersiz kaldığı ve çalışmadığı bazı durumlar da egrep 
 
 Kitaptaki çıktılarda renkler görünmediğinden ilgili [asciicast](https://asciinema.org/a/30240?speed=1&theme=solarized-dark&size=medium) videosunu izleyiniz.
 
-I> [egrep for linguists](http://stts.se/egrep_for_linguists/egrep_for_linguists.pdf) adlı dökümanda grep ile ilgili (ve `tr`, `cut` gibi komutlarla ilgili) detaylı açıklamalar ve örnekler bulabilirsiniz.
+> [egrep for linguists](http://stts.se/egrep_for_linguists/egrep_for_linguists.pdf) adlı dökümanda grep ile ilgili (ve `tr`, `cut` gibi komutlarla ilgili) detaylı açıklamalar ve örnekler bulabilirsiniz.
 
-X>### Sorular
-X>* Emma adlı kitapta kaç tane büyük harfli kelime vardır? (örn. ÖRNEK)
-X>* Emma adlı kitapta kaç tane 4 harfli kelime vardır?
-X>* Emma adlı kitapta kaç tane tek heceli (sadece bir tane sesli harf içeren) kelime vardır? 
-X>* Emma adlı kitapta en çok kullanılan ilk 10 kelimeyi, İngilizce'de çok kullanılan kelimeleri ([stop words](https://en.wikipedia.org/wiki/Stop_words)) çıkartarak tekrar hesaplayınız. (`stop_words` adlı dosyada çok kullanılan kelimelerin listesi mevcuttur)
-X>* Emma adlı kitapta bi-gram sayımını, İngilizce'de çok kullanılan kelimeleri çıkartarak tekrar hesaplayınız.
+>### Sorular
+>* Emma adlı kitapta kaç tane büyük harfli kelime vardır? (örn. ÖRNEK)
+>* Emma adlı kitapta kaç tane 4 harfli kelime vardır?
+>* Emma adlı kitapta kaç tane tek heceli (sadece bir tane sesli harf içeren) kelime vardır? 
+>* Emma adlı kitapta en çok kullanılan ilk 10 kelimeyi, İngilizce'de çok kullanılan kelimeleri ([stop words](https://en.wikipedia.org/wiki/Stop_words)) çıkartarak tekrar hesaplayınız. (`stop_words` adlı dosyada çok kullanılan kelimelerin listesi mevcuttur)
+>* Emma adlı kitapta bi-gram sayımını, İngilizce'de çok kullanılan kelimeleri çıkartarak tekrar hesaplayınız.
 
 %%%% TODO we can carry regex topic after awk and include a table showing diffs between regex of grep sed and awk, idea for table is here: http://www.sqlite.org/src/artifact/af92cdaa5058fcec
 
