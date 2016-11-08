@@ -733,8 +733,8 @@ $ echo -e "a b c\nde b c\nf gh c" | uniq -c -f2
 >### Sorular
 >* emma ve oliver_twist kitaplarında en çok görünen 5 kelimeyi ayrı ayrı bulun.
 >* emma ve oliver_twist kitaplarında en çok bulunan 150. kelimeleri bulun.
->* emma kitabında kelime başında en çok bulunan 5 harf hangileridir?
->* emma kitabında kelime sonunda en çok bulunan 5 harf hangileridir?
+>* emma kitabında kelime başında en çok bulunan 5 harf hangileridir? (Her farklı kelimeyi bir kere sayarak)
+>* emma kitabında kelime sonunda en çok bulunan 5 harf hangileridir? (Her farklı kelimeyi bir kere sayarak)
 >* *Ecoli-genome.fa* dosyasında birden fazla bulunan iki diziyi bulunuz.
 >* Movies dosyasından gerekli sütunu kullanarak, en çok film çekilen yılı bulunuz.
 >* Ratings dosyasında 4. kolon rating verilen gün ve saati gösterdiğine göre, en çok rating yapılan gün ve saat hangisidir (cevap: 01-03-1996 00:00:00'da 432 rating kaydedilmiştir)
