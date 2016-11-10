@@ -673,7 +673,7 @@ Geçerli dizinde bulunan dosya içindeki peş peşe dizilmiş aynı olan modelle
 * **`uniq -c <dosya.adı>`** : Geçerli dizindeki \<dosya.adı\> isimli dosya içinde peş peşe gelip aynı olan modelleri birleştirerek ve yanlarında sayılarını vererek görüntüler.
 * **`uniq -d <dosya.adı>`** : Geçerli dizindeki \<dosya.adı\> isimli dosya içinde sadece peş peşe aynı gelen modelleri görüntüler.
 * **`uniq -f<sayı> <dosya.adı>`** : Geçerli dizindeki \<dosya.adı\> isimli dosya içinde peş peşe gelip aynı olan modelleri belirtilen sayıda kolondan sonraki kolona göre birleştirerek görüntüler.
-* **`uniq -s <dosya.adı>`** : Geçerli dizindeki \<dosya.adı\> isimli dosya içinde sadece peş peşe gelip aynı olan modelleri belirtilen sayıda karakterden sonrasına göre birleştirerek görüntüler.
+* **`uniq -s<sayı> <dosya.adı>`** : Geçerli dizindeki \<dosya.adı\> isimli dosya içinde sadece peş peşe gelip aynı olan modelleri belirtilen sayıda karakterden sonrasına göre birleştirerek görüntüler.
 
 <<[Şekil 2.21 cut ve uniq komutlarının kullanımı](code/cut-uniq-ornek.txt)
 
