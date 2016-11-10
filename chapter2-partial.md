@@ -585,6 +585,7 @@ Geçerli dizinde bulunan bir dosyanın içeriğinin alfabetik olarak sıralanmas
 * **`sort -n <dosya.adı>`** : Sıralamanın sayısal değerlere göre yapılması sağlar.
 * **`sort -k<kolon.numarası> <dosya.adı>`** : Sıralamanın belirlenen kolona göre yapılması sağlar.
 * **`sort -u <dosya.adı>`** : Sıralamayı yaparken birden fazla olan modellerin bir kere gösterilmesini sağlar.
+* **`sort -t 'ayrac.turu' <dosya.adı>`** : Sıralama yaparken \<dosya.adı\> isimli dosyanın kolonlarını 'ayrac.turu' ne göre belirler.
 
 <<[Şekil 2.18 sort komutunun kullanımı](code/sort-ornek1.txt)
 
