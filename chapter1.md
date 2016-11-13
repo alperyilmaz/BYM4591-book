@@ -98,6 +98,10 @@ No space left on device
 
  : Hard diskte yer kalmamıştır.
 
+Aşağıdaki örnekte, `genomes` klasöründeki bir dosya `birds` klasörüne taşınmaya çalışılırken klasör adı yanlış girildiğinde (genomes yerine gnomes) hata oluşmuştur. İkinci hata, `birds` klasörünün hiyerarşisi doğru verilmediğinden (birds yerine genomes/birds) hata oluşmuştur. Bu tür hataları önlemek için Tab tuşu kullanımını alışkanlık haline getirmek gerekmektedir. Eğer Tab tuşu dosya veya klasör adını tamamlamıyorsa, ya dosya/klasör adı yanlış yazılmış veya yanlış klasörde olduğumuzdan dolayı dosya/klasör bulunamıyor demektir.
+
+![Şekil 1.2b Terminalde klasör veya dosya adı hatası](images/typo-commandline.png)
+
 > Bazı komutlar için kullanılan karakterler önce terminal tarafından yorumlanıp sonra komut tarafından yorumlanır. Terminalde anlamı olan karakterlerin sadece komut tarafından yorumlanması isteniyorsa tırnak işareti (' ') içinde kullanılmalıdır. Tek tırnak (' ') işareti ile çalışabilen komutlar olduğu gibi, bazı komutlar ise çift tırnak ("") ile çalışabilir. Komutun kullanımının doğruluğundan emin olunduğu zaman hatanın bunlardan kaynaklanabileceği düşünülmelidir. 
 
 ### Sayı aralıkları {#sayi-araliklari}

@@ -41,9 +41,13 @@ Geçerli dizindeki dosyaların alfabetik olarak sıralanmış listesini gösteri
 * **`ls -R`** (recursive) : Tüm dosyaları alt dizinleri ve içerikleri ile birlikte gösterir.
 * **`ls -h`** (human readable) : Tüm dosyaları insan okunabilir şekilde gösterir. Ama tek başına işlevi yoktur. Dosya boyutunu gösteren seçenekler ile birlikte kullanılmalıdır.
 
+Klasörünüzde, `veri-analizi-bundle.tar.gz` adlı arşivi açtıktan sonra `ls` komutunun çıktısı aşağıdakine benzer olacaktır. Eğer kullandığınız terminalde renkli `ls` çıktısı ayarı yapılmışsa, klasörler (mavi), resimler (pembe), arşiv dosyaları (kırmızı) gibi farklı öğeler farklı renkler ile gösterilecektir.
+
+![Şekil 2.2a ls komutunun çıktısındaki renklendirme](images/ls_output.png)
+
 Seçenekler birleştirilerek de kullanılabilirler. Örnek; ls -lrt dosyaları tarihlerine göre baştan sona doğru ve ayrıntılarıyla gösterir.
 
-<<[Şekil 2.2 ls komutunun farklı opsiyonları/argümanları](code/ls-ornek.txt)
+<<[Şekil 2.2b ls komutunun farklı opsiyonları/argümanları](code/ls-ornek.txt)
 
 ## cd komutu
 
@@ -743,7 +747,7 @@ $ echo -e "a b c\nde b c\nf gh c" | uniq -c -f2
 >* Ratings dosyasında ikinci kolon oylama yapılan filmin numarasını göstermektedir, bu halde en çok oy verilen filmin numarası nedir?
 >* Ratings dosyasından gerekli sütunu kullanarak hangi puandan kaçar tane verildiğini bulunuz (örn. kaç tane 3.5 , 4 ve 4.5 puanları verilmiştir).
 >* Ratings dosyasından faydalanarak en çok oylama yapılan **yılı** bulunuz.
->* Ratings dosyasından faydalanarak en çok oylama yapılan **saati** bulunuz.
+>* Ratings dosyasından faydalanarak en çok oylama yapılan **saati** bulunuz (Zamanı değil, HH:MM:SS bilgisinden saat, HH çekilip alınmalıdır).
 >* movies dosyasında 2.kolon film adını, 3.kolon da yılını göstermektedir. İkinci kolonda birden fazla kere görünen film isimleri hangileridir? (farklı yıllarda aynı isimle çekilmiş filmler)
 >* Sayı50 dosyasında hangi sayıdan kaç tane olduğunu ekranda görüntüleyin.
 >* Harfler dosyasında hangi harften kaç tane olduğunu çoktan aza doğru gösteriniz.
@@ -751,12 +755,18 @@ $ echo -e "a b c\nde b c\nf gh c" | uniq -c -f2
 >* Harfler dosyasında en çok bulunan beş harfi alfabetik sırayla ekranda görüntüleyin.
 >* Movies dosyasını son iki sütuna göre en çok sayıda görünenleri ekranda görüntüleyin.
 >* `uniq -f` ile baştan belirten sayı kadar kolon gözardı edilerek benzer satır araması yapıldığını görmüştük. `echo -e "a b c\na d e\na f g"` komutunun çıktısında **son iki kolon** gözardı edilerek benzerlik araması nasıl yapılabilir?
+>* `Ecoli-cds-protein` dosyasındaki ikinci kolon *E.coli* genomundaki genlerin protein kodlayan dizilerini gösterdiğine göre, ATG'den sonra en çok kullanılan ikinci başlangıç kodonu hangisidir.
+>* *E.coli* genomundaki genlerin protein kodlayan dizilerinde STOP CODON dağılımı nasıldır?
+>* `Ecoli-cds-protein` dosyasındaki üçüncü kolon *E.coli* genomundaki genlerin protein dizilerini gösterdiğine göre, proteinlerin sonunda en çok gözüken 5 amino asidi bulunuz.
 
+%%%% TODO birden fazla = uniq -d
 %%%% TODO some of the questions overlap with questions at the end of Chapter 2.. filter them (or these) out..
 
 > Sorularda kullanılan movies ve ratings dosyalarının içeriklerine dair açıklamalar [bölüm sonundaki sorular kısmında](#movies-ratings-desc) açıklanmıştır. `ratings` dosyası boyut olarak fazla yer kapladığından, klasörünüzde şıkıştırılmış halde `ratings.gz` adıyla bulunabilir. `gunzip ratings.gz` komutuyla dosyayı açabilirsiniz. `ratings` dosyası 10 milyon satırdan oluştuğundan dolayı `sort` komutunun sonucunu almak için bir miktar beklemeniz gerekebilir.
 
 ## Bakteri genomunda GC adaları
+
+Genomun yapısını veya fonksiyonunu anlamak için çeşitli analiz yöntemleri vardır. GC nükleotidlerinin global veya lokal profilinin incelenmesi bunlardan biridir. Farklı organizmaların genomlarında farklı GC nükleotid oranları [bulunmaktadır](https://en.wikipedia.org/wiki/GC-content#Application_in_systematics) ve genom boyunca GC oranı yüksek bölgeler hatta adalar bulunmaktadır. Bu tür bölgeler [patojenite](https://www.boundless.com/microbiology/textbooks/boundless-microbiology-textbook/microbial-genetics-7/genome-evolution-85/pathogenicity-islands-471-914/) veya [transkripsiyon](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3514669/) ile ilişkilendirilmektedir.
 
 Şimdiye kadar öğrendiğimiz komutlar yardımıyla *E.coli* bakteri genomundaki GC adalarının uzunluklarının dağılımını analiz edelim. Genom dosyasının ilk on satırına bakıp dosya içeriği hakkında bilgi sahibi olalım.
 
@@ -797,8 +807,7 @@ Geçerli dizinde bulunan dosyaların içindeki bilgileri belirli yerlerden kıra
 
 <<[Şekil 2.22 echo ve fold komutlarının kullanımı](code/echo-fold-ornek.txt)
 
->### Sorular
->* Oliver Twist kitabında toplam kaç karakter (tüm harfler ve noktalama işaretleri) kullanıldığını bulun ve bunların kullanım sayılarını ekranda görüntüleyin.
+> `fold` komutu ile ilgili sorular `Frekans Analizi` bölümünün sonunda bulunmaktadır.
 
 ## Kriptoloji ve Kriptoanaliz - Frekans analizi
 
@@ -866,10 +875,16 @@ Polialfabetik, transpozisyon veya Vinegre şifrelemeleri, eşit harf frekansı o
 >* "*the quick brown fox jumps over the lazy dog*" ifadesinin İngilizce dili açısından özelliği nedir?
 >* Gadsby adlı romanın [birinci bölümü](http://spinelessbooks.com/gadsby/01.html)nü içeren `gadsby_chp1.txt` adlı dosyada hangi harf eksiktir?
 >* Klasörünüzdeki `gizli_mesaj2` adlı dosyadaki mesajı tek harf ve çift harf frekanslarını kullanarak çözünüz. (Not: Her bir harf çözümünü tr komutu ile büyük harf ile gösterirseniz, terminalde çözmeniz kolaylaşacaktır)
+>* Oliver Twist kitabında toplam kaç karakter (tüm harfler ve noktalama işaretleri) kullanıldığını bulun ve bunların kullanım sayılarını ekranda görüntüleyin.
+>* `Ecoli-cds-protein` dosyasındaki üçüncü kolon *E.coli* genomundaki genlerin protein dizilerini gösterdiğine göre, *E.coli* proteinlerindeki amino asit frekanslarını hesaplayınız (hangi amino asit kaç kere kullanılmıştır). Çıkan sonuç, bu konuyla ilgili [bilimsel makale](https://www.ncbi.nlm.nih.gov/pubmed/10908643)deki bilgiyle örtüşüyor mu?
+>* *E.coli* genomundaki en uzun kodlama bölgesine sahip *yeeJ* [geni](http://biocyc.org/gene?orgid=ECOLI&id=G7064)nin ( `Ecoli-cds-protein` dosyasında 1805. satır) kodon frekansını hesaplayınız (her bir kodon kaçar defa kullanılmıştır)
+>* *E.coli* genomundaki en uzun kodlama bölgesine sahip *yeeJ* [geni](http://biocyc.org/gene?orgid=ECOLI&id=G7064)nin ( `Ecoli-cds-protein` dosyasında 1805. satır) +2, +3 çerçeveleri ve -1, -2 -3 çerçevelerinde en çok kullanılan kodonlar hangileridir. (6 çerçeve hakkında bilgi için ilgili [linke](https://www.boundless.com/microbiology/textbooks/boundless-microbiology-textbook/microbial-genetics-7/prokaryotic-genomes-72/size-variation-and-orf-contents-in-genomes-418-4724/images/open-reading-frames/) bakınız)
 
 %%%% TODO add a question, in which, the text is cyphered with zombie. however, the text should have good etaoin distribution.
 
 ## Genomda kelime sayımı
+
+Terminal komutları yardımıyla genomda kelime sayımına dair örnek Martin Krzywinski tarafından hazırlanan `perl workshop` adlı çalışmanın [ilgili PDF dosyası](http://mkweb.bcgsc.ca/perlworkshop/data/courses/2.1.2.4/03/pdf/2.1.2.4.3.1.a1.pdf)nda bulunabilir.
 
 %%%% TODO Martin's example here: http://mkweb.bcgsc.ca/perlworkshop/data/courses/2.1.2.4/03/pdf/2.1.2.4.3.1.a1.pdf
 
