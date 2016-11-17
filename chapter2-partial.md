@@ -736,26 +736,26 @@ $ echo -e "a b c\nde b c\nf gh c" | uniq -c -f2
 ```
 
 >### Sorular
->* emma ve oliver_twist kitaplarında en çok görünen 5 kelimeyi ayrı ayrı bulun.
+>* emma ve oliver_twist kitaplarında en çok görünen 5 kelimeyi ayrı ayrı bulun. ([cevap](https://gist.github.com/fe6812d98f21d1734012dc10a5a484d1))
 >* emma ve oliver_twist kitaplarında en çok bulunan 150. kelimeleri bulun.
->* emma kitabında kelime başında en çok bulunan 5 harf hangileridir? (Her farklı kelimeyi bir kere sayarak)
+>* emma kitabında kelime başında en çok bulunan 5 harf hangileridir? (Her farklı kelimeyi bir kere sayarak) ([cevap](https://gist.github.com/10ee7f9f05697b9530906051df5395a1))
 >* emma kitabında kelime sonunda en çok bulunan 5 harf hangileridir? (Her farklı kelimeyi bir kere sayarak)
->* *Ecoli-genome.fa* dosyasında birden fazla bulunan iki diziyi bulunuz.
->* Movies dosyasından gerekli sütunu kullanarak, en çok film çekilen yılı bulunuz.
->* Ratings dosyasında 4. kolon rating verilen gün ve saati gösterdiğine göre, en çok rating yapılan gün ve saat hangisidir (cevap: 01-03-1996 00:00:00'da 432 rating kaydedilmiştir)
+>* *Ecoli-genome.fa* dosyasında birden fazla bulunan iki diziyi bulunuz (Her satır ayrı bir dizi olarak düşünülmeli).
+>* Movies dosyasından gerekli sütunu kullanarak, en çok film çekilen yılı bulunuz. ([cevap](https://gist.github.com/05f139faadbb16179a02608220cd9020))
+>* Ratings dosyasında 4. kolon rating verilen gün ve saati gösterdiğine göre, en çok rating yapılan gün ve saat hangisidir ([cevap](https://gist.github.com/8690231b2804c801ed5aae425e5abe2f))
 >* Ratings dosyasında ilk kolon kullanıcı numarasını gösterdiğine göre, en çok puanlama yapan kullanıcı numarası nedir?
 >* Ratings dosyasında ikinci kolon oylama yapılan filmin numarasını göstermektedir, bu halde en çok oy verilen filmin numarası nedir?
->* Ratings dosyasından gerekli sütunu kullanarak hangi puandan kaçar tane verildiğini bulunuz (örn. kaç tane 3.5 , 4 ve 4.5 puanları verilmiştir).
+>* Ratings dosyasından gerekli sütunu kullanarak hangi puandan kaçar tane verildiğini bulunuz (örn. kaç tane 3.5 , 4 ve 4.5 puanları verilmiştir). ([cevap](https://gist.github.com/c960022fc1c13b0fb921791ef5fc35ae))
 >* Ratings dosyasından faydalanarak en çok oylama yapılan **yılı** bulunuz.
 >* Ratings dosyasından faydalanarak en çok oylama yapılan **saati** bulunuz (Zamanı değil, HH:MM:SS bilgisinden saat, HH çekilip alınmalıdır).
 >* movies dosyasında 2.kolon film adını, 3.kolon da yılını göstermektedir. İkinci kolonda birden fazla kere görünen film isimleri hangileridir? (farklı yıllarda aynı isimle çekilmiş filmler)
 >* Sayı50 dosyasında hangi sayıdan kaç tane olduğunu ekranda görüntüleyin.
 >* Harfler dosyasında hangi harften kaç tane olduğunu çoktan aza doğru gösteriniz.
 >* Harfler dosyasında en çok bulunan harfi ekranda görüntüleyin.
->* Harfler dosyasında en çok bulunan beş harfi alfabetik sırayla ekranda görüntüleyin.
->* Movies dosyasını son iki sütuna göre en çok sayıda görünenleri ekranda görüntüleyin.
+>* Harfler dosyasında en çok bulunan beş harfi alfabetik sırayla ekranda görüntüleyin. ([cevap](https://gist.github.com/7ba14e9d83fb06f4d772f5eefb341bb3))
+>* Movies dosyasını son iki sütuna göre en çok sayıda görünen 10 kombinasyonu ekranda görüntüleyin. ([cevap](https://gist.github.com/bbee15da74c0119785df3b315623a4c4))
 >* `uniq -f` ile baştan belirten sayı kadar kolon gözardı edilerek benzer satır araması yapıldığını görmüştük. `echo -e "a b c\na d e\na f g"` komutunun çıktısında **son iki kolon** gözardı edilerek benzerlik araması nasıl yapılabilir?
->* `Ecoli-cds-protein` dosyasındaki ikinci kolon *E.coli* genomundaki genlerin protein kodlayan dizilerini gösterdiğine göre, ATG'den sonra en çok kullanılan ikinci başlangıç kodonu hangisidir.
+>* `Ecoli-cds-protein` dosyasındaki ikinci kolon *E.coli* genomundaki genlerin protein kodlayan dizilerini gösterdiğine göre, ATG'den sonra en çok kullanılan ikinci başlangıç kodonu hangisidir. ([cevap](https://gist.github.com/e8be6351bdf975ed42fc3a575eec2bc5))
 >* *E.coli* genomundaki genlerin protein kodlayan dizilerinde STOP CODON dağılımı nasıldır?
 >* `Ecoli-cds-protein` dosyasındaki üçüncü kolon *E.coli* genomundaki genlerin protein dizilerini gösterdiğine göre, proteinlerin sonunda en çok gözüken 5 amino asidi bulunuz.
 
@@ -877,8 +877,8 @@ Polialfabetik, transpozisyon veya Vinegre şifrelemeleri, eşit harf frekansı o
 >* Klasörünüzdeki `gizli_mesaj2` adlı dosyadaki mesajı tek harf ve çift harf frekanslarını kullanarak çözünüz. (Not: Her bir harf çözümünü tr komutu ile büyük harf ile gösterirseniz, terminalde çözmeniz kolaylaşacaktır)
 >* Oliver Twist kitabında toplam kaç karakter (tüm harfler ve noktalama işaretleri) kullanıldığını bulun ve bunların kullanım sayılarını ekranda görüntüleyin.
 >* `Ecoli-cds-protein` dosyasındaki üçüncü kolon *E.coli* genomundaki genlerin protein dizilerini gösterdiğine göre, *E.coli* proteinlerindeki amino asit frekanslarını hesaplayınız (hangi amino asit kaç kere kullanılmıştır). Çıkan sonuç, bu konuyla ilgili [bilimsel makale](https://www.ncbi.nlm.nih.gov/pubmed/10908643)deki bilgiyle örtüşüyor mu?
->* *E.coli* genomundaki en uzun kodlama bölgesine sahip *yeeJ* [geni](http://biocyc.org/gene?orgid=ECOLI&id=G7064)nin ( `Ecoli-cds-protein` dosyasında 1805. satır) kodon frekansını hesaplayınız (her bir kodon kaçar defa kullanılmıştır)
->* *E.coli* genomundaki en uzun kodlama bölgesine sahip *yeeJ* [geni](http://biocyc.org/gene?orgid=ECOLI&id=G7064)nin ( `Ecoli-cds-protein` dosyasında 1805. satır) +2, +3 çerçeveleri ve -1, -2 -3 çerçevelerinde en çok kullanılan kodonlar hangileridir. (6 çerçeve hakkında bilgi için ilgili [linke](https://www.boundless.com/microbiology/textbooks/boundless-microbiology-textbook/microbial-genetics-7/prokaryotic-genomes-72/size-variation-and-orf-contents-in-genomes-418-4724/images/open-reading-frames/) bakınız)
+>* *E.coli* genomundaki en uzun kodlama bölgesine sahip *yeeJ* [geni](http://biocyc.org/gene?orgid=ECOLI&id=G7064)nin (`Ecoli-cds-protein` dosyasında 3277. satır) kodon frekansını hesaplayınız (her bir kodon kaçar defa kullanılmıştır)
+>* *E.coli* genomundaki en uzun kodlama bölgesine sahip *yeeJ* [geni](http://biocyc.org/gene?orgid=ECOLI&id=G7064)nin (`Ecoli-cds-protein` dosyasında 3277. satır) +2, +3 çerçeveleri ve -1, -2 -3 çerçevelerinde en çok kullanılan kodonlar hangileridir. (6 çerçeve hakkında bilgi için ilgili [linke](https://www.boundless.com/microbiology/textbooks/boundless-microbiology-textbook/microbial-genetics-7/prokaryotic-genomes-72/size-variation-and-orf-contents-in-genomes-418-4724/images/open-reading-frames/) bakınız)
 
 %%%% TODO add a question, in which, the text is cyphered with zombie. however, the text should have good etaoin distribution.
 
