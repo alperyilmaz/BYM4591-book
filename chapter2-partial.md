@@ -894,8 +894,8 @@ Metod olarak, k-mer oluştururken genomun nasıl bölüneceği önemlidir. Ört�
 
 Terminal komutları yardımıyla genomda kelime sayımına dair örnek Martin Krzywinski tarafından hazırlanan `perl workshop` adlı çalışmanın [ilgili PDF dosyası](http://mkweb.bcgsc.ca/perlworkshop/data/courses/2.1.2.4/03/pdf/2.1.2.4.3.1.a1.pdf)nda bulunabilir.
 
-X>### Sorular
-X>* Genomda kelime sayımı için atıfta bulunulan [dökümanın](http://mkweb.bcgsc.ca/perlworkshop/data/courses/2.1.2.4/03/pdf/2.1.2.4.3.1.a1.pdf) 7. sayfasındaki komutu E.coli genomu için uygulayıp genomda en çok bulunan 10 tane 7-mer'i bulunuz.
+>### Sorular
+>* Genomda kelime sayımı için atıfta bulunulan [dökümanın](http://mkweb.bcgsc.ca/perlworkshop/data/courses/2.1.2.4/03/pdf/2.1.2.4.3.1.a1.pdf) 7. sayfasındaki komutu E.coli genomu için uygulayıp genomda en çok bulunan 10 tane 7-mer'i bulunuz.
 
 ## comm komutu
 
@@ -1000,7 +1000,7 @@ Geçerli klasördeki iki dosyayı ortak kolonları üzerinden birleştirir. Ekst
 >* Emma romanında olup Oliver Twist romanında olmayan ve en çok sayıda bulunan ilk 5 kelimeyi bulun. 
 >* Sayı.harf dosyasında sadece bir kez görünen harfleri yanlarındaki sayılar ile birlikte ekranda görüntüleyin. [asciicast](https://asciinema.org/a/29681?speed=1&theme=solarized-dark&size=medium)
 >* `Ecoli-cds-protein` dosyasında bulunan *satP* genine ait CDS dizisinin `codon-table` adlı dosya yardımıyla kaçar tane `Basic` ve `Acidic` amino asit kodladığını bulunuz.
->* Aynı geni `codon-table` adlı dosya yardımıyla translasyona uğratınız. Çıktı `MGNTKLANPAPLGLMGFG...STOP` şeklinde olmalıdır. (**Not**: join sırasında codonların sırasını kaybetmemelisiniz!)
+>* Aynı geni `codon-table` adlı dosya yardımıyla translasyona uğratınız. Çıktı `MGNTKLANPAPLGLMGFG...*` şeklinde olmalıdır. (**Not**: join sırasında codonların sırasını kaybetmemelisiniz!, ipucu: [Schwartzian Transform](http://it-nonwhizzos.blogspot.com.tr/2015/02/the-schwartzian-transform-from-perl-in.html))
 >* Bir amino aside karşılık gelen birden fazla kodon olmasına rağmen ([Codon Degeneracy](https://en.wikipedia.org/wiki/Codon_degeneracy)) her kodon eşit ağırlıkta kullanılmamaktadır ([Codon Bias](https://en.wikipedia.org/wiki/Codon_usage_bias)). `Ecoli-cds-protein` dosyasındaki bütün kodonların amino asit karşılıklarını birleştirerek amino asitlerin kodon tercihlerini görüntüleyiniz. (Örn; Pro için CCG, Leu için CTG, Stop Codon için TAA ağırlıklı olarak kullanılmıştır. *E.coli* için [bütün tablo](http://www.sci.sdsu.edu/~smaloy/MicrobialGenetics/topics/in-vitro-genetics/codon-usage.html).)
 
 %%%% TODO wc command can be mentioned earlier

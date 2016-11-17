@@ -1,0 +1,35 @@
+$ grep .5 ogrenci-not-donem1 --colour
+0000001 Elif    Yılmaz  50      70      70      B
+0000022 Kemal   Şahin   75      90      45      B
+0000079 Mustafa Kara    60      50      95      B
+0000054 Ayşe    Demir   70      85      60      B
+
+$ grep 2* ogrenci-not-donem1 --colour
+ÖğrenciNo       Ad      Soyad   Vize1   Vize2   Final   HarfNotu
+0000001 Elif    Yılmaz  50      70      70      B
+0000101 Ayşe    Karaosmanoğlu   90      80      100     A
+0000060 Ahmet   Çelik   80      60      60      C
+0000022 Kemal   Şahin   75      90      45      B
+0000079 Mustafa Kara    60      50      95      B
+0000054 Ayşe    Demir   70      85      60      B
+
+$ grep 10* ogrenci-not-donem1 --colour
+ÖğrenciNo       Ad      Soyad   Vize1   Vize2   Final   HarfNotu
+0000001 Elif    Yılmaz  50      70      70      B
+0000101 Ayşe    Karaosmanoğlu   90      80      100     A
+
+$ egrep 2+ ogrenci-not-donem1 --colour
+ÖğrenciNo       Ad      Soyad   Vize1   Vize2   Final   HarfNotu
+0000022 Kemal   Şahin   75      90      45      B
+
+$ egrep "0[27]" ogrenci-not-donem1 --colour
+0000022 Kemal   Şahin   75      90      45      B
+0000079 Mustafa Kara    60      50      95      B
+
+$ egrep "(Kara|Ayşe)" ogrenci-not-donem1 --colour
+0000101 Ayşe    Karaosmanoğlu   90      80      100     A
+0000079 Mustafa Kara    60      50      95      B
+0000054 Ayşe    Demir   70      85      60      B
+
+$ grep ^Ö ogrenci-not-donem1 --colour
+ÖğrenciNo       Ad      Soyad   Vize1   Vize2   Final   HarfNotu
