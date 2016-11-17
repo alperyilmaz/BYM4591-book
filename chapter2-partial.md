@@ -884,9 +884,18 @@ Polialfabetik, transpozisyon veya Vinegre şifrelemeleri, eşit harf frekansı o
 
 ## Genomda kelime sayımı
 
+%%%% TODO importance of k-mer frequency in genomics and other sciences
+
+Metod olarak, k-mer oluştururken genomun nasıl bölüneceği önemlidir. Örtüşen (overlapping) ve örtüşmeyen (non-overlapping) pencereler şeklinde bölünüp sayım yapıldığında farklı sonuçlar çıkacaktır. Aşağıdaki şekilde, pencere boyutu (3-mer veya 4-mer) ve pencerelerin örtüşüp örtüşmemesi durumları tarif edilmiştir.
+
+![Şekil 2.22b Kelime sayımında pencere şeçimini göre sayım sonuçlarının değişmesi](images/kmer-window.png)
+
+Örtüşmeyen sayım tek bir `fold` komutu ile yapılabilir. Ama örtüşen pencere sayımı için `fold` komutu birden fazla kere kullanılmalı ve her kullanımda genom dizisi bir harf eksiltilip çerçeve kayması sağlanmalıdır.
+
 Terminal komutları yardımıyla genomda kelime sayımına dair örnek Martin Krzywinski tarafından hazırlanan `perl workshop` adlı çalışmanın [ilgili PDF dosyası](http://mkweb.bcgsc.ca/perlworkshop/data/courses/2.1.2.4/03/pdf/2.1.2.4.3.1.a1.pdf)nda bulunabilir.
 
-%%%% TODO Martin's example here: http://mkweb.bcgsc.ca/perlworkshop/data/courses/2.1.2.4/03/pdf/2.1.2.4.3.1.a1.pdf
+X>### Sorular
+X>* Genomda kelime sayımı için atıfta bulunulan [dökümanın](http://mkweb.bcgsc.ca/perlworkshop/data/courses/2.1.2.4/03/pdf/2.1.2.4.3.1.a1.pdf) 7. sayfasındaki komutu E.coli genomu için uygulayıp genomda en çok bulunan 10 tane 7-mer'i bulunuz.
 
 ## comm komutu
 
@@ -903,9 +912,9 @@ Geçerli dizinde bulunan iki dosya arasındaki ortak satırların bulunmasını 
 >### Sorular
 >* Sayı50 ve sayı1000 dosyalarındaki ortak satırları bulun.
 >* Sadece sayı1000'de olan satırları bulun.
->* Kitap1'de ve kitap2'de ortak olarak bulunan ve alfabetik sıralamaya göre en sonda bulunan 5 kelimeyi bulun.
->* Kitap2'de olup kitap1'de olmayan ve alfabetik sıralamaya göre ilk 5 kelimeyi bulun.
->* Kitap1'de bulunup kitap2'de bulunmayan kelimelerin alfabetik sıralamaya göre 50. sırada olan kelimeyi bulun.
+>* Emma romanında ve Oliver Twist romanında ortak olarak bulunan ve alfabetik sıralamaya göre en sonda bulunan 5 kelimeyi bulun.
+>* Oliver Twist romanında olup Emma romanında olmayan ve alfabetik sıralamaya göre ilk 5 kelimeyi bulun.
+>* Emma romanında bulunup Oliver Twist romanında bulunmayan kelimelerin alfabetik sıralamaya göre 50. sırada olanını bulunuz.
 
 ## paste komutu
 
@@ -918,8 +927,6 @@ Geçerli klasördeki iki dosyanın içindekilerin tamamen birbiri üzerine yapı
 * **`paste <dosya.adı1> <dosya.adı2> -s`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli iki klasördeki bilgilerin değiştirilmeden ama satırlar sütun, sütunlar satır yapılarak yapıştırılması sağlanır.
 
 <<[Şekil 2.24 paste komutunun farklı kullanımları](code/paste-ornek.txt)
-
-%%%% WARNING Artık harf ve sayı dosyası oluşturulmuş durumda. Uyarı kaldırılabilir. 
 
 > Örnekteki "harf" veya "sayı" dosyaları kitapla gelen zip dosyasında mevcut değildir. İçeriklerinin sırasıyla 4 tane harf ve sayı içeren dosyalar olduğu varsayılabilir.
 
@@ -935,9 +942,11 @@ Geçerli klasördeki iki dosyanın içindekilerin tamamen birbiri üzerine yapı
 
 ## Bi-gram analizi
 
-Kelime sayımının ileri boyutu olan N-gram analizine dair.
+Kriptoanaliz ve genomda kelime sayımı konularında gördüğümüz *N-gram* kavramı sadece bir karakter dizisi içindeki harfleri veya belirli boyuttaki (örn. 3-mer) pencereleri incelemekte kullanılmıştı. Fakat, bu metod bir cümlenin kelimeleri için de uygulanabilir. Yanyana gözüken ikili kelimelerin analizi bi-gram (veya 2-gram), yanyana gözüken üçlü kelimelerin analizi de tri-gram analizi olarak adlandırılmaktadır. [Google N-gram](https://books.google.com/ngrams) projesi, 8 milyondan fazla taranmış kitaptan 1-gram, 2-gram, 3-gram, 4-gram ve 5-gram verilerini oluşturmuştur.
 
-```bash
+Aşağıdaki örnek Emma romanında yanyana bulunan ikili kelimelerin (bi-gram) frakansını hesaplamaktadır.
+
+```
 cat emma.txt | tr -sc '[:alnum:]' '\n' | tr A-Z a-z  > emma.words
 tail -n +2 emma.words > emma.nextwords
 paste emma.words emma.nextwords | sort | uniq -c > emma.bigrams
@@ -990,7 +999,7 @@ Geçerli klasördeki iki dosyayı ortak kolonları üzerinden birleştirir. Ekst
 >* Emma ve Oliver Twist kitaplarında ortak olarak en çok görünen 5 kelimeyi bulun.
 >* Emma romanında olup Oliver Twist romanında olmayan ve en çok sayıda bulunan ilk 5 kelimeyi bulun. 
 >* Sayı.harf dosyasında sadece bir kez görünen harfleri yanlarındaki sayılar ile birlikte ekranda görüntüleyin. [asciicast](https://asciinema.org/a/29681?speed=1&theme=solarized-dark&size=medium)
->* `Ecoli-cds-protein` dosyasında 10. sırada bulunan *satP* genine ait CDS dizisinin `codon-table` adlı dosya yardımıyla kaçar tane `Basic` ve `Acidic` amino asit kodladığını bulunuz.
+>* `Ecoli-cds-protein` dosyasında bulunan *satP* genine ait CDS dizisinin `codon-table` adlı dosya yardımıyla kaçar tane `Basic` ve `Acidic` amino asit kodladığını bulunuz.
 >* Aynı geni `codon-table` adlı dosya yardımıyla translasyona uğratınız. Çıktı `MGNTKLANPAPLGLMGFG...STOP` şeklinde olmalıdır. (**Not**: join sırasında codonların sırasını kaybetmemelisiniz!)
 >* Bir amino aside karşılık gelen birden fazla kodon olmasına rağmen ([Codon Degeneracy](https://en.wikipedia.org/wiki/Codon_degeneracy)) her kodon eşit ağırlıkta kullanılmamaktadır ([Codon Bias](https://en.wikipedia.org/wiki/Codon_usage_bias)). `Ecoli-cds-protein` dosyasındaki bütün kodonların amino asit karşılıklarını birleştirerek amino asitlerin kodon tercihlerini görüntüleyiniz. (Örn; Pro için CCG, Leu için CTG, Stop Codon için TAA ağırlıklı olarak kullanılmıştır. *E.coli* için [bütün tablo](http://www.sci.sdsu.edu/~smaloy/MicrobialGenetics/topics/in-vitro-genetics/codon-usage.html).)
 
