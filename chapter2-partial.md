@@ -756,7 +756,7 @@ $ echo -e "a b c\nde b c\nf gh c" | uniq -c -f2
 >* Movies dosyasını son iki sütuna göre en çok sayıda görünen 10 kombinasyonu ekranda görüntüleyin. ([cevap](https://gist.github.com/bbee15da74c0119785df3b315623a4c4))
 >* `uniq -f` ile baştan belirten sayı kadar kolon gözardı edilerek benzer satır araması yapıldığını görmüştük. `echo -e "a b c\na d e\na f g"` komutunun çıktısında **son iki kolon** gözardı edilerek benzerlik araması nasıl yapılabilir?
 >* `Ecoli-cds-protein` dosyasındaki ikinci kolon *E.coli* genomundaki genlerin protein kodlayan dizilerini gösterdiğine göre, ATG'den sonra en çok kullanılan ikinci başlangıç kodonu hangisidir. ([cevap](https://gist.github.com/e8be6351bdf975ed42fc3a575eec2bc5))
->* *E.coli* genomundaki genlerin protein kodlayan dizilerinde STOP CODON dağılımı nasıldır?
+>* `Ecoli-cds-protein`dosyasındaki genlerin protein kodlayan dizilerinde STOP CODON dağılımı nasıldır?
 >* `Ecoli-cds-protein` dosyasındaki üçüncü kolon *E.coli* genomundaki genlerin protein dizilerini gösterdiğine göre, proteinlerin sonunda en çok gözüken 5 amino asidi bulunuz.
 
 %%%% TODO birden fazla = uniq -d
