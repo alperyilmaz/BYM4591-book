@@ -939,10 +939,13 @@ Geçerli klasördeki iki dosyanın içindekilerin tamamen birbiri üzerine yapı
 >* Sayı50 ve harfler dosyalarının seri olarak birleştirilmesi ile oluşan dosyanın 25, 28 ve 32. sütunlarını ekranda görüntüleyin.
 >* Sayı50 ve harfler dosyalarını ayıracı yıldız (*) olacak şekilde birleştirip son 8 satırını ekranda görüntüleyin. 
 >* Sayı50 ve harfler dosyasının tek satır halinde birleştirilmesi ile oluşan listenin 175-180. sütunlarını tek satır halinde görüntüleyin. 
+>* `Ecoli-cds-protein` dosyasındaki CDS dizilerinden başlangıç kodonu ve bitiş kodonu çiftlerinin dağılımını hesaplayınız. (Cevap: ATG TAA 2425, ATG TGA 1043, vb.)
 
 ## Bi-gram analizi
 
 Kriptoanaliz ve genomda kelime sayımı konularında gördüğümüz *N-gram* kavramı sadece bir karakter dizisi içindeki harfleri veya belirli boyuttaki (örn. 3-mer) pencereleri incelemekte kullanılmıştı. Fakat, bu metod bir cümlenin kelimeleri için de uygulanabilir. Yanyana gözüken ikili kelimelerin analizi bi-gram (veya 2-gram), yanyana gözüken üçlü kelimelerin analizi de tri-gram analizi olarak adlandırılmaktadır. [Google N-gram](https://books.google.com/ngrams) projesi, 8 milyondan fazla taranmış kitaptan 1-gram, 2-gram, 3-gram, 4-gram ve 5-gram verilerini oluşturmuştur.
+
+%%%% TODO mention N-gram for DNA (http://www.biomedcentral.com/1471-2105/12/12 ) and find more examples for use of N-gram for other than DNA
 
 Aşağıdaki örnek Emma romanında yanyana bulunan ikili kelimelerin (bi-gram) frakansını hesaplamaktadır.
 
