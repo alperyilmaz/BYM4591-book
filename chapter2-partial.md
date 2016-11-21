@@ -1077,3 +1077,10 @@ Kitaptaki çıktılarda renkler görünmediğinden ilgili [asciicast](https://as
 %%%% TODO we can carry regex topic after awk and include a table showing diffs between regex of grep sed and awk, idea for table is here: http://www.sqlite.org/src/artifact/af92cdaa5058fcec
 
 %%%% TODO add tweet example and then ask for popular hashtag (both tr and grep needs #) for example: tr -sc '[:alnum:]@#'' '\n'
+Kontrol Karakterleri-Amacı	
+Control-C	Çalışan komutu sona erdirir
+Control-U	Komut satırındaki tüm karakterleri sile
+Control-S	Ekrana çıktıyı durdurur
+Control-Q	Ekrana çıktıyı yeniden başlatır
+Control-D	End-of-file veya çıkış sinyali üretir
+Control-W	Komut satırındaki son kelimeyi siler
