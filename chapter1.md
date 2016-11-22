@@ -222,14 +222,18 @@ Boşluk karakterinin argümanları ayırmak için kullanılmadığı, dosya ismi
 Bu işleme kaçış (ing. escape) denilmektedir.
 
 > İçinde boşluk karakteri bulunan dosya ve klasör isimlerini yazarken `Tab` tuşu ile tamamlama yapılırsa kaçış karakteri otomatik olarak eklenecektir.
-### kontrol karakterleri
-+Control-C	Çalışan komutu sona erdirir
-+Control-U	Cursor'un solundaki karakterleri siler
-+Control-D	End-of-file veya çıkış sinyali üretir
-+Control-W	Komut satırındaki son kelimeyi siler
-+Control-k      Cursorun sağınakileri siler
-+Control-a      Satır başını siler
-+Control-e      Satır sonunu siler
+
+### Kontrol Karakterleri
+
+Terminalde `Ctrl` (Kontrol) tuşu ile özel karakterler terminale yazdırılabilir. Bu özel karakterler belirli eylemleri gerçekleştirmek için kullanılmaktadır. Aşağıdaki tuş kombinasyonları ile terminalde komut yazarken zaman kazanılabilir, özel eylemler (örn. komut öldürme) gerçekleştirilebilir. 
+
+* Ctrl-c	Çalışan komutu sona erdirir
+* Ctrl-u	Kürsorun solundaki karakterleri siler
+* Ctrl-k	Kürsorun sağındaki karakterleri siler
+* Ctrl-d	End-of-file veya çıkış sinyali üretir
+* Ctrl-w	Komut satırındaki son kelimeyi siler
+* Ctrl-a	Kürsoru satır başına taşır
+* Ctrl-e	Kürsoru satır sonuna taşır
 
 ### Dosya türleri ve uzantıları {#dosya-turleri}
 
