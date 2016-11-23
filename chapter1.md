@@ -223,6 +223,18 @@ Bu işleme kaçış (ing. escape) denilmektedir.
 
 > İçinde boşluk karakteri bulunan dosya ve klasör isimlerini yazarken `Tab` tuşu ile tamamlama yapılırsa kaçış karakteri otomatik olarak eklenecektir.
 
+### Kontrol Karakterleri
+
+Terminalde `Ctrl` (Kontrol) tuşu ile özel karakterler terminale yazdırılabilir. Bu özel karakterler belirli eylemleri gerçekleştirmek için kullanılmaktadır. Aşağıdaki tuş kombinasyonları ile terminalde komut yazarken zaman kazanılabilir, özel eylemler (örn. komut öldürme) gerçekleştirilebilir. 
+
+* Ctrl-c	Çalışan komutu sona erdirir
+* Ctrl-u	Kürsorun solundaki karakterleri siler
+* Ctrl-k	Kürsorun sağındaki karakterleri siler
+* Ctrl-d	End-of-file veya çıkış sinyali üretir
+* Ctrl-w	Komut satırındaki son kelimeyi siler
+* Ctrl-a	Kürsoru satır başına taşır
+* Ctrl-e	Kürsoru satır sonuna taşır
+
 ### Dosya türleri ve uzantıları {#dosya-turleri}
 
 Maalesef, Windows işletim sisteminin kullanıcıların işini kolaylaştırmak için seçtiği yöntemler yüzünden dosya türü konusunda bazı yanlış anlamalar olmaktadır. Windows sisteminde bir dosya üzerine çift tıklandığında uygun yazılım ile o dosya açılmaktadır. Mesela, .doc veya docx uzantılı bir dosya Microsoft Word ile açılmaktadır. Bu yüzden "korelasyon" ile "sebep-sonuç ilişkisi" [karıştırılmaktadır](https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation). Bir dosya, *uzantısı .doc veya .docx olduğu için Word ile açılıyor* şeklinde bir kabul ortaya çıkmaktadır. Bir dosya ancak uygun [Word binary format](https://en.wikipedia.org/wiki/Microsoft_Word#Binary_formats_.28Word_97.E2.80.932007.29) taşıyorsa Word tarafından açılabilir, uzantısı ne olursa olsun. 
