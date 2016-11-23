@@ -908,6 +908,7 @@ Geçerli dizinde bulunan iki dosya arasındaki ortak satırların bulunmasını 
 * **`comm -1 -3 <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> dosyalarındaki satırlardan \<dosya.adı1\> de olmayıp sadece \<dosya.adı2\> de olanların görüntülenmesini sağlar.
 
 <<[Şekil 2.23 comm komutunun kullanımı](code/comm-ornek.txt)
+<<[Şekil 2.23.1 iki farklı hikayede kullanılan ortak kelimeleri comm komutu ile bulma](code/comm-ornek1.txt)
 
 >### Sorular
 >* Sayı50 ve sayı1000 dosyalarındaki ortak satırları bulun.
