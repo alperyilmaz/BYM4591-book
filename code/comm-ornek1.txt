@@ -1,0 +1,30 @@
+$ cat set1.txt
+1
+2
+3
+4
+5
+$ cat set2.txt
+1
+3
+5
+7
+9
+$ comm <(sort set1.txt) <(sort set2.txt)
+                1
+2
+                3
+4
+                5
+        7
+        9
+$comm -12 <(sort set1.txt) <(sort set2.txt)
+1
+3
+5
+$comm -23 <(sort set1.txt) <(sort set2.txt)
+2
+4
+$comm -13 <(sort set1.txt) <(sort set2.txt)
+7
+9
