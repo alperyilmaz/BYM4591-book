@@ -909,6 +909,21 @@ Geçerli dizinde bulunan iki dosya arasındaki ortak satırların bulunmasını 
 
 <<[Şekil 2.23 comm komutunun kullanımı](code/comm-ornek.txt)
 
+Girdi olarak iki dosya kabul eden komutlar için girdiler farklı şekilde sağlanabilir: 
+1. Dosyalardan her ikisi de bilgisayarda kayıtlı dosya olabilir. Bu durumda, eğer sıralı dosya gerekiyorsa, dosyayı sıralayıp kaydetmek gerekmektedir. 
+2. `<( komut )` şeklinde sanal dosya olarak dosyalardan biri veya her ikisi de sağlanabilir. Daha bilgi için [Process Substitution](https://en.wikipedia.org/wiki/Process_substitution)
+3. Dosyalardan biri (ikisi birden değil) yerine tire (-) işareti kullanılıp bu dosya için girdi başka bir komuttan çubuk (|) yardımıyla alınabilir. :
+```
+$ sort set2 > set2-sorted       | $ comm -12 set1 <(sort set2)
+$ comm -12 set1 set2-sorted     | 1                           
+1                               | 3                           
+3                               |
+                                |
+$ sort set2 | comm -12 set1 -   |
+1                               |
+3                               |
+```
+
 >### Sorular
 >* Sayı50 ve sayı1000 dosyalarındaki ortak satırları bulun.
 >* Sadece sayı1000'de olan satırları bulun.
