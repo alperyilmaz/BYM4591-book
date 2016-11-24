@@ -243,6 +243,21 @@ Bu durum, Linux terminalinde çalışırken daha kolay anlaşılacaktır. Termin
 
 Yukarıda anlatılanlar, terminalde çalışırken uzantılar rastgele seçilebilir, manasına gelmemektedir. Dosya oluştururkenUygun uzantılar seçilmelidir ve bu hangi yazılım tarafından açılacağına uygun olarak değil, dosya türü hakkında fikir verecek şekilde olmalıdır. Örneğin, veri dosyaları .dat olarak adlandırılabilir, Perl kodu içeren dosyalar da .pl olarak adlandırılabilir. Geçici dosyalar da .tmp olarak adlandırılabilirler.
 
+Temel Lınux Komutları
+
+bc: Aritmetik işlemlerin gerçekleştirilebileceği bir programdır.
+cat: Dosyanın içeriğini görüntülemek için kullanılır.
+clear: Terminali temizler ve imleci ilk satıra taşır.
+cmp: İki dosyayı karşılaştırır ve farklılıklarını belirtir.
+diff: İki metin dosyasını karşılaştırır.
+du: Dosya ve dizinlerin disk kullanım alanlarını görüntüler.
+expr: Aritmetik ve mantıksal işlemleri gerçekleştirir.
+find: Dosya ya da dizin arama işlemlerini gerçekleştirir.
+echo: Karakterleri ya da değişkenlerin değerlerini görüntüler.
+wc: Dosyadaki kelime ya da satır sayısını görüntüler.
+split: Dosyayı belirtilen boyutlara böler.
+grep: Belirtilen dosyalar içerisinde girilen düzgün deyimin araştırılması için kullanılır. [KAYNAK] ((http://file.cc.metu.edu.tr/ccweb/bidb_ccusg/Linux2002.pdf))
+
 ### Terminal egzersizleri için kaynaklar
 
 Bilişim veya programlama türündeki bilgilerin en hızlı öğrenilmesi pratik yapma ve egzersiz ile mümkün olacaktır. Bu kitabı çok kısa sürede okuyup anlayabilirsiniz fakat bir terminal karşısına geçip pratik yapmazsanız maalesef bu kitapta anlatılanları kavramanız mümkün olmayacaktır. Aşağıda, terminal komutları hakkında pratik yapabilmeniz için kullanılabilecek web tabanlı kaynaklar listelenmiştir.
