@@ -540,47 +540,6 @@ Polialfabetik şifreleme, monoalfabetik yöntemlere göre çözümlemesi çok zo
 > ~~~~~~~~~~~~~~~
 >
 
-## column komutu
-
-İngilizce orijinal tarifi: "columnate lists"
-
-Dosyaların veya girdinin ekranda sütunlar halinde düzenli görüntülenmesini sağlar.
-
-* **`column <dosya.adı>`** : Geçerli dizin içinde bulunan \<dosya.adı\> isimli dosya içindeki sütunları tab ile birleştirerek aynı satırda görüntüler.
-* **`column -t <dosya.adı>`** : Geçerli dizin içinde bulunan \<dosya.adı\> isimli dosyanın kolonlarının tab ile ayrıldığını kabul ederek düzenleme yapar.
-* **`column -s 'ayıraç.türü' <dosya.adı>`** : Geçerli dizin içinde bulunan \<dosya.adı\> isimli dosyanın kolonlarının belirtilen ayıraç.türü ile ayrıldığını kabul ederek düzenleme yapar. Örneğin; **`column -s ','`** komutunda, virgül (,) ile ayrılmış kolonları düzenler. 
-
-<<[Şekil 2.17 column komutunun kullanımı](code/column-ornek.txt)
-
->### Sorular
->* Movies ve ratings dosyalarını düzgün olarak ekranda görüntüleyin.
-
-%%%% TODO: uzun satırlar wrap yapılıp satır numarası açılabilir.
-
-> `column` komutu pipe içerisinde kullanırsa ardından gelen komutların doğru çalışmasını engeller, ardından gelen komutların sütunları algılayıp ayırabilmesine mani olur. Bu yüzden, görsel olarak düzeltme gerekmedikçe `column` komutunu kullanmamaya özen gösteriniz. Aşağıdaki örnek, tab karakterinin özel bir karakter olduğunu vurgulayıp, `column -t` ile boşluklara çevrildiğini, bunun ardından da artık kolon ayıracının ortadan kalktığını göstermektedir.
-
-```
-$ cat what-is-tab.txt            | $ column -t what-is-tab.txt
-abc     3                        | abc               3
-abcde   5                        | abcde             5
-abcdefg 7                        | abcdefg           7
-abcdefgh        8                | abcdefgh          8
-abcdefghijklmnop        16       | abcdefghijklmnop  16
-                                 |
-$ cat -A what-is-tab.txt         | $ column -t what-is-tab.txt | cat -A
-abc^I3$                          | abc               3$
-abcde^I5$                        | abcde             5$
-abcdefg^I7$                      | abcdefg           7$
-abcdefgh^I8$                     | abcdefgh          8$
-abcdefghijklmnop^I16$            | abcdefghijklmnop  16$
-                                 | 
-$ cut -f2 what-is-tab.txt        | $ column -t what-is-tab.txt | cut -f2
-3                                | abc               3
-5                                | abcde             5
-7                                | abcdefg           7
-8                                | abcdefgh          8
-16                               | abcdefghijklmnop  16
-```
 
 ## sort komutu
 
@@ -595,7 +554,7 @@ Geçerli dizinde bulunan bir dosyanın içeriğinin alfabetik olarak sıralanmas
 * **`sort -u <dosya.adı>`** : Sıralamayı yaparken birden fazla olan modellerin bir kere gösterilmesini sağlar.
 * **`sort -t 'ayrac.turu' <dosya.adı>`** : Sıralama yaparken \<dosya.adı\> isimli dosyanın kolonlarını 'ayrac.turu' ne göre belirler.
 
-<<[Şekil 2.18 sort komutunun kullanımı](code/sort-ornek1.txt)
+<<[Şekil 2.17 sort komutunun kullanımı](code/sort-ornek1.txt)
 
 <<[Şekil 2.18 sort komutunun kullanımı (devamı)](code/sort-ornek2.txt)
 
@@ -634,6 +593,31 @@ a zcefhi                          | abc efjk
 `sort` komutu aynı anda iki sütuna göre sıralama yapabilir. Aşağıdaki örnekte, filmler yıllara göre ters olarak (yeni çekilen filmler) ve ardından alfabetik olarak sıralanmışlardır. `sort -k3r movies | sort -k2` şeklindeki komut yanlış sonuç verecektir çünkü üçüncü kolona göre sıralanan içerik ikinci kolona göre sıralanacaktır ve bu sırada ilk sıralama kaybolacaktır.
 
 <<[Şekil 2.19b İki sütuna göre aynı anda sıralama örneği](code/sort-double.txt)
+
+> `column` komutu pipe içerisinde kullanırsa ardından gelen komutların doğru çalışmasını engeller, ardından gelen komutların sütunları algılayıp ayırabilmesine mani olur. Bu yüzden, görsel olarak düzeltme gerekmedikçe `column` komutunu kullanmamaya özen gösteriniz. Aşağıdaki örnek, tab karakterinin özel bir karakter olduğunu vurgulayıp, `column -t` ile boşluklara çevrildiğini, bunun ardından da artık kolon ayıracının ortadan kalktığını göstermektedir.
+
+```
+$ cat what-is-tab.txt            | $ column -t what-is-tab.txt
+abc     3                        | abc               3
+abcde   5                        | abcde             5
+abcdefg 7                        | abcdefg           7
+abcdefgh        8                | abcdefgh          8
+abcdefghijklmnop        16       | abcdefghijklmnop  16
+                                 |
+$ cat -A what-is-tab.txt         | $ column -t what-is-tab.txt | cat -A
+abc^I3$                          | abc               3$
+abcde^I5$                        | abcde             5$
+abcdefg^I7$                      | abcdefg           7$
+abcdefgh^I8$                     | abcdefgh          8$
+abcdefghijklmnop^I16$            | abcdefghijklmnop  16$
+                                 | 
+$ cut -f2 what-is-tab.txt        | $ column -t what-is-tab.txt | cut -f2
+3                                | abc               3
+5                                | abcde             5
+7                                | abcdefg           7
+8                                | abcdefgh          8
+16                               | abcdefghijklmnop  16
+```
 
 >### Sorular
 >* `sayi50` dosyasını alfabetik olarak sıralayın.
