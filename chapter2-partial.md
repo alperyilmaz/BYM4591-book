@@ -116,6 +116,15 @@ Geçerli dizinde bulunan dosyaları veya klasörleri silmeyi sağlar.
 
 * **`rm <dosya.adı>`** : Geçerli dizin içindeki \<dosya.adı\> isimli dosyanın silinmesini sağlar.
 * **`rm -r <klasör.adı>`** : Klasörleri altdizin ve içerisinde bulunan dosyalar ile birlikte siler. Komut bazı durumlarda çalışmadan önce onay ister ve onaylamak için y tuşuna basılmalıdır.
+* **`rm -i <klasör.adı>`** :işlemi onaylamanızı ister, hata olasılığını azaltmak için kullanılır.
+$ rm -i a*
+komutu, ‘a’ harfi ile başlayan tüm dosyaları silecektir.
+$ rm -i *at*
+komutu ise, içinde herhangi bir yerinde at geçen tüm dosyaları silecektir. Örneğin aynı dizin altında bulunan
+at.txt
+saat.txt
+dosya.sat
+isimli dosyaların hepsini silecektir.
 
 <<[Şekil 2.6 rm komutunun kullanımı](code/rm-ornek.txt)
 
