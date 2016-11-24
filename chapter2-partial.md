@@ -553,7 +553,7 @@ Dosyaların veya girdinin ekranda sütunlar halinde düzenli görüntülenmesini
 
 %%%% TODO: uzun satırlar wrap yapılıp satır numarası açılabilir.
 
-> `column` komutu pipe içerisinde kullanırsa ardından gelen komutların doğru çalışmasını engeller, ardından gelen komutların sütunları algılayıp ayırabilmesine mani olur. Bu yüzden, görsel olarak düzeltme gerekmedikçe `column` komutunu kullanmamaya özen gösteriniz. Aşağıdaki örnek, tab karakterinin özel bir karakter olduğunu vurgulayıp, `column -t` ile boşluklara çevrildiğini, bunun ardından da artık kolon ayıracının ortadan kalktığını göstermektedir. (`what-is-tab.txt` adlı dosya klasörünüzde bulunmamaktadır fakat kolaylıkla oluşturulabilir)
+> `column` komutu pipe içerisinde kullanırsa ardından gelen komutların doğru çalışmasını engeller, ardından gelen komutların sütunları algılayıp ayırabilmesine mani olur. Bu yüzden, görsel olarak düzeltme gerekmedikçe `column` komutunu kullanmamaya özen gösteriniz. Aşağıdaki örnek, tab karakterinin özel bir karakter olduğunu vurgulayıp, `column -t` ile boşluklara çevrildiğini, bunun ardından da artık kolon ayıracının ortadan kalktığını göstermektedir.
 
 ```
 $ cat what-is-tab.txt            | $ column -t what-is-tab.txt
@@ -913,19 +913,23 @@ Yukarıdaki örnekten `comm` komutunun tek sütun halindeki listenin ortak elema
 
 <<[Şekil 2.23.1 comm komutunun satır bazında çalıştığını gösteren örnek](code/comm-ornek.txt)
 
+Girdi olarak iki dosya kabul eden komutlar için girdiler farklı şekilde sağlanabilir:
 
-Girdi olarak iki dosya kabul eden komutlar için girdiler farklı şekilde sağlanabilir: 
 1. Dosyalardan her ikisi de bilgisayarda kayıtlı dosya olabilir. Bu durumda, eğer sıralı dosya gerekiyorsa, dosyayı sıralayıp kaydetmek gerekmektedir. 
-2. `<( komut )` şeklinde sanal dosya olarak dosyalardan biri veya her ikisi de sağlanabilir. Daha bilgi için [Process Substitution](https://en.wikipedia.org/wiki/Process_substitution)
-3. Dosyalardan biri (ikisi birden değil) yerine tire (-) işareti kullanılıp bu dosya için girdi başka bir komuttan çubuk (|) yardımıyla alınabilir. :
+2. `<( komut )` şeklinde sanal dosya olarak dosyalardan biri veya her ikisi de sağlanabilir. (Daha fazla bilgi için [Process Substitution](https://en.wikipedia.org/wiki/Process_substitution))
+
+3. Dosyalardan biri (ikisi birden değil) yerine tire (-) işareti kullanılıp bu dosya için girdi başka bir komuttan çubuk (|) yardımıyla alınabilir.
+
 ```
+#1                              | #2 (dosyalardan biri veya ikisi)
 $ sort set2 > set2-sorted       | $ comm -12 set1 <(sort set2)
 $ comm -12 set1 set2-sorted     | 1                           
 1                               | 3                           
 3                               |
-                                |
-$ sort set2 | comm -12 set1 -   |
-1                               |
+                                | $ comm -12 <(sort set1) <(sort set2)
+#3                              | 1
+$ sort set2 | comm -12 set1 -   | 3
+1                               | 
 3                               |
 ```
 
