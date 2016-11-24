@@ -479,6 +479,8 @@ drnxh tvhrv ckvkk xowfy vfvov fygen bwkkn ekpwe cbvpn edfwt wkkwe fdkgd
 
 Oldukça eski ve ilkel bir yöntem olan [Sezar şifresi](https://en.wikipedia.org/wiki/Caesar_cipher), her bir karakterin alfabetik olarak belirli ve sabit sayıda kaydırılması ile yapılmaktadır. Eğer, üç harf kaydırma kullanılacak olursa "Zebra" kelimesi "Cheud" şekline dönüşmektedir. [ROT13 adlı şifreleme](https://en.wikipedia.org/wiki/ROT13), Sezar şefrelemesinin özel bir hali olup her karakter alfabetik olarak 13 karakter ilerletilmektedir. ROT13 kullanıldığında "Zebra" kelimesi "Mroen" şeklinde yazılmaktadır.
 
+"Zebra" kelimesini ROT13 ile "Mroen" şifresine dönüştürmek için komut kısmına  " echo Zebra | tr a-zA-Z  n-za-mN-ZA-M " yazmamız gerekir. "Mroen" şifresini ROT13 ile çözmek istersek de komut kısmına " echo Mroen | tr n-za-mN-ZA-M " yazmalıyız.
+
 ```
 ROT1
 Input   ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -494,8 +496,33 @@ ROT13, diğer anahtarlara göre özel bir yere sahiptir çünkü ROT13 için hem
 Sezar şifresi çok kolaylıkla çözülebilir çünkü 25 farklı anahtar deneyerek sonuca ulaşılabilir (ROT1 -- > ROT25). Terminalde bunun güzel bir örneği [bu sayfada](https://sandilands.info/sgordon/classical-ciphers-frequency-analysis-examples) gösterilmiştir. [Decrypting Text](http://www.richkni.co.uk/php/crypta/caesar.php) adlı websayfasında, kutuya yazılan yazı 25 farklı kaydırma ile denenip deşifre edilmektedir. Harfleri rastgele karıştırmak mümkün olsa da, sırası unutulmayacak bir karıştırma daha çok tercih edilmektedir. Bunun için kullanılan yöntemlerden biri, anahtar kelime  kullanmaktır. Aşağıdaki eşleşme tablosu `LINUX` kelimesi kullanılarak oluşturulmuştur. Anahtar kelime ilk önce yazılmış ardından da anahtar kelimede olmayan harfler sırasıyla yazılmıştır. "Y" ve "Z" harflerinin yerleri değiştirilmiştir çünkü **eşleşme tablosunda hiçbir harf kendiyle eşleşmemelidir**.
 
 ROT kısaltması rotation kelimesinden gelmektedir yani alfabede bulunun harflerin, onlardan sonra gelecek olan harflerle yer değiştirmesidir. ROT şifrelemesi yapılırken echo ve tr komutları sıklıkla kullanılır.
-Örneğin "ProjectX" kelimesini ROT1 ile şifrelemek istersek komut kısmına " echo ProjectX | tr a-zA-Z  b-za-aB-ZA-A " yazmamız gerekir. Şifreleme tamamldığında "ProjectX" kelimesi "QspkfduY" şifresine dönüşecektir. Eğer "QspkfduY" şifresini eski haline geri döndürmek istersek de komut kısmına " echo QspkfduY | tr b-za-aB-ZA-A  a-zA-Z " yazmamız gerekir.
+
 Bir kelimeyi ROT2 ye göre şifrelemek istersek de " echo 'kelime' | tr a-zA-Z  c-za-bC-ZA-B " yazmamız gerekir. ROT3 ile şifrelemek için "tr a-zA-Z  d-za-cD-ZA-C" yazmamız gerekir. Her seferinde birer harf kaydırma yaparak 25 farklı ROT şifrelemesi oluşturabiiriz. 
+Aşağıdaki liste ROT3 ten ROT25 e kadar şifre çözmemize yardımcı olur;
+
+ROT-3 = d-za-cD-ZA-C
+ROT-4 = e-za-dE-ZA-D
+ROT-5 =  f-za-eF-ZA-E
+ROT-6 =  g-za-fG-ZA-F
+ROT-7 = h-za-gH-ZA-G
+ROT-8 = i-za-hI-ZA-H
+ROT-9 = j-za-iJ-ZA-I
+ROT-10 = k-za-jK-ZA-J
+ROT-11 = l-za-kL-ZA-K
+ROT-12 = m-za-lM-ZA-L
+ROT-13 = n-za-mN-ZA-M
+ROT-14 = o-za-nO-ZA-N
+ROT-15 = p-za-oP-ZA-O
+ROT-16 = q-za-pQ-ZA-P
+ROT-17 = r-za-qR-ZA-Q
+ROT-18 = s-za-rS-ZA-R
+ROT-19 = t-za-sT-ZA-S
+ROT-20 = u-za-tU-ZA-T
+ROT-21 = v-za-uV-ZA-U
+ROT-22 = w-za-vW-ZA-V
+ROT-23 = x-za-wX-ZA-W
+ROT-24 = y-za-xY-ZA-X
+ROT-25 = z-za-yZ-ZA-Y
 
 ```
 Input   ABCDEFGHIJKLMNOPQRSTUVWXYZ
