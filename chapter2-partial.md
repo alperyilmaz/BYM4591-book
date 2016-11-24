@@ -908,6 +908,9 @@ Geçerli dizinde bulunan iki dosya arasındaki ortak satırların bulunmasını 
 * **`comm -1 -3 <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> dosyalarındaki satırlardan \<dosya.adı1\> de olmayıp sadece \<dosya.adı2\> de olanların görüntülenmesini sağlar.
 
 <<[Şekil 2.23 comm komutunun kullanımı](code/comm-ornek1.txt)
+
+Yukarıdaki örnekten `comm` komutunun tek sütun halindeki listenin ortak elemanlarını bulduğu sanılabilir. Aslında bütün satırın aynı olup olmadığını karşılaştırılmaktadır. Aşağıdaki örnekte birden fazla sütundan oluşan iki dosya arasında ortak olan satırlar bulunmuştur.
+
 <<[Şekil 2.23.1 comm komutunun satır bazında çalıştığını gösteren örnek](code/comm-ornek.txt)
 
 
