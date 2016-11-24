@@ -885,9 +885,10 @@ Polialfabetik, transpozisyon veya Vinegre şifrelemeleri, eşit harf frekansı o
 ## Genomda kelime sayımı
 
 %%%% TODO importance of k-mer frequency in genomics and other sciences
+K-mer frequency analysis can be used as a general and assembly-independent method for estimating genomic characteristics, which can improve understanding of a species genome, help design the sequencing strategy of genome projects, and guide the development of assembly algorithms.[Kaynak](https://arxiv.org/ftp/arxiv/papers/1308/1308.2012.pdf)
 
 Metod olarak, k-mer oluştururken genomun nasıl bölüneceği önemlidir. Örtüşen (overlapping) ve örtüşmeyen (non-overlapping) pencereler şeklinde bölünüp sayım yapıldığında farklı sonuçlar çıkacaktır. Aşağıdaki şekilde, pencere boyutu (3-mer veya 4-mer) ve pencerelerin örtüşüp örtüşmemesi durumları tarif edilmiştir.
-
+https://arxiv.org/ftp/arxiv/papers/1308/1308.2012.pdf
 ![Şekil 2.22b Kelime sayımında pencere şeçimini göre sayım sonuçlarının değişmesi](images/kmer-window.png)
 
 Örtüşmeyen sayım tek bir `fold` komutu ile yapılabilir. Ama örtüşen pencere sayımı için `fold` komutu birden fazla kere kullanılmalı ve her kullanımda genom dizisi bir harf eksiltilip çerçeve kayması sağlanmalıdır.
