@@ -940,7 +940,7 @@ Geçerli klasördeki iki dosyanın içindekilerin tamamen birbiri üzerine yapı
 * **`paste <dosya.adı1> <dosya.adı2> -d'ayıraç'`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli iki klasördeki bilgilerin değiştirilmeden, yan yana yapıştırılmasını ve berlirtilen ayıraç ile ayrılmasını sağlar. Bu komut ile peş peşe farklı ayıraçlar da yapılabilir.
 * **`paste <dosya.adı1> <dosya.adı2> -s`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli iki klasördeki bilgilerin değiştirilmeden ama satırlar sütun, sütunlar satır yapılarak yapıştırılması sağlanır.
 
-<<[Şekil 2.24 paste komutunun farklı kullanımları](code/paste-ornek1.txt)
+<<[Şekil 2.24 paste komutunun farklı kullanımları](code/paste-ornek1)
 
 <<[Şekil 2.24.1 paste komutuyla sayı serisi üretimi ve hesaplanması](code/paste-ornek.txt)
 
