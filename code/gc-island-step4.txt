@@ -1,5 +1,5 @@
-$ cat Ecoli-genome.fa | tr "ACGT" " __ "  | tr -s " " "\n" | sort | head 
-_
+$ tail -n +2 Ecoli-genome.fa | tr "ACGT" " __ "  | tr -s " " "\n" | sort | head
+
 _
 _
 _

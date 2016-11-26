@@ -313,6 +313,7 @@ Boşluk, enter ve tab gibi özel karakterlerin de değiştirilmesi mümkündür.
 >* 'fark' kelimesinden 'pile' kelimesine kadar dört kademede olarak her kademede bir harf değiştirerek anlamlı kelimeler oluşturun. Örnek olarak kal kelimesinden sek kelimesine inmek şu şekilde gerçekleşir: kal - sal - sel - sek.
 >* 'Yarın' kelimesini değiştirerek 'kadın' kelimesi olarak ekranda görüntüleyin.
 >* AGTCAGCTACGACTACGACTACGACTAGCATCAA dizisinin ters eşleniğini (reverse complement) hesaplayınız.
+>* `seq` ve `tr` komutlarını kullanarak yanyana 100 tane + işaretini yazdırınız (++++...). (**İpucu**: seq komutunun kullanım kılavuzuna bakınız)
 
 %%%% TODO we should have plenty of tr questions for practicing
 
@@ -624,6 +625,7 @@ $ cut -f2 what-is-tab.txt        | $ column -t what-is-tab.txt | cut -f2
 >* `sayi50` dosyasını sayısal olarak sıralayın ve ilk 15 tanesini ekranda görüntüleyin.
 >* `sayi50` dosyasının alfabetik sıralamaya göre son 25 tanesi hariç ekranda görüntüleyin.
 >* english_words adlı dosyadaki kelimeleri kafiye oluşturacak şekilde sıralayın.
+>* `Ecoli-genome.fa` adlı dosyadaki dizileri 20. nükleotide göre sıralayın.
 
 ## cut komutu
 
@@ -758,11 +760,13 @@ Genomun yapısını veya fonksiyonunu anlamak için çeşitli analiz yöntemleri
 
 Şimdiye kadar öğrendiğimiz komutlar yardımıyla *E.coli* bakteri genomundaki GC adalarının uzunluklarının dağılımını analiz edelim. Genom dosyasının ilk on satırına bakıp dosya içeriği hakkında bilgi sahibi olalım.
 
-> Aşağıdaki örneklerde, dosyadan veya komut çıktılarından içeriğini anlamaya yetecek kadar satır, sadece 10 veya 20 satır, gösterilmiştir.
+> Aşağıdaki örneklerde, dosyadan veya komut çıktılarından içeriğini anlamaya yetecek kadar satır, sadece 5 veya 10 satır, gösterilmiştir.
+
+[Fasta](https://en.wikipedia.org/wiki/FASTA_format) formatında olan genom dosyasının ilk satırından kurtulmak için `tail` komutu kullanılabilir. (**Not**: birden fazla kromozom olan dosyalarda bu yöntem kullanılamaz)
 
 <<[Genom dosyası içeriği](code/gc-island-step1.txt)
 
-tr komutu yardımıyla G ve C nükleotidlerini alt çizgi ve A ile T nükleotidlerini boşluk karakteri ile yerdeğiştirdiğimizde aşağıdaki gibi bir sonuç elde etmekteyiz:
+tr komutu yardımıyla G ve C nükleotidlerini alt çizgi ve A ile T nükleotidlerini boşluk karakteri ile yer değiştirdiğimizde aşağıdaki gibi bir sonuç elde etmekteyiz:
 
 <<[Genom dosyasında nükleotidlerin tr komutu ile yer değiştirilmesi](code/gc-island-step2.txt)
 
@@ -781,7 +785,7 @@ Daha önceki örneklerde gördüğümüz üzere, bir sütunda bulunan öğelerin
 
 Daha kesin hesap yapabilmek için:
 
-* Genom dosyasındaki ilk satırın gözardı edilmesi gerekmektedir. Bu da, ileriki bölümlerde öğrenecegimiz `grep`, `sed` veya `awk` komutları ile mümkün olacaktır. Bu örnek için, kullandığımız komuta, `grep -v ">"` komutu eklenirse daha doğru sonuç elde edebiliriz.
+* Genom dosyasındaki ilk satırın gözardı edilmesi için kullandığımız `tail -n +2` komutu birden fazla kromozom olan dosyalarda doğru sonuç vermeyecektir. İleriki bölümlerde öğrenecegimiz `grep`, `sed` veya `awk` komutları ile birden fazla kromozom bilgisini ortadan kaldırmak mümkün olacaktır. 
 * Genom dosyası tek satır halinde olmayıp birçok satır halindedir, bu yüzden satır sonlarına gelen GC adaları ortadan bölünmektedir. Yine ek bir tr komutu sayesinde bu sorun aşılabilir ve bunun sonucunda daha doğru sonuç elde edilebilir (5 tane G ve C nükleotidi yanyana olan ada sayısı aslında 50292 tanedir).
 
 Bu yönteme ait orijinal fikir Martin Krzywinski tarafından hazırlanan [perl workshop](http://mkweb.bcgsc.ca/perlworkshop/data/courses/2.1.2.4/01/pdf/2.1.2.4.1.a1.pdf) içeriğinden alınmıştır.
@@ -1004,7 +1008,7 @@ Geçerli klasördeki iki dosyayı ortak kolonları üzerinden birleştirir. Ekst
 * **`join -o dosya-no.kolon-no <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli klasörleri ilk kolondaki ortak olanlara göre yan yana yapıştırır ve belirtilen dosyaların belirtilen kolonlarının görüntülenmesini sağlar.
 * **`join -e 'işaret' <dosya.adı1> <dosya.adı2>`** : Geçerli klasördeki \<dosya.adı1\> ve \<dosya.adı2\> isimli dosyalar birleştirildiğinde karışıklığı önlemek için, ortak olmayan kısımlara belirli işaretler konulmasını sağlar. Dosyalar sadece join ile birleştirildiğinde yalnızca ortak komutların satırları geldiği için e seçeneğinin bir fonksiyonu olmaz. Bu nedenle önce -a seçeneği ile hangi dosyada olmayan satır çağrılacaksa o belirtilmelidir.
 
-> `join` ve `comm` komutu için kullanılan dosyaların `sort` komutu ile sıralı hale getirilmiş olması gerekir. Özellikle `join` komutu için, hangi ortak kolon üzerinde birleştirme yapılacaksa her iki dosyanın da o kolona göre alfabetik sıralanması gerekmektedir. Dosyalar sıralanarak farklı birer dosya olarak kaydedilebilecekleri gibi aşağıdaki örnekte olduğu gibi de yapılabilir.
+> `join` ve `comm` komutu için kullanılan dosyaların `sort` komutu ile sıralı hale getirilmiş olması gerekir. Özellikle `join` komutu için, hangi ortak kolon üzerinde birleştirme yapılacaksa her iki dosyanın da o kolona göre **alfabetik** sıralanması gerekmektedir. Dosyalar sıralanarak farklı birer dosya olarak kaydedilebilecekleri gibi aşağıdaki örnekte olduğu gibi de yapılabilir.
 >
 > `join <(sort öğrenci-not-dönem1) <(sort öğrenci-not-dönem2)`
 
@@ -1012,11 +1016,53 @@ Geçerli klasördeki iki dosyayı ortak kolonları üzerinden birleştirir. Ekst
 
 > Yukarıdaki örnek çıktıda, uzun satırların bir sonraki satıra taşan kısımları \ ile gösterilmiştir, komutlar çalıştırıldığında terminal ekranında görünmeyecektir.
 
+Her iki kümedeki elemanlar birer defa bulunuyorsa `comm -12` ve `join` komutları benzer sonuçlar verecek ve iki küme arasında "ortak" olan elemanları listeleyecektir. Fakat, bir kereden fazla görünen elemanlar olduğunda `comm` ve `join` komutlarının davranışları değişecektir.
+
+Aşağıdaki örnekte **tek sütun** halindeki listelerin birleştirilmesinden sonra, `join` komutu "2" rakamını iki kere göstermiştir, sadece bir dosyada iki kere görüldüğü halde. `comm` komutu ise **ortak** olarak bir tane "2" rakamı olduğunu göstermiştir.
+
+```
+$ echo -e "1\n2\n2\n3" > setA
+$ echo -e "2\n3\n4" > setB
+
+$ cat setA                        | $ cat setB
+1                                 | 2
+2                                 | 3
+2                                 | 4
+3                                 | 
+
+$ comm setA setB                  | $ join setA setB
+1                                 | 2
+                2                 | 2
+2                                 | 3
+                3                 | 
+        4                         | 
+```
+
+Bu davranışın sebebi, `join` komutunun **ortak** eleman aramadığını, iki listedeki her elemanı birbiriyle kavuşturmaya çalışmasıdır. Aşağıdaki örnek bu durumu iki sütunlu dosyaların birleştirilmesinde göstermektedir.
+
+```
+# jset1                      # jset2                # jset3
+echo -e "1 ab\n2 cd\n2 ef" | echo -e "1 gh\n2 ij" | echo -e "2 kl\n2 mn"
+1 ab                       | 1 gh                 | 2 kl 
+2 cd                       | 2 ij                 | 2 mn
+2 ef                       |                      |
+
+$ join jset1 jset2         | $ join jset1 jset3   | $ join jset2 jset3
+1 ab gh                    | 2 cd kl              | 2 ij kl
+2 cd ij                    | 2 cd mn              | 2 ij mn
+2 ef ij                    | 2 ef kl              |
+                           | 2 ef mn              |
+```
+
+Bu yüzden, **ortak** eleman bulunması gerektiğinde doğru komutu kullanmak gerekmektedir.
+
+> Sıralı sütun gerektiren her iki komutu, `comm` ve `join`, kullanırken sonuçları ilk olarak `head` ile görüntülemeye çalışınız. Aksi takdirde, dosyaların sıralı olmadığına dair hata mesajını göremeyebilirsiniz.
+
 >### Sorular
 >* Emma ve Oliver Twist kitaplarında ortak olarak en çok görünen 5 kelimeyi bulun.
 >* Emma romanında olup Oliver Twist romanında olmayan ve en çok sayıda bulunan ilk 5 kelimeyi bulun. 
 >* Sayı.harf dosyasında sadece bir kez görünen harfleri yanlarındaki sayılar ile birlikte ekranda görüntüleyin. [asciicast](https://asciinema.org/a/29681?speed=1&theme=solarized-dark&size=medium)
->* `Ecoli-cds-protein` dosyasında bulunan *satP* genine ait CDS dizisinin `codon-table` adlı dosya yardımıyla kaçar tane `Basic` ve `Acidic` amino asit kodladığını bulunuz.
+>* `Ecoli-cds-protein` dosyasında 2332. satırda bulunan *satP* genine ait CDS dizisinin  `codon-table` adlı dosya yardımıyla kaçar tane `Basic` ve `Acidic` amino asit kodladığını bulunuz.
 >* Aynı geni `codon-table` adlı dosya yardımıyla translasyona uğratınız. Çıktı `MGNTKLANPAPLGLMGFG...*` şeklinde olmalıdır. (**Not**: join sırasında codonların sırasını kaybetmemelisiniz!, ipucu: [Schwartzian Transform](http://it-nonwhizzos.blogspot.com.tr/2015/02/the-schwartzian-transform-from-perl-in.html))
 >* Bir amino aside karşılık gelen birden fazla kodon olmasına rağmen ([Codon Degeneracy](https://en.wikipedia.org/wiki/Codon_degeneracy)) her kodon eşit ağırlıkta kullanılmamaktadır ([Codon Bias](https://en.wikipedia.org/wiki/Codon_usage_bias)). `Ecoli-cds-protein` dosyasındaki bütün kodonların amino asit karşılıklarını birleştirerek amino asitlerin kodon tercihlerini görüntüleyiniz. (Örn; Pro için CCG, Leu için CTG, Stop Codon için TAA ağırlıklı olarak kullanılmıştır. *E.coli* için [bütün tablo](http://www.sci.sdsu.edu/~smaloy/MicrobialGenetics/topics/in-vitro-genetics/codon-usage.html).)
 

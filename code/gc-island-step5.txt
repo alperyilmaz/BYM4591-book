@@ -1,4 +1,5 @@
-$ cat Ecoli-genome.fa | tr "ACGT" " __ "  | tr -s " " "\n" | sort | uniq -c | head -20
+$ tail -n +2 Ecoli-genome.fa | tr "ACGT" " __ "  | tr -s " " "\n" | sort | uniq -c
+      1 
  515957 _
  274833 __
  141099 ___
