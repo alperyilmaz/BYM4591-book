@@ -1,0 +1,77 @@
+&cat foodtypes.txt                
+1 Protein
+2 Carbohydrate
+3 Fat
+
+&cat foods.txt
+1 Cheese 
+2 Potato
+3 Butter
+
+&join foodtypes.txt foods.txt
+1 Protein 				Cheese
+2 Carbohydrate 		Potato
+3 Fat 						Butter
+
+&cat colour.txt
+Pink    White   Blue
+Purple  Red     Black
+Grey    Yellow  Green
+		
+&cat colour1.txt
+Red     Yellow
+White   Red
+Yellow  White
+
+&join -1 2 -2 1 colour.txt colour1.txt
+Red Purple Black Yellow
+White Pink Blue Red
+Yellow Grey Green White
+
+&cat colour.txt
+Pink 			White 		Blue 
+Purple		Red	 			Black 
+Grey 			Yellow 		Green
+
+&cat colour1.txt
+Yellow	 	White
+Red 			Yellow
+White		 	Red
+
+&join -1 2 -2 1 colour.txt colour1.txt
+join: colour1.txt:2: is not sorted: Red Yellow
+Yellow Grey Green White
+
+&join -1 2 -2 1 <(sort -k 2 colour.txt) <(sort colour1.txt)
+Red Purple Black Yellow
+White Pink Blue Red
+Yellow Grey Green White
+
+$ cat testfile1
+a India
+b US
+c UK
+d Canada
+e Australia
+
+$ cat testfile2
+a NewDelhi
+b Washington
+c London
+d Toronto
+
+$ join testfile1 testfile2
+a India NewDelhi
+b US Washington
+c UK London
+d Canada Toronto
+
+$ join -a1 testfile1 testfile2
+a India NewDelhi
+b US Washington
+c UK London
+d Canada Toronto
+e Australia
+
+$ join -v1 testfile1 testfile2
+e Australia
