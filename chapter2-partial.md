@@ -624,7 +624,12 @@ $ cut -f2 what-is-tab.txt        | $ column -t what-is-tab.txt | cut -f2
 >* `sayi50` dosyasını sayısal olarak sıralayın ve ilk 15 tanesini ekranda görüntüleyin.
 >* `sayi50` dosyasının alfabetik sıralamaya göre son 25 tanesi hariç ekranda görüntüleyin.
 >* english_words adlı dosyadaki kelimeleri kafiye oluşturacak şekilde sıralayın.
-
+ $ rev english_words | sort | rev | head -5
+ a
+ baa
+ kwanzaa 
+ ba
+ kaaba
 ## cut komutu
 
 İngilizce orijinal tarifi: "remove sections from each line of files"
