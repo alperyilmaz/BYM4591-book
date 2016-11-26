@@ -1,0 +1,41 @@
+$ cat file1                             | $ paste file1
+England                                 | England
+Turkey                                  | Turkey
+France                                  | France
+Germany                                 | Germany
+Spain                                   | Spain 
+                                        | 
+                                        |
+$  paste -s file1                       | $ paste -d, -s file1
+England  Turkey  France   Germany Spain | England,Turkey,France,Germany,Spain                
+                                        |         
+                                        |
+$paste - - < file1                      | $ paste -d':' - - < file1
+England Turkey                          | England:Turkey
+France Germany                          | France:Germany                
+Spain                                   | Spain:
+                                        |         
+$ paste - - - < file1                   | $ paste -d ':,' - - - < file1
+England Turkey France                   | England:Turkey,France
+Germany Spain                           | Germany:Spain,       
+                                        |                                 
+$ cat file2                             | $ paste file1 file2
+Londra                                  | England  Londra
+Ankara                                  | Turkey   Ankara
+Paris                                   | France   Paris
+Berlin                                  | Germany  Berlin
+Madrid                                  | Spain    Madrid
+                                        |
+$ paste -d, file1 file2                 | $ cat file2 | paste -d, file1 -
+England,Londra                          | England,Londra
+Turkey,Ankara                           | Turkey,Ankara       
+France,Paris                            | France,Paris       
+Germany,Berlin                          | Germany,Berlin        
+Spain,Madrid                            | Spain,Madrid      
+                                        |                           
+$ cat file1 | paste -d, - file2         | $ cat file1 file2 | paste -d, - -       
+England,Londra                          |  England,Londra    
+Turkey,Ankara                           |  Turkey,Ankara      
+France,Paris                            |  France,Paris      
+Germany,Berlin                          |  Germany,Berlin       
+Spain,Madrid                            |Spain,Madrid 
