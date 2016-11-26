@@ -1009,7 +1009,7 @@ Geçerli klasördeki iki dosyayı ortak kolonları üzerinden birleştirir. Ekst
 > `join` ve `comm` komutu için kullanılan dosyaların `sort` komutu ile sıralı hale getirilmiş olması gerekir. Özellikle `join` komutu için, hangi ortak kolon üzerinde birleştirme yapılacaksa her iki dosyanın da o kolona göre alfabetik sıralanması gerekmektedir. Dosyalar sıralanarak farklı birer dosya olarak kaydedilebilecekleri gibi aşağıdaki örnekte olduğu gibi de yapılabilir.
 >
 > `join <(sort öğrenci-not-dönem1) <(sort öğrenci-not-dönem2)`
-
+<<[Şekil 2.26.1 join komutunun farklı kullanımları](code/join-ornek1.txt)
 <<[Şekil 2.26 join komutunun farklı kullanımları](code/join-ornek.txt)
 
 > Yukarıdaki örnek çıktıda, uzun satırların bir sonraki satıra taşan kısımları \ ile gösterilmiştir, komutlar çalıştırıldığında terminal ekranında görünmeyecektir.
