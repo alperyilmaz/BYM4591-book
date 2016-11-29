@@ -1139,3 +1139,25 @@ Kitaptaki çıktılarda renkler görünmediğinden ilgili [asciicast](https://as
 %%%% TODO we can carry regex topic after awk and include a table showing diffs between regex of grep sed and awk, idea for table is here: http://www.sqlite.org/src/artifact/af92cdaa5058fcec
 
 %%%% TODO add tweet example and then ask for popular hashtag (both tr and grep needs #) for example: tr -sc '[:alnum:]@#'' '\n'
+
+Temel Linux Komutları ve Kullanımları
+
+ ls: Geçerli çalışma dizinindeki içeriği, yani dosyaları ve klasörleri listelemek için kullanılır.
+ mkdir: Yeni bir klasör oluşturmak için kullanılır.
+ pwd:Linux dizinleri arasında gezinirken nerede olduğunuzu anlamak için kullanılır.
+ cd: Bulunduğunuz dizini değiştirmek için kullanılır.
+  -cd ..: Bu komut bir önceki klasöre dönmek için kullanılır.
+ rm: Bir dosyayı silmek için kullanılır.
+  -rmdir: Bu komut boş bir klasörü silmek için kullanılır.
+ cp: Bir dosyanın kopyasını oluşturmak için kullanılır.
+ mv: Bu komut hem dosya taşımak için hem de dosyaları yeniden adlandırmak için kullanılır.
+ cat: Bir dosyanın içeriğini görmek için kullanılır.
+ tail: Belirttiğiniz dosyanın son bölümünü görüntüler.
+ less: Dosyaları görüntülerken filtre koymak için kullanılır.
+ grep: Bir veya birden fazla dosya içerisinde karakterlerden oluşan kalıpları aramak için kullanılır.
+ find: Dosyaları bulmak için kullanılır.
+ tar: Sıkıştırılmış arşiv dosyaları oluşturmak için kullanılır.
+ man: Bu komutu kullanarak, herhangi bir komutun kullanım detaylarına erişilebilir.
+
+
+
