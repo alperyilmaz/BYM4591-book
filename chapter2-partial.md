@@ -1067,6 +1067,10 @@ Bu yüzden, **ortak** eleman bulunması gerektiğinde doğru komutu kullanmak ge
 >* `Ecoli-cds-protein` dosyasında 2332. satırda bulunan *satP* genine ait CDS dizisinin  `codon-table` adlı dosya yardımıyla kaçar tane `Basic` ve `Acidic` amino asit kodladığını bulunuz.
 >* Aynı geni `codon-table` adlı dosya yardımıyla translasyona uğratınız. Çıktı `MGNTKLANPAPLGLMGFG...*` şeklinde olmalıdır. (**Not**: join sırasında codonların sırasını kaybetmemelisiniz!, ipucu: [Schwartzian Transform](http://it-nonwhizzos.blogspot.com.tr/2015/02/the-schwartzian-transform-from-perl-in.html))
 >* Bir amino aside karşılık gelen birden fazla kodon olmasına rağmen ([Codon Degeneracy](https://en.wikipedia.org/wiki/Codon_degeneracy)) her kodon eşit ağırlıkta kullanılmamaktadır ([Codon Bias](https://en.wikipedia.org/wiki/Codon_usage_bias)). `Ecoli-cds-protein` dosyasındaki bütün kodonların amino asit karşılıklarını birleştirerek amino asitlerin kodon tercihlerini görüntüleyiniz. (Örn; Pro için CCG, Leu için CTG, Stop Codon için TAA ağırlıklı olarak kullanılmıştır. *E.coli* için [bütün tablo](http://www.sci.sdsu.edu/~smaloy/MicrobialGenetics/topics/in-vitro-genetics/codon-usage.html).)
+>* country-cap  country-pop  country-pov  country-unemp  country-unemp-column capital-pop dosyalarını kullanarak join komutu yardımıyla delimeter (United Kingdom,United States etc) olayına da dikkat ederek her ülkeye ait tüm bilgileri tek dosya altında ekranda görüntüleyin. Ayrıca her dosyada bazı ülkelerin bilgileri eksik verilmiştir bunun önüne geçmek için gereken opsiyonu kullanın.
+>* country-pop ve capital-pop dosyasını kullanarak join komutu yardımıyla en yüksek popülasyondan en düşüğe doğru, sütunlarda sırasıyla populasyon başkent ülke ismi yazacak şekilde ekranda görüntüleyin.(eksik bilgiler için ‘Yok’ yazmasını istiyoruz)
+>* country-unemp-column ve country-pov dosyalarını kullanarak en az işsizlik oranına sahip ülkeden en çok olana doğru sütunlar sırasıyla ülke ismi işsizlik fakirlik oranı olacak şekilde ekranda görüntüleyin. 
+
 
 %%%% TODO wc command can be mentioned earlier
 
