@@ -139,6 +139,21 @@ Kopyalanan dosya aynı klasör içine değil, farklı bir klasör içine kopyala
 
 %%%% TODO: cp komutu örneği geliştirilmeli, PATH (relative and absolute) kavramı bahsedilmeli
 
+Path işletim sistemimizin komut satırından veya terminal penceresinden gerekli çalıştırılabilir dosyaların yerini belirlemek için kullandığı sistem değişkeni veya yol olarak tanımlanır.
+Komutları genellikle dosyaların pathwayleriyle kullanırız çünkü kullanmak istediğimiz dosya eğer bulunduğumuz yerde değilse "cannot open 'dosya' for reading: No such file or directory hatasını almaktayız. Pathwayleri ikiye ayırabiliriz : 
+
+a) Relative Path :
+ Adından da anlaşılacağı gibi bu pathway kullanımı görecelidir yani içinde bulunduğumuz klasörde işlem yapabilir.
+   Örnek olarak komutumuz :  "cp Ecoli-genome.fa Ecoli-genome2.fa" olsun , eğer Ecoli-genome.fa dosyası bulunduğumuz dizindeyse çalışır, aksi takdirde    hata verir.
+
+b) Absolute Path :
+ Dosyaların açık adresi diyebileceğimiz bir pathway türüdür.
+   Relative Path'de kullandığımız örneğe bakacak olursak  Ecoli-genome.fa dosyanın asıl konumu /home/1305A024/Ecoli-genome.fa 'dır.
+   Ve kullanım olarak "cp /home/1305A024/Ecoli-genome.fa /home/1305A024/Ecoli-genome2.fa" şeklinde olmaktadır.
+   
+Özetlemek gerekirse ; terminalde nerde olduğumuzun önemi olmaksızın işlem yapmak istediğimizde Absolute Path kullanılmalıdır.
+
+
 ##  mv komutu
 
 İngilizce orijinal tarifi: "move (rename) files"
