@@ -878,6 +878,8 @@ Polialfabetik, transpozisyon veya Vinegre şifrelemeleri, eşit harf frekansı o
 
 %%%% TODO importance of k-mer frequency in genomics and other sciences
 
+Bu yaklaşımı kullandığımızda, bir genomik aralıkta (veya aralıklarla) çok kullanılan veya çok sık temsil edilen k-mer'leri ararken, genomun geri kalanı beklenen frekansta bulunmaktır. Genomda kelime sayma amacımız, bu k-mer lerin gen regülasyonunda ya da kromozom yapısında ve işlevinde biyolojik bir role sahip olduğunu araştırmaktır. Genomic veri tabanlarından verilerimizi alarak bu k-mer'lerden oluşan bir koleksiyon yaparak hipotezimizi test edebiliriz. Örneğin, insan nöronal arttırıcıların bir listesi varsa, sık görülen k-mer'lerle olan ilişkisini anlamlandırmaya çalışabiliriz.
+
 K-mer frequency analysis can be used as a general and assembly-independent method for estimating genomic characteristics, which can improve understanding of a species genome, help design the sequencing strategy of genome projects, and guide the development of assembly algorithms.[Kaynak](https://arxiv.org/ftp/arxiv/papers/1308/1308.2012.pdf)
 
 Metod olarak, k-mer oluştururken genomun nasıl bölüneceği önemlidir. Örtüşen (overlapping) ve örtüşmeyen (non-overlapping) pencereler şeklinde bölünüp sayım yapıldığında farklı sonuçlar çıkacaktır. Aşağıdaki şekilde, pencere boyutu (3-mer veya 4-mer) ve pencerelerin örtüşüp örtüşmemesi durumları tarif edilmiştir.
