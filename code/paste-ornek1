@@ -4,13 +4,12 @@ Turkey                                  | Turkey
 France                                  | France
 Germany                                 | Germany
 Spain                                   | Spain 
-                                        | 
                                         |
-$  paste -s file1                       | $ paste -d, -s file1
-England  Turkey  France   Germany Spain | England,Turkey,France,Germany,Spain                
+$ paste -s file1                        | $ paste -d, -s file1
+England  Turkey  France  Germany  Spain | England,Turkey,France,Germany,Spain                
                                         |         
                                         |
-$paste - - < file1                      | $ paste -d':' - - < file1
+$ paste - - < file1                     | $ paste -d':' - - < file1
 England Turkey                          | England:Turkey
 France Germany                          | France:Germany                
 Spain                                   | Spain:
@@ -34,8 +33,8 @@ Germany,Berlin                          | Germany,Berlin
 Spain,Madrid                            | Spain,Madrid      
                                         |                           
 $ cat file1 | paste -d, - file2         | $ cat file1 file2 | paste -d, - -       
-England,Londra                          |  England,Londra    
-Turkey,Ankara                           |  Turkey,Ankara      
-France,Paris                            |  France,Paris      
-Germany,Berlin                          |  Germany,Berlin       
-Spain,Madrid                            |Spain,Madrid 
+England,Londra                          | England,Londra    
+Turkey,Ankara                           | Turkey,Ankara      
+France,Paris                            | France,Paris      
+Germany,Berlin                          | Germany,Berlin       
+Spain,Madrid                            | Spain,Madrid 
