@@ -436,7 +436,7 @@ is
 that
 ```
 
-İlerleyen sayfalarda `sort` ve ` uniq` komutlarını öğrendikten sonra bir dökümanda kelimelerin kaç defa gözüktüğünü hesaplayacağız. 
+İlerleyen sayfalarda `sort` ve `uniq` komutlarını öğrendikten sonra bir dökümanda kelimelerin kaç defa gözüktüğünü hesaplayacağız. 
 
 ## Kriptoloji ve Kriptoanaliz {#kriptoloji-intro}
 
@@ -1040,7 +1040,7 @@ $ comm setA setB                  | $ join setA setB
         4                         | 
 ```
 
-Bu davranışın sebebi, `join` komutunun **ortak** eleman aramadığını, iki listedeki her elemanı birbiriyle kavuşturmaya çalışmasıdır. Aşağıdaki örnek bu durumu iki sütunlu dosyaların birleştirilmesinde göstermektedir.
+Bu davranışın sebebi, `join` komutunun **ortak** eleman aramaması, iki listedeki her elemanı birbiriyle kavuşturmaya çalışmasıdır. Aşağıdaki örnek bu durumu iki sütunlu dosyaların birleştirilmesinde göstermektedir.
 
 ```
 # jset1                      # jset2                # jset3
@@ -1139,3 +1139,166 @@ Kitaptaki çıktılarda renkler görünmediğinden ilgili [asciicast](https://as
 %%%% TODO we can carry regex topic after awk and include a table showing diffs between regex of grep sed and awk, idea for table is here: http://www.sqlite.org/src/artifact/af92cdaa5058fcec
 
 %%%% TODO add tweet example and then ask for popular hashtag (both tr and grep needs #) for example: tr -sc '[:alnum:]@#'' '\n'
+
+## sed komutu
+
+İngilizce orijinal tarifi: "stream editor for filtering and transforming text"
+
+Geçerli klasörde bulunan dosyalar için veri akışı sırasında karakter ve/veya motiflerin düzenlenerek filtreleme ve dönüştürme yapılmasını sağlar. Dosyanın `nano` komutu ile açılmadan istenilen satırın silinmesini veya farklı satır eklenmesini sağlar. **`sed '1,5'd`** komutu belirtilen dosyanın ilk beş satırının silinmesini, **`sed '$d’`** ise belirtilen dosyanın son satırının silinmesini sağlar.
+
+* **`sed -e 's/<değişecek.motif>/<hedef.motif>/' <dosya.adı>`** : Geçerli klasör içindeki \<dosya.adı\> isimli dosyadaki <değişecek.motif> ile belirtilen motiflerin \<hedef.motif\>e dönüştürülmesini sağlar. Burada \<değiştirilecek.motif\> bulunan her satırda ilk motif değiştirilerek tüm dosya ekranda görüntülenir.Genellikle komutun tüm kullanımlarında `-e` seçeneği yazılır.
+* **`sed -e 's/<değişecek.motif>/<hedef.motif>/g'<dosya.adı>`** : Geçerli klasördeki dosyada motif bulunan satırlarda sadece ilk motifin değil tüm motiflerin değiştirilmesini sağlar. Tek başına bir fonksiyonu yoktur. Komutun diğer seçenekleri ile birlikte kullanılmalıdır.
+* **`sed -e 's/<değişecek.motif>/<hedef.motif>/' -i <dosya.adı>`** : Geçerli klasör içindeki \<dosya.adı\> isimli dosyadaki \<değişecek.motif\> ile belirtilen motiflerin \<hedef.motif\>e dönüştürülmesini ve kaydedilmesini sağlar. Burada `-i` seçeneği yerinde değişimin gerçekleştirilmesinde görevlidir.Satırda bulunan ilk motif değişirken diğerleri sabit kalır.
+* **`sed -e 's/<değişecek.motif>/<hedef.motif>/' -i.<isim> <dosya.adı>`** : Bu kullanımda ise tek fark orijinal dosyanın dosya.adı.\<isim\> şeklinde yeni bir dosya olarak kopyalanmasını ve saklanmasını sağlamaktır.
+* **`sed -n '/<aranan.motif>/p' <dosya.adı>`** : Geçerli klasör içindeki \<dosya.adı\> isimli dosyada sadece \<aranan.motif\>i içeren satırların ekranda görüntülenmesini sağlar.
+* **`sed -e '/<aranan.motif>/d' <dosya.adı>`** : Geçerli klasör içindeki \<dosya.adı\> isimli dosyada \<aranan.motif\>i içermeyen satırların ekranda görüntülenmesini sağlar. Bu gibi aramalar için `-e` seçeneğini kullanmak zorunlu değildir.
+* **`sed '/<motif1>/s/<motif2>/<motif3>/' <dosya.adı>`** : Geçerli klasör içindeki \<dosya.adı\> isimli dosya içerisinde \<motif1\> gördüğü satırdaki \<motif2\>leri \<motif3\>e dönüştürerek dosyayı ekranda görüntüler.
+* **`sed '/<motif1>/!s/<motif2>/<motif3>/' <dosya.adı>`** : Geçerli klasör içindeki \<dosya.adı\> isimli dosya içerisinde \<motif1\> gördüğü satırlar haricindeki satırlarda bulunan \<motif2\>leri \<motif3\>e dönüştürerek dosyayı ekranda görüntüler.
+
+> `grep` komutu için kullanılan kurallı ifadeler `sed` komutu için de geçerlidir. Ama hepsi tamamen aynı özelliği göstermez.
+
+<<[Şekil 2.30 sed komutunun farklı kullanımları](code/sed-ornek.txt)
+
+>### Sorular
+>* Emma kitabında toplam kaç cümle olduğunu Mr. ve Mrs. kelimelerini çıkarıp daha doğru olarak hesaplayın.
+>* Kitap1'de en çok görünen 50.kelimeyi head/tail yerine sed kullanarak bulun.
+
+> sed komutunun [sık kullanılan listesini](http://sed.sourceforge.net/sed1line.txt) inceleyerek sed kullanımı hakkında daha detaylı bilgi sahibi olabilirsiniz.
+
+## awk komutu
+
+İngilizce orijinal tarifi: "pattern scanning and text processing language"
+
+Geçerli klasörde bulunan dosyalarda motif taraması ve yazı işleme yapabilen programlama dilidir. Komutun doğru çalışabilmesi için koşul ve ifadeler tek tırnak (' ') içinde yazılmalıdır. Dosyalar da filtreleme yapma görevini üstlenir. `grep` ve `sed` komutu sadece satırlarda motif arayabilirken, `awk` hem satır hem sütunlarda arama yapabilir. Ayrıca `grep` komutu için herhangi bir koşul belirtilerek filtreleme yapılamaz.
+
+* **`awk '<koşul>{<ifade>}' <dosya.adı>`** : Geçerli klasör içindeki \<dosya.adı\> isimli dosya içinde belirtilen \<koşul\> olan satırlardaki belirtilen \<ifade\>lerin filtrelenmesini sağlayarak ekranda görüntüler. Şablon tamamen kullanılmak zorunda değildir. Komut çalıştırılırken şablon sadece ‘\<koşul\>’ şeklinde de kullanılabilir ve bu belirtilen koşulu içeren tüm satırların ekranda görüntülenmesini sağlar. Aynı şekilde koşul belirtilmeden '\{ \<ifade\> \}' şeklinde kullanımlarda da hiç bir ayrım yapılmadan belirtilen ifade tüm satırlarda aranarak ekranda görüntülenir.
+* **`awk NF<koşul> veya {print NF}`** !!!!!
+* **`awk 'NR<koşul>' <dosya.adı>`** : Geçerli klasördeki \<dosya.adı\> isimli dosya içinde belirtilen \<koşul\> sayısında satırları ekranda görüntüler.
+
+Koşul veya ifade içinde sütunları belirtmek için dolar ($) işareti kullanılmalıdır. $0 dosyada bulunan satırlardaki tüm sütunları ifade ederken, $1 ilk sütunu, $2 ikinci sütunu, $3 üçüncü sütunu ifade eder. Komutun doğru çalışabilmesi için sütunların hepsinin aynı karakter ile ayrılmış olmasına veya karakterin belirtilmesine gerek yoktur. Aynı satırda bulunan hem boşluk hem tab karakterini sütun ayıracı olarak algılayabilir.
+
+Koşul sayısal veya yazılı olarak karşılaştırmaları da kapsayabilir. Burada kullanılan bazı işaretler ve anlamları aşağıdaki tabloda belirtildiği gibidir.
+
+%%%% TODO length fonksiyonu eklensin
+
+{title="Tablo 2.1 awk komutu koşulları için kullanılan işaretler",width="40%"}
+| İşaret |    Anlamı     |
+| :----: | :-----------: |
+|   ==   |    Eşittir    |
+|   !=   | Eşit değildir |
+|   <    |   Küçüktür    |
+|   >    |   Büyüktür    |
+|   ~    |    İçerir     |
+|   !~   |    İçermez    |
+|   &&   |   Ve (AND)    |
+|  \|\|  |   Veya (OR)   |
+
+%%%%% FIX delete the image file (images/awk-tablo.png)
+
+`egrep` ve `sed` komutunda bulunan kurallı ifadeler `awk` komutu için de kullanılabilir. Koşul ve ifade için satır ve sütun içerikleri direk kullanılabileceği gibi işlenip de kullanılabilirler.
+
+Komut ayrıca `sed` komutunun yaptığı gibi yer değişikliği yapabilir ve matematiksel fonksiyonları algılayabilir.
+
+<<[Şekil 2.31 awk komutunun farklı kullanımları](code/awk-ornek.txt)
+
+> awk komutunun [sık kullanılan listesini](http://www.catonmat.net/blog/wp-content/uploads/2008/09/awk1line.txt) inceleyerek awk kullanımı hakkında daha detaylı bilgi sahibi olabilirsiniz.
+
+>### Sorular
+>* Harfler dosyasında sadece birden fazla görünen harfleri ekranda görüntüleyin.
+>* Kitap1'deki en uzun 10 kelime ile kitap2'deki en uzun 10 kelimeyi ekranda görüntüleyin.
+>* Kitap1'de en çok görünen 50.kelimeyi head/tail veya sed yerine awk kullanarak bulun.
+>* Harfler dosyasında sadece ikiden fazla görünen harfleri ekranda görüntüleyin.
+>* Movies dosyasındaki her satırın en ortasında bulunan harf veya harflerini ekranda görüntüleyin. (ADVANCED)
+>* Movies ve ratings dosyalarında 4. satır hariç her satırın son sütunlarındaki ikinci harfi ekranda görüntüleyin.
+>* Kitap1 ve kitap2'de 10'dan daha az (10 dahil değil) sayıda bulunan kelimeleri bulun.
+>* Movies ve ratings dosyalarının 4. sütun ve 20. karakterini ekranda görüntüleyin (kitapta olmayan bir awk fonksiyonu gerekmektedir)
+>* `ecoli-prot-vs-prot.out` dosyası Ecoli-protein.fa dosyasındaki bütün proteinlerin kendileri ile [Blast](https://blast.ncbi.nlm.nih.gov/Blast.cgi) yapılması sonucunda ortaya çıkmıştır. Proteinlerin kendisiyle eşleştiği satırlar çıkarıldığında toplam kaç sonuç vardır.
+>* `ecoli-prot-vs-prot.out` dosyasındaki Blast sonuçlarında, proteinleri kaç **farklı proteine** benzerlik gösterdiklerine göre sıralayınız (kendine benzerliği saymayınız) (Örnek: yhdZ, ybbA, rbbA proteinleri 79 proteine benzerlik göstermektedir)
+>* Biyolojik olarak protein Blast, nükleotid Blast sonuçlarına göre daha uzak benzerlikleri de bulabilmektedir (Bunun sebebi ne olabilir?). Protein Blast sonuçlarında bulunup CDS Blast sonuçlarında bulunmayan benzer protein çiftlerini bulunuz.
+
+%%%% TODO blast should be done again with more columns, query len, subject len, strand should be included so that more analysis can be done
+
+%%%% TODO regarding yhdZ, ybbA and rbbA, can we do simple clustering on terminal (blastclust is a solution with special software, can we achieve similar result with unix tools)
+
+%%%% TODO provide link for "awk & sed for bioinformatics", https://github.com/stephenturner/oneliners
+
+Buraya kadar gördüğümüz komutlar sayesinde dosyaların açılması, içeriğine erişilmesi, filtrelenmesi, içeriğinin manipüle edilmesi ve temel analizine dair komutları görmüş olduk.
+
+![Şekil 2.32 Dosya görüntüleme, filtreleme, birleştirme, değiştirme ve analizi için kullanılan terminal komutları](images/star-command1.png) 
+
+Yukarıdaki resimde ([kaynak](http://mkweb.bcgsc.ca/perlworkshop/data/courses/2.1.2.4/01/pdf/2.1.2.4.1.a1.pdf)) gösterilen terminal komutlarının gerçekleştirdiği işlemleri veritabanlarında yapabilen komutlar "Veri Tabanları" bölümünde gösterilecektir.
+
+
+## nano komutu
+
+İngilizce orijinal tarifi: "nano's another editor, an enhanced free pico clone"
+
+Terminalde çalışan yazı düzenleyicidir. Yeni bir dosya oluşturmak veya var olan bir dosya içinde değişiklik yapmak için kullanılır. Açılan penceren ctrl+x ile çıkış yapılır ve değişiklik yapıldığı zaman kaydedilip kaydedilmemesi için onay ister. Değişikliğin kaydedilmesi için y tuşuna, kaydedilmeden çıkış yapılabilmesi için n tuşuna basılmalıdır.
+
+* **`nano <dosya.adı>`** : Geçerli klasör içinde varsa \<dosya.adı\> isimli dosyanın açılmasını yoksa \<dosya.adı\> isimli bir dosya oluşturulup içine yazı yazmayı sağlar.
+
+<<[Şekil 2.33 nano komutunun kullanımı](code/nano-ornek.txt)
+
+## history komutu
+
+Kullanıcının o zamana kadar kullandığı tüm komutları zamanlarıyla birlikte gösteren komuttur.
+
+## passwd komutu
+
+Kullanıcı şifresinin değiştirilmesini sağlayan komuttur. Daha önceden kullanılmış bir şifre tekrar kullanılamaz.
+
+<<[Şekil 2.34 passwd komutunun kullanımı](code/passwd-ornek.txt)
+
+## Bölüm sonu soruları
+
+[MovieLens](https://movielens.org/), film önerisi hizmeti veren bir web sayfasıdır. Kullanıcılar her film için sadece beğeni değil aynı zamanda etiket bildirmektedir. Çok sayıda kullanıcıdan toplanan veriler film önerisi algoritmalarında kullanılmaktadır. MovieLens, aynı zamanda elindeki verileri ilgili kişilerle paylaşmaktadır. Aşağıdaki sorular iki dosyaki verilerle çözülecektir. `movies` ve `ratings` adlı dosyalar [gerekli linkten](http://grouplens.org/datasets/movielens/) indirilmiş ve içeriklerinde küçük düzenlemeler yapılmıştır. 
+
+{#movies-ratings-desc}
+`movies` dosyası 10681 filme dair bilgiler içermektedir ve her film için 4 sütun bulunmaktadır. Bunlar sırasıyla; film no, film adı, film yılı ve film türüdür. Birden fazla türde olan filmler için türler çubuk (|) işareti ile birleştirilmiştir. 
+
+`ratings` dosyası yaklaşık 10000 film için yapılan 10 milyon değerlendirmeyi içermektedir. Her bir değerlendirme 4 farklı veri içermektedir, bunlar sırasıyla; kullanıcı no, film no, değerlendirme (0.5-5 arası), değerlendirme gün ve saati. `ratings` dosyasındaki film no sütunu `movies` dosyasındaki film no sütununa denk gelmektedir.
+
+Şimdiye kadar öğrenilen terminal komutlarını karışık şekilde kullanarak aşağıdaki soruları cevaplayınız.
+
+**Movies Soruları**
+
+1. Listeyi önce yıl sonra film adına göre sıralayın.
+2. En çok film yapılan yılı bulun.
+3. En çok film yapılan türü bulun.
+4. Tek türü olan filmleri sayın.
+5. 2000-2005 arası yapılan filmler en çok hangi harf ile başlayan isimler almış bulup bu harfle başlayan filmleri ayrı bir dosya olarak kaydedin.
+
+**Ratings Soruları**
+
+1. Puan veren toplam kaç kullanıcı/seyirci vardır.
+2. Puan verilen toplam kaç film vardır.
+3. En çok puan veren kullacıyı bulun.
+4. İlk oylama ve son oylama tarihlerini bulun.
+5. Aynı filme aynı puanı veren kullanıcıları bulun.
+6. Toplamda en çok puan veren üç kullanıcıyı bulun.
+7. Toplamda en az puan veren kullanıcının filmlere verdiği puanların ortalamasını bulun.
+8. Gün içerisinde en sık puan verilen saat aralığını bulun.
+9. 100-150 numara arası kullanıcıların en çok beğendiği üç filmi (filmNO cinsinden) bulun.
+10. Tüm filmlerin ortalama kaçar puan aldıklarını bulun. Tüm filmlerin ortalamasını bulun.
+11. 2 kişiden puan almış ve ortalaması 5 olan bir film, 1000 kişiden puan almış ve ortalaması 4.8 olan bir filmden daha iyi değildir. Bu tür etkileri elemek için bayesian derecelendirmesi yapalım. Bayesian derecelendirmesine göre en yüksek değeri alan 3 filmi bulun. \[Formül : **bayesian derecelendirme = (v ÷ (v+m)) × R + (m ÷ (v+m)) × C** \] R = filmin aldığı ortalama puan, v = filmin aldığı puan sayısı, m = listelenmek için gerekli minimum puanlama sayısı (bu örnek için 1000 alalım, [IMDB](http://www.imdb.com/) 1250 olarak alıyor), C = bütün filmlerin ortalaması (10. sorunun ikinci kısmında hesaplandığı üzere 3.51242)
+12. En yüksek puan ortalamasına sahip 50 filmin türlerini bulun.
+13. En çok oy kullanılan üç ayı bulun. En çok oy kullanılan üç film türünü bulun.
+14. Film yapım yılından oy kullanımına kadar en çok zaman geçen filmi bulun.
+15. Filmlerin yapım yıllarından beş sene sonrasına kadar geçen sürede aldıkları oyların ortalamasını bulun ve en çok puan alandan en az puan alana doğru sıralayın.
+16. Korku türünde en çok oylama yapılan ilk 10 filmi bulun. Korku türünde oylarının toplamı en çok olan ilk 10 filmi bulun.
+17. En az hangi türde film yapılmış bulup en az puan alan 3 filmi ekranda görüntüleyin. 
+18. Her filmin kaçar kullanıcıdan oy aldığını bulun.
+19. 10'dan az kullanıcıdan oy alan filmler türlerine göre kaçar tanedir bulun.
+20. 2.soruda oy kullanılan film sayısı hesaplanmıştı. Şimdi de herhangi bir oy kullanılmamış filmleri bulun.
+
+Soruların cevapları [Ek: Cevaplar](#ek-cevaplar) kısmındadır.
+
+%%%% TODO: veritabanı konusuna daha kolay geçiş olması için, datamash örnekleri eklenebilir (http://www.gnu.org/software/datamash/examples/)
+
+%%%% TODO also add https://github.com/shenwei356/csvtk OR https://github.com/wireservice/csvkit
+
+%%%% TODO we should mention GNU parallel and https://github.com/mattgodbolt/zindex https://github.com/stedolan/jq 
+
+%%%% TODO add section of one-liners (bioinformatics ones as well) and list urls to examples: https://github.com/onceupon/Bash-Oneliner/blob/master/README.md , https://github.com/stephenturner/oneliners
+
+%%%% TODO add ref to http://korflab.ucdavis.edu/Unix_and_Perl/unix_and_perl_v3.0.html

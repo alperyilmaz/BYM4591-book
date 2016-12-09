@@ -1,0 +1,5 @@
+$ passwd
+Changing password for irembuyuk.
+Old Password:
+New Password:
+Retype New Password:

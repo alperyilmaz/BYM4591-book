@@ -1,0 +1,20 @@
+$ awk '$4==80' ogrenci-not-donem1
+0000060 Ahmet   Çelik   80      60      60      C
+
+$ awk '$3~/Yıl/' ogrenci-not-donem1
+0000001 Elif    Yılmaz  50      70      70      B
+
+$ awk '$3~/^K/' ogrenci-not-donem1
+0000101 Ayşe    Karaosmanoğlu   90      80      100     A
+0000079 Mustafa Kara    60      50      95      B
+
+$ awk '$3~/^D/' ogrenci-not-donem1
+0000054 Ayşe    Demir   70      85      60      B
+
+$ awk '(($4+$5)/2) > 80' ogrenci-not-donem1
+0000101 Ayşe    Karaosmanoğlu   90      80      100     A
+0000022 Kemal   Şahin   75      90      45      B
+
+$ awk 'NR<=2' ogrenci-not-donem1
+ÖğrenciNo       Ad      Soyad   Vize1   Vize2   Final   HarfNotu
+0000001 Elif    Yılmaz  50      70      70      B

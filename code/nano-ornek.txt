@@ -1,0 +1,10 @@
+$ nano ders_listesi
+...
+
+$ cat ders_listesi 
+Matematik
+Fizik
+Genel Kimya
+Genel Biyoloji
+Tarih
+Türkçe

@@ -1,0 +1,62 @@
+$ sed -e 's/60/-/' ogrenci-not-donem1
+ÖğrenciNo       Ad      Soyad   Vize1   Vize2   Final   HarfNotu
+0000001 Elif    Yılmaz  50      70      70      B
+0000101 Ayşe    Karaosmanoğlu   90      80      100     A
+00000-  Ahmet   Çelik   80      60      60      C
+0000022 Kemal   Şahin   75      90      45      B
+0000079 Mustafa Kara    -       50      95      B
+0000054 Ayşe    Demir   70      85      -       B
+
+$ sed -e 's/60/*/g' ogrenci-not-donem1
+ÖğrenciNo       Ad      Soyad   Vize1   Vize2   Final   HarfNotu
+0000001 Elif    Yılmaz  50      70      70      B
+0000101 Ayşe    Karaosmanoğlu   90      80      100     A
+00000*  Ahmet   Çelik   80      *       *       C
+0000022 Kemal   Şahin   75      90      45      B
+0000079 Mustafa Kara    *       50      95      B
+0000054 Ayşe    Demir   70      85      *       B
+
+$ sed -n '/60/p' ogrenci-not-donem1
+0000060 Ahmet   Çelik   80      60      60      C
+0000079 Mustafa Kara    60      50      95      B
+0000054 Ayşe    Demir   70      85      60      B
+
+$ sed -e '/60/d' ogrenci-not-donem1
+ÖğrenciNo       Ad      Soyad   Vize1   Vize2   Final   HarfNotu
+0000001 Elif    Yılmaz  50      70      70      B
+0000101 Ayşe    Karaosmanoğlu   90      80      100     A
+0000022 Kemal   Şahin   75      90      45      B
+
+$ sed '/Ayşe/d' ogrenci-not-donem1
+ÖğrenciNo       Ad      Soyad   Vize1   Vize2   Final   HarfNotu
+0000001 Elif    Yılmaz  50      70      70      B
+0000060 Ahmet   Çelik   80      60      60      C
+0000022 Kemal   Şahin   75      90      45      B
+0000079 Mustafa Kara    60      50      95      B
+
+$ sed -e '/01/s/50/-/' ogrenci-not-donem1
+ÖğrenciNo       Ad      Soyad   Vize1   Vize2   Final   HarfNotu
+0000001 Elif    Yılmaz  -       70      70      B
+0000101 Ayşe    Karaosmanoğlu   90      80      100     A
+0000060 Ahmet   Çelik   80      60      60      C
+0000022 Kemal   Şahin   75      90      45      B
+0000079 Mustafa Kara    60      50      95      B
+0000054 Ayşe    Demir   70      85      60      B
+
+$ sed -e '/Ayşe/s/60/-/' ogrenci-not-donem1
+ÖğrenciNo       Ad      Soyad   Vize1   Vize2   Final   HarfNotu
+0000001 Elif    Yılmaz  50      70      70      B
+0000101 Ayşe    Karaosmanoğlu   90      80      100     A
+0000060 Ahmet   Çelik   80      60      60      C
+0000022 Kemal   Şahin   75      90      45      B
+0000079 Mustafa Kara    60      50      95      B
+0000054 Ayşe    Demir   70      85      -       B
+
+$ sed -e '/Ayşe/!s/60/-/' ogrenci-not-donem1
+ÖğrenciNo       Ad      Soyad   Vize1   Vize2   Final   HarfNotu
+0000001 Elif    Yılmaz  50      70      70      B
+0000101 Ayşe    Karaosmanoğlu   90      80      100     A
+00000-  Ahmet   Çelik   80      60      60      C
+0000022 Kemal   Şahin   75      90      45      B
+0000079 Mustafa Kara    -       50      95      B
+0000054 Ayşe    Demir   70      85      60      B
