@@ -1,0 +1,5 @@
+$ egrep '([A-Za-z])\1' protein-yapisi.pdb
+
+SHEET    1   A 5 MET A  74  ARG A  78  0
+SHEET    2   A 5 LYS A 113  ILE A 120 -1  N  GLY A 118   O  MET A  75
+SHEET    3   A 5 HIS A  57  ILE A  64  1  N  LEU A  58   O  LYS A 113

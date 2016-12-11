@@ -1,0 +1,6 @@
+$ sed 1d ogrenci-not-donem1 | awk '$6>50' | sort -nr -k6 | cut -f1,7 | while read OGRNO HARF; do echo "$OGRNO" numaralı öğrencinin notu: "$HARF"; done
+0000101 numaralı öğrencinin notu: A
+0000079 numaralı öğrencinin notu: B
+0000001 numaralı öğrencinin notu: B
+0000060 numaralı öğrencinin notu: C
+0000054 numaralı öğrencinin notu: B

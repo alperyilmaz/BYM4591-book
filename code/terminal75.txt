@@ -1,0 +1,12 @@
+$ egrep '[0-2T] A' protein-yapisi.pdb
+
+SEQRES   1 A  162  MET ARG ILE LEU VAL LEU GLY VAL GLY ASN ILE LEU LEU
+SEQRES   2 A  162  THR ASP GLU ALA ILE GLY VAL ARG ILE VAL GLU ALA LEU
+ATOM      1  N   MET A   1      50.347  23.578  52.116  1.00 62.03           N
+ATOM      2  CA  MET A   1      49.879  24.359  50.932  1.00 59.61           C
+ATOM      3  C   MET A   1      48.865  25.394  51.393  1.00 54.58           C
+ATOM      4  O   MET A   1      47.875  25.011  52.020  1.00 54.99           O
+ATOM      5  CB  MET A   1      49.248  23.457  49.877  1.00 62.37           C
+ATOM      6  CG  MET A   1      48.708  24.106  48.629  1.00 66.70           C
+ATOM      7  SD  MET A   1      49.731  23.948  47.163  1.00 77.15           S
+ATOM      8  CE  MET A   1      51.349  24.403  47.765  1.00 71.39           C

@@ -1,0 +1,7 @@
+$ for ogrno in $(cut -f1 ogrenci-not-donem1 | sed 1d); do grep $ogrno ogrenci-not-donem2; done
+0000001 Elif    Yılmaz  70      75      80      B
+0000101 Ayşe    Karaosmanoğlu   90      95      100     A
+0000060 Ahmet   Çelik   80      40      50      C
+0000079 Mustafa Kara    55      60      65      C
+0000054 Ayşe    Demir   70      85      60      B
+
