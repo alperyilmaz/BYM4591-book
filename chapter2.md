@@ -1076,6 +1076,8 @@ Geçerli klasördeki dosyaların veya girdideki satır, kelime ve karakter sayı
 
 * **`wc <dosya.adı>`** : Geçerli klasördeki \<dosya.adı\> isimli dosya için sırasıyla; satır, kelime ve karakter sayılarını gösterir.
 * **`wc -l <dosya.adı>`** : Geçerli klasördeki \<dosya.adı\> isimli dosya için toplam satır sayısını ve dosya adını gösterir. Sadece satır sayısı gösterimi için çok tercih edilen kullanımı; **`cat <dosya.adı> | wc -l`** şeklindedir. Bir çok farklı sayım için oldukça yaygın olarak kullanılır.
+* **`wc -w <dosya.adı>`** : Geçerli klasördeki \<dosya.adı\> isimli dosya için sadece kelime sayısını gösterir.
+
 
 > Birçok komut için kullanılan \<dosya.adı\> ifadesi birden çok dosya da içerebilir, jokerler sayesinde. Daha detaylı bilgi için [jokerler](#jokerler) açıklamasına bakınız.
 
