@@ -1,0 +1,33 @@
+~/lessons$ tree
+.
+|_biosensors
+|     |_viral_sensors
+|_ chapter3.txt
+|_data_analysing
+|     |_chapter1.txt
+|     |_chapter2.txt
+|_virology
+      |_HIV.txt
+      |_Retro.txt
+
+## Bir dosyasının, ait olduğu klasörden başka bir klasöre taşınmasını sağlar.
+~/lessons$ mv chapter3.txt data_analysing/  
+
+## Boşluk kullanılarak birden fazla dosya taşınabilir.
+~/lessons/virology$ mv HIV.txt Retro.txt ../biosensors/viral_sensors/ 
+
+## Jokerler yardımıyla birden fazla dosya taşınabilir.
+~/lessons/biosensors/viral_sensors$ mv *.txt ../../virology/ 
+
+## Bir klasör başka bir klasörün içine taşınabilir.
+~/lessons$ mv virology/ biosensors/viral_sensors/ 
+
+## Dosyalar yeniden adlandırılabilinir.
+~/lessons/data_analysing$ mv chapter1.txt Linux.txt 
+
+## Klasörler yeniden adlandırılabilinir.
+~/lessons$ mv data_analysing/ linux/ 
+
+
+
+
