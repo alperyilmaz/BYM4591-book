@@ -1,0 +1,200 @@
+counting the letters frequency  in java :
+
+public static void main(String[] args) throws FileNotFoundException, IOException {
+
+        FileReader fr = new FileReader("\\pathtofile\\data.txt");
+
+        BufferedReader br = new BufferedReader(fr);
+        int nextLetter;
+        int[] count = new int[26];
+        int total = 0;
+        int other = 0;
+
+        System.out.println("Letter            Frequency");    
+        while ((nextLetter = br.read()) != -1) {
+            char current = (char) nextLetter;
+            current = Character.toLowerCase(current);
+            if (current >= 'a' && current <= 'z') {
+                count[current - 'a']++;
+                total++;
+            } else {
+                other++;
+            }        }
+        Map ans = sorting(count);  
+        printMap(ans);
+    }
+    private static Map sorting(int[] count) {
+        Map m = new LinkedHashMap<String, Integer>() {};
+        int k = 0 ;
+        for (int i = 0; i < 26; i++) {
+             int max =-1;
+            for (int j = 0; j < 26; j++) {
+                if(max < count[j]){
+                    max = count[j];
+                    k = j;
+                }            }     
+            count[k] = -1;
+            if(max!=0)
+            m.put(((char)(k+97))+"", max);
+            max=0;
+        }
+        return m;
+    }
+
+    public static void printMap(Map<String, Integer> map)
+    {
+        for (Entry<String, Integer> entry : map.entrySet())
+        {
+            System.out.println("" + entry.getKey() + "     : "+ entry.getValue());
+        }    }
+the out put will be :
+ Letter            Frequency
+     E                   14 
+     C                   7 
+     B                   1 
+     D                   0  
+     A                   0
+while using Linux command :
+$ cat file.name |tr A-Z a-z |fold -w1 |sort | uniq -c | sort -nr 
+
+----***---***---***---***---***----***---***----***-----
+counting the words in a text file using java :
+class WordData {
+    public int getFrequency() {
+        return frequency;
+    }
+    public void setFrequency(int frequency) {
+        this.frequency = frequency;
+    }
+    public String getWord() {
+        return word;
+    }
+    public void setWord(String word) {
+        this.word = word;
+    }
+
+    private int frequency=0;
+    private String word;
+
+    public WordData(int frequency, String word) {
+        this.frequency = frequency;
+        this.word = word;
+    }
+
+    public void increaseFrequency(){
+        this.frequency =this.frequency+1;
+    }    }
+public class NoOfWordsInFile {
+    public static void main( String args[]) {
+        HashMap<String, WordData> Words = new HashMap<String, WordData>();
+        try {
+            File f1 = new File(filepath);
+            Scanner scan1 = new Scanner(f1, "UTF-8");
+            String word, line;
+            WordData wordData;
+            String[] wordsOfLine;
+            while (scan1.hasNext()) {
+                line = scan1.nextLine().trim();
+                wordsOfLine = line.split("\\s");
+
+                for (int i = 0; i < wordsOfLine.length&&wordsOfLine[i]!=""; i++) {
+
+                    word = wordsOfLine[i].trim();
+                    if (Words.get(word)==null){
+                        wordData = new WordData(1, word);
+                        Words.put(word, wordData);
+                    } else {
+                        wordData = Words.get(word);
+                        wordData.increaseFrequency();
+                        Words.put(word, wordData);
+                    }             }            }
+            for (WordData s : Words.values()){
+                System.out.println(s.getWord() +": " + s.getFrequency());
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }    }     }
+
+while in linux command line :
+$ cat file.txt |tr -sc '[[:alnum:]]' '\n' | tr A-Z a-z > file .words
+$ cat file.words |sort | uniq -c |sort -nr 
+
+----***---***---***---***---***----***---***----***-----
+finding the common words between two text files using java 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Test {
+
+  private static final Pattern WORD_PATTERN = Pattern.compile("[\\w']+");
+
+  private static Map<String, Integer> load(final String f1) throws FileNotFoundException {
+    Scanner reader = new Scanner(new File(f1));
+    Map<String, Integer> out = new HashMap<String, Integer>();
+    while (reader.hasNext()) {
+      String tempLine = reader.nextLine();
+      if (tempLine != null && tempLine.trim().length() > 0) {
+        Matcher matcher = WORD_PATTERN.matcher(tempLine);
+        while (matcher.find()) {
+          out.put(matcher.group().toLowerCase(), 0);
+        }      }    }
+
+    return out;
+  }
+  private static void write(final Map<String, Integer> out, final String fname) throws IOException {
+    FileWriter writer = new FileWriter(new File(fname));
+    for (Map.Entry<String, Integer> word : out.entrySet()) {
+      if (word.getValue() == 1) {
+        writer.write(word.getKey() + "\n");
+      }    }
+    writer.close();
+  }
+
+  public static void main(final String[] args) throws IOException {
+    Map<String, Integer> file1 = load("file1.txt");
+    Map<String, Integer> file2 = load("file2.txt");
+
+    // below for loop will run just one time, so it is much faster
+    for (Map.Entry<String, Integer> file1Word : file1.entrySet()) {
+      if (file2.containsKey(file1Word.getKey())) {
+        file1.put(file1Word.getKey(), 1);
+        file2.put(file1Word.getKey(), 1);
+      }    }
+    write(file1, "test1.txt");
+    write(file2, "test2.txt");
+  }   }
+
+while using linux command line :
+$ cat file1.txt | tr -sc '[:alnum:]' '\n' | tr A-Z  a-z | sort > file1.sorted 
+$  cat file2.txt | tr -sc '[:alnum:]' '\n' | tr A-Z  a-z | sort > file2.sorted 
+$ comm -12 file1.sorted  file2.sorted 
+
+----***---***---***---***---***----***---***----***-----
+finding the number of sentences in a text file using java :
+BufferedReader reader = new BufferedReader(new FileReader(fileName));
+int sentenceCount = 0;
+String line;
+String delimiters = "?!.";
+
+while ((line = reader.readLine()) != null) { // Continue reading until end of file is reached
+    for (int i = 0; i < line.length(); i++) {
+        if (delimiters.indexOf(line.charAt(i)) != -1) { // If the delimiters string contains the character
+            sentenceCount++;
+        }    }    }
+reader.close();
+System.out.println("The number of sentences is " + sentenceCount);
+
+while in linux command line :
+$ cat file.txt  | tr A-Z a-z | tr -d '\n' | tr '.,?;!'  '\n' | wc -l 
+
+
+
+
